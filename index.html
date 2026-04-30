@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="تعمیرات تخصصی بردهای الکترونیکی، لپ‌تاپ، کامپیوتر و مودم در شیراز – با گارانتی و قیمت منصفانه">
+    <title>تعمیرات تخصصی | برد، لپ‌تاپ، کامپیوتر، مودم</title>
+    <!-- Font Awesome 6 (آیکون‌های حرفه‌ای) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- فونت وزیرمتن (وزیر) برای فارسی زیبا -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Vazirmatn', 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(145deg, #eef2f7 0%, #d9e2ec 100%);
+            color: #1a2c3e;
+            line-height: 1.6;
+            padding: 24px 20px;
+        }
+
+        /* کانتینر اصلی با شیشه‌ای مات (glassmorphism) */
+        .glass-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(2px);
+            border-radius: 48px;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            padding: 28px 32px 48px;
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 700px) {
+            body {
+                padding: 12px;
+            }
+            .glass-container {
+                padding: 18px 20px 32px;
+                border-radius: 32px;
+            }
+        }
+
+        /* هدر */
+        .hero {
+            text-align: center;
+            padding: 20px 10px 20px;
+            background: linear-gradient(120deg, #f9fbfd, #ffffff);
+            border-radius: 40px;
+            margin-bottom: 30px;
+        }
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #0f5c6b, #0a3e5a);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 12px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #2c5368;
+            font-weight: 500;
+        }
+
+        /* نوار تماس با دکمه واتساپ */
+        .contact-bar {
+            background: linear-gradient(115deg, #0b5e7e, #0a485f);
+            border-radius: 80px;
+            padding: 12px 24px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin: 30px 0 20px;
+            color: white;
+            box-shadow: 0 8px 14px rgba(0,0,0,0.1);
+        }
+        .address-text {
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,240,0.15);
+            padding: 6px 16px;
+            border-radius: 40px;
+        }
+        .contact-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .btn-call, .btn-wa {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            padding: 8px 22px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+            font-size: 1.1rem;
+        }
+        .btn-call {
+            color: #0b5e7e;
+        }
+        .btn-wa {
+            color: #25D366;
+            border: 1px solid #25D366;
+            background: white;
+        }
+        .btn-call:hover, .btn-wa:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+        .btn-call i, .btn-wa i {
+            font-size: 1.3rem;
+        }
+
+        /* شبکه خدمات */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 28px;
+            margin: 45px 0;
+        }
+        .service-card {
+            background: #ffffff;
+            border-radius: 32px;
+            padding: 24px 16px;
+            text-align: center;
+            transition: all 0.25s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -8px rgba(0,0,0,0.15);
+            background: #fefefe;
+        }
+        .service-card i {
+            font-size: 3.2rem;
+            background: linear-gradient(145deg, #0f5c6b, #0a3e5a);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 14px;
+        }
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #155f74;
+        }
+
+        /* گالری تصاویر */
+        .gallery, .videos-section {
+            margin: 55px 0;
+        }
+        .section-title {
+            font-size: 1.9rem;
+            font-weight: 700;
+            border-right: 6px solid #f4a261;
+            padding-right: 18px;
+            margin-bottom: 28px;
+            color: #1f4e5f;
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+        .image-card {
+            background: #fff;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 12px 20px rgba(0,0,0,0.08);
+            transition: 0.2s;
+        }
+        .image-card:hover {
+            transform: scale(1.02);
+        }
+        .image-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        .image-card .caption {
+            padding: 14px;
+            text-align: center;
+            font-weight: 500;
+            background: white;
+        }
+
+        /* ویدیوها */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .video-item {
+            background: #f1f5f9;
+            border-radius: 28px;
+            padding: 16px;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+        }
+        .video-item video {
+            width: 100%;
+            border-radius: 20px;
+            background: #000;
+            outline: none;
+        }
+        .video-title {
+            margin-top: 12px;
+            font-weight: bold;
+            text-align: center;
+            color: #1f4e5f;
+        }
+
+        /* باکس توضیحات */
+        .description {
+            background: #eef2fa;
+            padding: 24px 32px;
+            border-radius: 44px;
+            margin: 40px 0;
+            border-right: 5px solid #f4a261;
+        }
+
+        /* فوتر و تکرار آدرس */
+        .footer-card {
+            background: #e9edf2;
+            border-radius: 38px;
+            padding: 18px 22px;
+            text-align: center;
+            margin-top: 25px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 48px;
+            padding-top: 20px;
+            border-top: 1px solid #cddae9;
+            font-size: 0.8rem;
+            color: #5d6f7e;
+        }
+        @media (max-width: 680px) {
+            .contact-bar {
+                flex-direction: column;
+                border-radius: 40px;
+                text-align: center;
+            }
+            .hero h1 {
+                font-size: 1.4rem;
+            }
+            .btn-call, .btn-wa {
+                padding: 6px 16px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="glass-container">
+    <div class="hero">
+        <h1><i class="fas fa-microchip"></i> تعمیرات تخصصی بردهای الکترونیک | لپ‌تاپ · کامپیوتر · مودم</h1>
+        <p>⚡ تعمیر در محل یا ارسال با پیک – تضمین کیفیت و قطعات اصلی ⚡</p>
+    </div>
+
+    <!-- نوار تماس مدرن با واتساپ -->
+    <div class="contact-bar">
+        <div class="address-text">
+            <i class="fas fa-map-marker-alt"></i> شیراز، معالی آباد، خیابان پزشکان، کوچه 4/1 ساختمان سپیده 2 طبقه 6 واحد 24
+        </div>
+        <div class="contact-buttons">
+            <a href="tel:09174429089" class="btn-call"><i class="fas fa-phone-alt"></i> 0917-4429089</a>
+            <a href="https://wa.me/989174429089" class="btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> واتساپ</a>
+        </div>
+    </div>
+
+    <!-- خدمات تخصصی -->
+    <div class="services-grid">
+        <div class="service-card"><i class="fas fa-laptop-code"></i><h3>لپ‌تاپ و کامپیوتر</h3><p>تعمیر مادربرد، کارت گرافیک، رفع روشن نشدن، تعویض سوکت</p></div>
+        <div class="service-card"><i class="fas fa-wifi"></i><h3>مودم و شبکه</h3><p>مودم ADSL/VDSL، فیبر نوری، فلش فریم‌ویر، رفع قطعی</p></div>
+        <div class="service-card"><i class="fas fa-microchip"></i><h3>بردهای صنعتی</h3><p>CNC، درایو، منبع تغذیه، اینورتر، دستگاه‌های پزشکی</p></div>
+        <div class="service-card"><i class="fas fa-soldering"></i><h3>تعمیرات SMD</h3><p>تعویض آی‌سی، خازن، رگولاتور، ریبال و ریکاوری بایوس</p></div>
+    </div>
+
+    <!-- گالری تصاویر نمونه کار -->
+    <div class="gallery">
+        <div class="section-title"><i class="fas fa-images"></i> نمونه کارها و تجهیزات</div>
+        <div class="image-grid">
+            <div class="image-card"><img src="https://placehold.co/500x300/0b5e7e/white?text=مادربرد+لپ‌تاپ" alt="مادربرد لپ تاپ"><div class="caption">تعمیر مادربرد ایسر</div></div>
+            <div class="image-card"><img src="https://placehold.co/500x300/f4a261/1e2a3e?text=مودم+VDSL" alt="مودم"><div class="caption">تعویض سوکت و خازن مودم</div></div>
+            <div class="image-card"><img src="https://placehold.co/500x300/2a6f7f/white?text=برد+اینورتر" alt="برد صنعتی"><div class="caption">عیب‌یابی برد اینورتر صنعتی</div></div>
+        </div>
+        <p style="font-size:0.75rem; color:#6c7a89; margin-top:8px;">※ تصاویر نمونه – حتماً عکس‌های واقعی خود را جایگزین کنید.</p>
+    </div>
+
+    <!-- فیلم‌های تبلیغاتی -->
+    <div class="videos-section">
+        <div class="section-title"><i class="fas fa-video"></i> فیلم‌های آموزشی و تبلیغاتی</div>
+        <div class="video-grid">
+            <div class="video-item">
+                <video controls poster="https://placehold.co/400x220/e9ecef/1e2a3e?text=پیش‌نمایش+فیلم">
+                    <source src="sample-video-1.mp4" type="video/mp4">
+                    مرورگر پشتیبانی نمی‌کند.
+                </video>
+                <div class="video-title">🔧 نمونه تعمیر برد لپ‌تاپ – رفع اتصال کوتاه</div>
+            </div>
+            <div class="video-item">
+                <video controls poster="https://placehold.co/400x220/e9ecef/1e2a3e?text=پیش‌نمایش+فیلم">
+                    <source src="sample-video-2.mp4" type="video/mp4">
+                </video>
+                <div class="video-title">📡 عیب‌یابی مودم و تعویض قطعات</div>
+            </div>
+        </div>
+        <p style="font-size:0.8rem; margin-top:8px;">⚠️ فایل‌های ویدیویی خود را با نام sample-video-1.mp4 و sample-video-2.mp4 در کنار فایل HTML قرار بده یا مسیر رو اصلاح کن.<br>
+        می‌تونی از کد embed یوتیوب/آپارات هم استفاده کنی.</p>
+    </div>
+
+    <!-- توضیحات نحوه سفارش -->
+    <div class="description">
+        <h3><i class="fas fa-clipboard-list"></i> نحوه ثبت سفارش و پذیرش تعمیرات:</h3>
+        <p>✅ تماس بگیرید یا در واتساپ پیام دهید (شماره بالا).<br>
+        ✅ هماهنگی برای ارسال دستگاه با پیک (هزینه پیک با مشتری) یا تحویل حضوری در آدرس ذکر شده.<br>
+        ✅ پس از عیب‌یابی، قیمت نهایی و زمان تحویل اعلام می‌شود.<br>
+        ✅ گارانتی تعمیرات ۳ ماهه بر روی خدمات انجام شده.<br>
+        🔻 <strong>توجه:</strong> تعمیرات در سطح قطعه (SMD، لحیم‌کاری، ریکاوری بایوس) انجام می‌شود.</p>
+    </div>
+
+    <div class="footer-card">
+        <i class="fas fa-store"></i> آدرس کارگاه: شیراز، معالی آباد، خیابان پزشکان، کوچه 4/1 ساختمان سپیده 2 طبقه 6 واحد 24 <br>
+        <i class="fas fa-phone-alt"></i> مشاوره رایگان: <strong dir="ltr">0917-4429089</strong> (۱۰ صبح تا ۸ شب - به جز جمعه‌ها)
+    </div>
+
+    <div class="footer">
+        © ۱۴۰۴ - تمامی حقوق محفوظ است. طراحی مدرن برای خدمات تعمیرات تخصصی برد و تجهیزات الکترونیکی.
+    </div>
+</div>
+</body>
+</html>
