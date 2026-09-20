@@ -118,6 +118,39 @@
             border: 1px solid #25D366;
             background: white;
         }
+        .btn-bale, .btn-rubika, .btn-eitaa, .btn-telegram {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 60px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.2s;
+    font-size: 0.95rem;
+    color: white;
+    border: none;
+}
+.btn-bale {
+    background: #28a745;
+}
+.btn-rubika {
+    background: linear-gradient(135deg, #FFD300, #009FDF);
+    color: #1a2c3e;
+}
+.btn-eitaa {
+    background: #FF6B00;
+}
+.btn-telegram {
+    background: #0088CC;
+}
+.btn-bale:hover, .btn-rubika:hover, .btn-eitaa:hover, .btn-telegram:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+.btn-bale i, .btn-rubika i, .btn-eitaa i, .btn-telegram i {
+    font-size: 1.1rem;
+}
         .btn-call:hover, .btn-wa:hover {
             transform: scale(1.02);
             box-shadow: 0 6px 12px rgba(0,0,0,0.1);
@@ -125,7 +158,7 @@
         .btn-call i, .btn-wa i {
             font-size: 1.3rem;
         }
-
+    
         /* شبکه خدمات */
         .services-grid {
             display: grid;
