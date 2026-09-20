@@ -23,7 +23,26 @@
             line-height: 1.6;
             padding: 24px 20px;
         }
-
+        /* استایل امبد آپارات */
+.video-item .aparat-frame {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #000;
+}
+.video-item .aparat-frame .ratio {
+    display: block;
+    width: 100%;
+    padding-top: 57%; /* نسبت تصویر 16:9 */
+}
+.video-item .aparat-frame iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
         /* کانتینر اصلی با شیشه‌ای مات (glassmorphism) */
         .glass-container {
             max-width: 1280px;
@@ -343,22 +362,26 @@
     </div>
 
     <!-- فیلم‌های تبلیغاتی -->
-    <div class="videos-section">
-        <div class="section-title"><i class="fas fa-video"></i> فیلم‌های آموزشی و تبلیغاتی</div>
-        <div class="video-grid">
-            <div class="video-item">
-                <style>.h_iframe-aparat_embed_frame{position:relative;}.h_iframe-aparat_embed_frame .ratio{display:block;width:100%;height:auto;}.h_iframe-aparat_embed_frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;}</style><div class="h_iframe-aparat_embed_frame"><span style="display: block;padding-top: 57%"></span><iframe src="https://www.aparat.com/video/video/embed/videohash/ampuc7h/vt/frame?titleShow=true&startTime=5&recom=self"  allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe></div>
-                <div class="video-title">🔧 نمونه تعمیر برد لپ‌تاپ – رفع اتصال کوتاه</div>
+<div class="videos-section">
+    <div class="section-title"><i class="fas fa-video"></i> فیلم‌های آموزشی و تبلیغاتی</div>
+    <div class="video-grid">
+        <div class="video-item">
+            <div class="aparat-frame">
+                <span class="ratio"></span>
+                <iframe src="https://www.aparat.com/video/video/embed/videohash/ampuc7h/vt/frame" allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
             </div>
-            <div class="video-item">
-                <video controls poster="https://placehold.co/400x220/e9ecef/1e2a3e?text=پیش‌نمایش+فیلم">
-                    <source src="sample-video-2.mp4" type="video/mp4">
-                </video>
-                <div class="video-title">📡 عیب‌یابی مودم و تعویض قطعات</div>
-            </div>
+            <div class="video-title">🔧 نمونه تعمیر برد لپ‌تاپ – رفع اتصال کوتاه</div>
         </div>
- 
+
+        <div class="video-item">
+            <div class="aparat-frame">
+                <span class="ratio"></span>
+                <iframe src="https://www.aparat.com/video/video/embed/videohash/YYYYY/vt/frame" allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+            </div>
+            <div class="video-title">📡 عیب‌یابی مودم و تعویض قطعات</div>
+        </div>
     </div>
+</div>
 
     <!-- توضیحات نحوه سفارش -->
     <div class="description">
