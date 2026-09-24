@@ -412,3 +412,52 @@ body {
     .top-bar { font-size: 0.8rem; }
     .main-nav a { font-size: 0.82rem; padding: 6px 12px; }
 }
+/* ============ ویدیوهای آپارات ============ */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.video-item {
+    background: #f1f5f9;
+    border-radius: 22px;
+    padding: 14px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+}
+.video-item .aparat-frame {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #000;
+}
+.video-item .aparat-frame .ratio {
+    display: block;
+    width: 100%;
+    padding-top: 56%;
+}
+.video-item .aparat-frame iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+.video-title {
+    margin-top: 10px;
+    font-weight: 600;
+    text-align: center;
+    color: #1f4e5f;
+    font-size: 0.9rem;
+}
+.video-note {
+    font-size: 0.78rem;
+    color: #6c7a89;
+    margin-top: 12px;
+    text-align: center;
+}
+@media (max-width: 680px) {
+    .video-grid { max-width: 100%; }
+}
