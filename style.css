@@ -1,0 +1,414 @@
+/* ============================================
+   استایل مشترک - خدمات آلفا شیراز
+   ============================================ */
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: 'Vazirmatn', 'Segoe UI', Tahoma, sans-serif;
+    background: linear-gradient(145deg, #eef2f7 0%, #d9e2ec 100%);
+    color: #1a2c3e;
+    line-height: 1.8;
+    padding: 24px 20px;
+}
+.glass-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.96);
+    border-radius: 48px;
+    box-shadow: 0 25px 45px -12px rgba(0,0,0,0.25);
+    overflow: hidden;
+    padding: 24px 32px 48px;
+}
+@media (max-width: 700px) {
+    body { padding: 12px; }
+    .glass-container { padding: 18px 16px 32px; border-radius: 32px; }
+}
+
+/* ============ نوار بالا ============ */
+.top-bar {
+    background: linear-gradient(115deg, #0b5e7e, #0a485f);
+    color: white;
+    border-radius: 24px;
+    padding: 10px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+}
+.top-bar .brand { font-weight: 800; font-size: 1.05rem; display: flex; align-items: center; gap: 8px; }
+.top-bar .brand i { color: #f4a261; }
+.top-bar .info { display: flex; gap: 16px; flex-wrap: wrap; font-size: 0.85rem; }
+.top-bar .info span { display: inline-flex; align-items: center; gap: 5px; }
+
+/* ============ منو اصلی ============ */
+.main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    padding: 14px 10px;
+    background: #f4f7fa;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #dde6ee;
+}
+.main-nav a {
+    text-decoration: none;
+    color: #155f74;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    border-radius: 30px;
+    transition: 0.2s;
+    white-space: nowrap;
+}
+.main-nav a:hover, .main-nav a.active {
+    background: #0b5e7e;
+    color: white;
+}
+
+/* ============ بردکرامب ============ */
+.breadcrumb {
+    font-size: 0.82rem;
+    color: #5d6f7e;
+    margin-bottom: 12px;
+    padding: 0 6px;
+}
+.breadcrumb a { color: #0b5e7e; text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb span { margin: 0 6px; color: #95a8b8; }
+
+/* ============ هدر / Hero ============ */
+.hero {
+    text-align: center;
+    padding: 30px 15px 25px;
+    background: linear-gradient(120deg, #f9fbfd, #ffffff);
+    border-radius: 40px;
+    margin-bottom: 25px;
+}
+.hero h1 {
+    font-size: 2.05rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #0f5c6b, #0a3e5a);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 14px;
+    line-height: 1.5;
+}
+.hero .sub-h1 { font-size: 1.12rem; color: #2c5368; font-weight: 600; margin-bottom: 10px; }
+.hero .tagline { font-size: 0.98rem; color: #5d6f7e; margin-bottom: 6px; }
+.hero .badges {
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 10px; margin-top: 18px;
+}
+.hero .badges span {
+    background: #e8f4f8; color: #0b5e7e;
+    padding: 6px 16px; border-radius: 30px;
+    font-size: 0.88rem; font-weight: 600;
+}
+
+/* ============ نوار تماس ============ */
+.contact-bar {
+    background: linear-gradient(115deg, #0b5e7e, #0a485f);
+    border-radius: 30px;
+    padding: 18px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 25px 0 20px;
+    color: white;
+    box-shadow: 0 8px 14px rgba(0,0,0,0.1);
+}
+.address-text {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(255,255,240,0.15);
+    padding: 10px 16px;
+    border-radius: 40px;
+    text-align: center;
+}
+.contact-buttons { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.btn-call, .btn-wa, .btn-bale, .btn-rubika, .btn-eitaa, .btn-telegram {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 9px 18px; border-radius: 60px;
+    text-decoration: none; font-weight: bold;
+    transition: 0.2s; font-size: 0.95rem; color: white;
+}
+.btn-call { background: white; color: #0b5e7e; }
+.btn-wa { background: #25D366; }
+.btn-bale { background: #28a745; }
+.btn-rubika { background: linear-gradient(135deg, #FFD300, #009FDF); color: #1a2c3e; }
+.btn-eitaa { background: #FF6B00; }
+.btn-telegram { background: #0088CC; }
+.btn-call:hover, .btn-wa:hover, .btn-bale:hover,
+.btn-rubika:hover, .btn-eitaa:hover, .btn-telegram:hover {
+    transform: scale(1.05); box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* ============ بخش‌ها ============ */
+.section { margin: 50px 0; }
+.section-title {
+    font-size: 1.65rem;
+    font-weight: 700;
+    border-right: 6px solid #f4a261;
+    padding-right: 18px;
+    margin-bottom: 25px;
+    color: #1f4e5f;
+}
+.section-subtitle {
+    font-size: 1rem; color: #5d6f7e;
+    margin-bottom: 22px; padding-right: 24px;
+}
+
+/* ============ کارت‌های خدمات ============ */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
+    margin-top: 25px;
+}
+.service-card {
+    background: #fff;
+    border-radius: 28px;
+    padding: 26px 18px;
+    text-align: center;
+    transition: all 0.25s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.03);
+}
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 30px -8px rgba(0,0,0,0.15);
+}
+.service-card i {
+    font-size: 3rem;
+    background: linear-gradient(145deg, #0f5c6b, #0a3e5a);
+    background-clip: text; -webkit-background-clip: text;
+    color: transparent; margin-bottom: 14px;
+}
+.service-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; color: #155f74; }
+.service-card p { font-size: 0.94rem; color: #4a5f6f; }
+
+/* ============ چرا ما ============ */
+.why-us {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px; margin-top: 20px;
+}
+.why-card {
+    background: linear-gradient(135deg, #f9fbfd, #eef4f8);
+    border-radius: 24px;
+    padding: 22px 18px;
+    text-align: center;
+    border: 1px solid #dbe7ee;
+}
+.why-card i { font-size: 2.5rem; color: #0b5e7e; margin-bottom: 12px; }
+.why-card h4 { font-size: 1.1rem; color: #155f74; margin-bottom: 8px; }
+.why-card p { font-size: 0.9rem; color: #5d6f7e; }
+
+/* ============ مراحل ============ */
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 18px; margin-top: 20px;
+}
+.step-card {
+    background: #fff; border-radius: 22px;
+    padding: 22px 16px; text-align: center;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+}
+.step-number {
+    background: #0b5e7e; color: white;
+    width: 40px; height: 40px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 1.2rem;
+    margin: 0 auto 12px;
+}
+.step-card h4 { color: #155f74; margin-bottom: 8px; font-size: 1.05rem; }
+.step-card p { font-size: 0.88rem; color: #5d6f7e; }
+
+/* ============ گالری ============ */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
+}
+.image-card {
+    background: #fff; border-radius: 24px;
+    overflow: hidden; box-shadow: 0 12px 20px rgba(0,0,0,0.08);
+    transition: 0.2s;
+}
+.image-card:hover { transform: scale(1.02); }
+.image-card img { width: 100%; height: 190px; object-fit: cover; display: block; }
+.image-card .caption {
+    padding: 14px; text-align: center;
+    font-weight: 500; background: white; font-size: 0.95rem;
+}
+
+/* ============ ویدیو ============ */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px; max-width: 900px; margin: 0 auto;
+}
+.video-item {
+    background: #f1f5f9; border-radius: 22px;
+    padding: 14px; box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+}
+.video-item .aparat-frame {
+    position: relative; border-radius: 16px;
+    overflow: hidden; background: #000;
+}
+.video-item .aparat-frame .ratio { display: block; width: 100%; padding-top: 56%; }
+.video-item .aparat-frame iframe {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%; border: none;
+}
+.video-title {
+    margin-top: 10px; font-weight: 600;
+    text-align: center; color: #1f4e5f; font-size: 0.9rem;
+}
+
+/* ============ نظرات ============ */
+.testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px; margin-top: 20px;
+}
+.testimonial-card {
+    background: #fff; border-radius: 22px;
+    padding: 22px 18px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+    border-right: 4px solid #f4a261;
+}
+.testimonial-card .stars { color: #f4a261; margin-bottom: 8px; }
+.testimonial-card p { font-size: 0.92rem; color: #4a5f6f; margin-bottom: 12px; line-height: 1.7; }
+.testimonial-card .name { font-weight: bold; color: #155f74; font-size: 0.88rem; }
+
+/* ============ FAQ ============ */
+.faq-item {
+    background: #fff; border-radius: 18px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+.faq-item summary {
+    padding: 16px 20px; font-weight: 700;
+    color: #155f74; cursor: pointer;
+    display: flex; justify-content: space-between;
+    align-items: center; font-size: 1rem;
+    list-style: none;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+    content: '\f078';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    transition: transform 0.2s;
+}
+.faq-item[open] summary::after { transform: rotate(180deg); }
+.faq-answer {
+    padding: 0 20px 16px;
+    font-size: 0.92rem;
+    color: #4a5f6f;
+    line-height: 1.9;
+}
+
+/* ============ باکس توضیحات ============ */
+.description {
+    background: #eef2fa;
+    padding: 24px 28px;
+    border-radius: 32px;
+    margin: 30px 0;
+    border-right: 5px solid #f4a261;
+}
+.description h3 { color: #155f74; margin-bottom: 14px; font-size: 1.2rem; }
+.description p { font-size: 0.98rem; line-height: 2; margin-bottom: 10px; }
+.description a { color: #0b5e7e; font-weight: 700; }
+
+/* ============ مناطق ============ */
+.areas-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.area-tag {
+    background: #e8f4f8; color: #0b5e7e;
+    padding: 7px 16px; border-radius: 30px;
+    font-size: 0.88rem; font-weight: 500;
+    text-decoration: none; transition: 0.2s;
+}
+.area-tag:hover { background: #0b5e7e; color: white; }
+
+/* ============ برندها ============ */
+.brands { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+.brands span {
+    background: #fff; padding: 8px 18px;
+    border-radius: 30px; font-weight: 600;
+    color: #155f74; font-size: 0.9rem;
+    border: 1px solid #dbe7ee;
+}
+
+/* ============ لینک‌های مرتبط ============ */
+.related-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+.related-card {
+    display: block;
+    background: linear-gradient(135deg, #ffffff, #f1f7fb);
+    border: 2px solid #dbe7ee;
+    border-radius: 20px;
+    padding: 20px 18px;
+    text-decoration: none;
+    color: #155f74;
+    transition: 0.25s;
+}
+.related-card:hover {
+    border-color: #0b5e7e;
+    background: #0b5e7e;
+    color: white;
+    transform: translateY(-3px);
+}
+.related-card h4 { font-size: 1.05rem; margin-bottom: 6px; }
+.related-card p { font-size: 0.85rem; opacity: 0.85; }
+
+/* ============ فوتر ============ */
+.footer-card {
+    background: #e9edf2;
+    border-radius: 30px;
+    padding: 20px 22px;
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.95rem;
+    line-height: 2;
+}
+.footer-card strong { color: #155f74; }
+.footer-card a { color: #0b5e7e; font-weight: 700; text-decoration: none; }
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #cddae9;
+    font-size: 0.8rem;
+    color: #5d6f7e;
+}
+
+/* ============ موبایل ============ */
+@media (max-width: 680px) {
+    .hero h1 { font-size: 1.35rem; }
+    .hero .sub-h1 { font-size: 1rem; }
+    .section-title { font-size: 1.3rem; }
+    .btn-call, .btn-wa, .btn-bale, .btn-rubika, .btn-eitaa, .btn-telegram {
+        padding: 7px 14px; font-size: 0.85rem;
+    }
+    .contact-bar { padding: 15px 15px; }
+    .video-grid { max-width: 100%; }
+    .top-bar { font-size: 0.8rem; }
+    .main-nav a { font-size: 0.82rem; padding: 6px 12px; }
+}
