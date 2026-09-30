@@ -7,7 +7,7 @@
 
 <!-- ==================== SEO ==================== -->
 <title>اعجاز عددی قرآن؛ کاوشی در لایه‌های پنهان | پژوهش شخصی</title>
-<meta name="description" content="پژوهشی شخصی و مستقل درباره اعجاز عددی قرآن کریم، از بررسی چالش‌های ذهن مدرن در پذیرش معجزه تا کشف نظم عددی در سوره‌های مقطعه‌دار. این پژوهش توسط نویسنده و بر اساس روش‌های ابجد کبیر و صغیر انجام شده است.">
+<meta name="description" content="پژوهشی شخصی و مستقل درباره اعجاز عددی قرآن کریم، از بررسی چالش‌های ذهن مدرن در پذیرش معجزه تا کشف نظم عددی در سوره‌های مقطعه‌دار. این پژوهش توسط نویسنده و بر اساس سه سطح ابجد کبیر و ابجد صغیر انجام شده است.">
 <meta name="keywords" content="اعجاز عددی قرآن, معجزه در عصر علم, حروف مقطعه, نظام عددی قرآن, ابجد کبیر, ابجد صغیر, اعجاز قرآن, عصای موسی, فلسفه معجزه, قرآن و علم, پژوهش شخصی">
 <meta name="author" content="نویسنده (پژوهش شخصی)">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -28,7 +28,7 @@
 <meta name="twitter:description" content="پژوهشی شخصی درباره معجزه، دل، و نظام عددی قرآن کریم">
 <meta name="twitter:image" content="https://example.com/images/quran-cover.jpg">
 
-<link rel="canonical" href="https://example.com/quran-numerical-miracle.html">
+<link rel="canonical" href="https://shirazpcrepair.ir/quran-numerics.html">
 
 <!-- ==================== Fonts (Optimized) ==================== -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -89,6 +89,33 @@
     position: relative;
   }
 
+  /* ============ منوی ناوبری اصلی سایت ============ */
+  .main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+    padding: 14px 12px;
+    background: #f7faf8;
+    border-radius: 18px;
+    margin-bottom: 22px;
+    border: 1px solid #c8e0d0;
+  }
+  .main-nav a {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.82rem;
+    padding: 7px 14px;
+    border-radius: 30px;
+    transition: 0.2s;
+    white-space: nowrap;
+  }
+  .main-nav a:hover {
+    background: var(--primary);
+    color: white;
+  }
+
   /* ============ Back to top button ============ */
   .back-to-top {
     position: fixed;
@@ -103,7 +130,7 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     box-shadow: 0 6px 16px rgba(26,77,46,0.35);
     opacity: 0;
     visibility: hidden;
@@ -151,7 +178,7 @@
     border-top: 1px solid var(--border);
   }
 
-  /* ============ Author Notice (New) ============ */
+  /* ============ Author Notice ============ */
   .author-notice {
     background: var(--notice-bg);
     border: 2px solid var(--notice-border);
@@ -161,8 +188,7 @@
     position: relative;
   }
   .author-notice::before {
-    content: '\f05a';
-    font-family: 'Font Awesome 6 Free', sans-serif;
+    content: 'i';
     position: absolute;
     top: -14px;
     right: 22px;
@@ -174,8 +200,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.85rem;
+    font-size: 1rem;
     font-weight: 900;
+    font-family: 'Vazirmatn', serif;
   }
   .author-notice h3 {
     color: #8a5a1f;
@@ -203,7 +230,7 @@
     line-height: 1.9;
   }
 
-  /* ============ Methodology box (New) ============ */
+  /* ============ Methodology box ============ */
   .methodology-box {
     background: linear-gradient(135deg, #f7faf8 0%, #eef7f1 100%);
     border: 1px solid #c8e0d0;
@@ -234,7 +261,7 @@
     line-height: 2;
   }
   .methodology-box ol li {
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     color: var(--text);
   }
   .methodology-box ol li strong {
@@ -459,13 +486,15 @@
   }
 
   .discovery-card::before {
-    content: '🔍';
+    content: '?';
     position: absolute;
     top: -14px;
     right: 24px;
     background: var(--card-bg);
-    padding: 0 8px;
-    font-size: 1.4em;
+    padding: 0 10px;
+    font-size: 1.2em;
+    color: var(--primary);
+    font-weight: 900;
   }
 
   .discovery-card .discovery-title {
@@ -483,6 +512,12 @@
     font-size: 1.5em;
     letter-spacing: 8px;
     border: none;
+    height: 1.5em;
+    position: relative;
+  }
+  .divider::before {
+    content: '✦ ✦ ✦';
+    display: block;
   }
 
   /* Note */
@@ -580,6 +615,8 @@
     .author-notice { padding: 18px 18px; }
     .methodology-box { padding: 18px 20px; }
     .back-to-top { bottom: 16px; left: 16px; width: 40px; height: 40px; }
+    .main-nav { padding: 10px 8px; gap: 5px; }
+    .main-nav a { font-size: 0.72rem; padding: 6px 10px; }
   }
 
   /* Print */
@@ -594,7 +631,7 @@
       page-break-inside: avoid;
     }
     a { color: black; text-decoration: none; }
-    .skip-link, .back-to-top { display: none; }
+    .skip-link, .back-to-top, .main-nav { display: none; }
   }
 </style>
 
@@ -645,11 +682,25 @@
     از عصای موسی تا کدهای عددی قرآن: سفری فلسفی، معنوی و ریاضی در لایه‌های پنهان وحی
   </p>
   <p class="meta">
-    پژوهشی بر اساس گفتگوی عمیق فلسفی و کشفیات عددی در متن قرآن کریم
+    پژوهشی بر اساس جستجوی عمیق فلسفی و کشفیات عددی در متن قرآن کریم که بخشی از آن در ادامه نشان داده شده
   </p>
 </header>
 
-<!-- ==================== AUTHOR NOTICE (New) ==================== -->
+<!-- ==================== منوی ناوبری سایت ==================== -->
+<nav class="main-nav" aria-label="ناوبری سایت">
+  <a href="index.html">خانه</a>
+  <a href="laptop-repair-shiraz.html">تعمیر لپ تاپ شیراز</a>
+  <a href="laptop-repair-moaliabad.html">تعمیر لپ تاپ معالی آباد</a>
+  <a href="computer-repair-shiraz.html">تعمیر کامپیوتر شیراز</a>
+  <a href="computer-repair-moaliabad.html">تعمیر کامپیوتر معالی آباد</a>
+  <a href="corporate.html">خدمات سازمانی</a>
+  <a href="estimate.html">تخمین هزینه</a>
+  <a href="gallery.html">نمونه کارها</a>
+  <a href="blog.html">وبلاگ</a>
+  <a href="shop.html">فروشگاه</a>
+</nav>
+
+<!-- ==================== AUTHOR NOTICE ==================== -->
 <div class="author-notice">
   <h3>درباره این پژوهش</h3>
   <p>
@@ -667,29 +718,29 @@
   </ul>
 </div>
 
-<!-- ==================== METHODOLOGY (New) ==================== -->
+<!-- ==================== METHODOLOGY (سه روش) ==================== -->
 <div class="methodology-box">
   <h3>🔬 روش‌شناسی این پژوهش</h3>
   <p>
-    برای شفافیت بیشتر، روش‌های به‌کاررفته در بخش کشفیات عددی را در ادامه می‌آوریم:
+    در این پژوهش، از <strong>سه سطح متمایز «ابجد صغیر»</strong> استفاده شده است. نکته مهم اینکه این سه روش، <strong>سه لایه مختلف از معنا</strong> را نمایندگی می‌کنند و هیچ‌کدام جایگزین دیگری نیستند. تمام این سه روش در محاسبات این پژوهش بکار رفته‌اند تا هر سه سطح معنا مورد بررسی قرار گیرد:
   </p>
   <ol>
     <li>
       <strong>ابجد کبیر:</strong> جمع مقادیر عددی حروف بر اساس نظام ابجد سنتی (ا=۱، ب=۲، ج=۳، ... ی=۱۰، ک=۲۰، ... ق=۱۰۰، ...).
     </li>
     <li>
-      <strong>ابجد صغیر (روش اول):</strong> کاهش هر عدد به جمع ارقام آن (مثلاً ۱۰۹ ← ۱+۰+۹ = ۱۰).
+      <strong>ابجد صغیر — روش اول (جمع ارقام):</strong> کاهش هر عدد به جمع ارقام آن (مثلاً ۱۰۹ ← ۱+۰+۹ = ۱۰).
     </li>
     <li>
-      <strong>ابجد صغیر (روش دوم):</strong> روش مرسوم غیر باقی‌مانده که در آن اعداد دو رقمی به جمع ارقامشان کاهش می‌یابند.
+      <strong>ابجد صغیر — روش دوم:</strong> روش مرسوم غیر باقی‌مانده که در آن اعداد دو رقمی به جمع ارقامشان کاهش می‌یابند.
     </li>
     <li>
-      <strong>شمارش دقیق حروف و کلمات:</strong> با استفاده از متن قرآن کریم و مطابقت با نرم‌افزارهای معتبر قرآنی.
-    </li>
-    <li>
-      <strong>محاسبات ترکیبی:</strong> ترکیب عملیات جمع، تفریق، ضرب، تقسیم و فاکتورگیری برای یافتن روابط.
+      <strong>ابجد صغیر — روش سوم (تقسیم بر ۱۲):</strong> بررسی نسبت عدد با مبنای دوازدهگانه، به‌عنوان لایه‌ای دیگر از معنا در نظام عددی.
     </li>
   </ol>
+  <p>
+    نکته اساسی اینکه در این پژوهش، <strong>هر سه روش همزمان بکار گرفته شده‌اند</strong> — نه به‌عنوان انتخاب دلخواه، بلکه به‌عنوان <strong>سه لایه از یک نظام معنایی واحد</strong> که هرکدام، بخشی از حقیقت را آشکار می‌کنند.
+  </p>
   <p>
     <strong>توجه:</strong> خوانندگان محترم می‌توانند محاسبات را مستقلاً بازبینی و صحت‌سنجی کنند. در صورت یافتن هرگونه خطا، استقبال می‌شود.
   </p>
@@ -967,11 +1018,11 @@
 <h2 id="part4">بخش چهارم: کشفیات عددی — سوره‌های مقطعه‌دار</h2>
 
 <p>
-در این بخش، به بررسی نظام عددی حاکم بر حروف مقطعه و آیات ابتدایی سوره‌های مقطعه‌دار می‌پردازیم. این کشفیات <strong>بر اساس پژوهش شخصی نویسنده</strong> و با استفاده از روش‌های «ابجد کبیر»، «ابجد صغیر» و شمارش دقیق حروف و کلمات انجام شده است.
+در این بخش، به بررسی نظام عددی حاکم بر حروف مقطعه و آیات ابتدایی سوره‌های مقطعه‌دار می‌پردازیم. این کشفیات <strong>بر اساس پژوهش شخصی نویسنده</strong> و با استفاده از <strong>هر سه سطح ابجد</strong> (کبیر، صغیر با سه روش) و شمارش دقیق حروف و کلمات انجام شده است.
 </p>
 
 <div class="note">
-  <strong>یادآوری روش‌شناسی:</strong> همان‌طور که در ابتدای مقاله ذکر شد، روش‌های به‌کاررفته عبارتند از: ابجد کبیر، دو روش ابجد صغیر، و شمارش دقیق حروف و کلمات. خوانندگان می‌توانند این محاسبات را مستقلاً بازبینی کنند.
+  <strong>یادآوری روش‌شناسی:</strong> همان‌طور که در ابتدای مقاله ذکر شد، سه روش ابجد صغیر (جمع ارقام، روش مرسوم، تقسیم بر ۱۲) سه لایه از معنا را نمایندگی می‌کنند و در این پژوهش، هر سه همزمان بکار رفته‌اند. خوانندگان می‌توانند این محاسبات را مستقلاً بازبینی کنند.
 </div>
 
 <!-- ===== DISCOVERY 1 ===== -->
@@ -1733,9 +1784,7 @@
 </div>
 
 <!-- ==================== BACK TO TOP ==================== -->
-<a href="#" class="back-to-top" id="backToTop" aria-label="بازگشت به بالا">
-  <i class="fas fa-arrow-up" aria-hidden="true">↑</i>
-</a>
+<a href="#" class="back-to-top" id="backToTop" aria-label="بازگشت به بالا">↑</a>
 
 <script>
   // Back to top button
