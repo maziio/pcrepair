@@ -1,1802 +1,2431 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa" dir="rtl" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0d5c47">
-<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0d1f18">
 
 <title>اعجاز عددی قرآن؛ کاوشی در لایه‌های پنهان | تحقیق شخصی</title>
-<meta name="description" content="تحقیق شخصی درباره اعجاز عددی قرآن کریم. از فلسفه معجزه تا رمزگشایی عددی آیات با ابجد کبیر، ابجد صغیر و شمارش حروف.">
-<meta name="keywords" content="اعجاز عددی قرآن, رمزهای عددی قرآن, ابجد کبیر, ابجد صغیر, تحقیق شخصی قرآن, معجزه قرآن, حروف مقطعه">
+<meta name="description" content="تحقیق شخصی در رمزگشایی عددی قرآن کریم — بررسی لایه‌های پنهان حروف مقطعه، نظام ابجد کبیر و صغیر، و کشفیات عددی در سوره‌های مریم، نحل، انسان، مؤمنون، یس، ص، فصلت، شورى، زخرف و غافر.">
+<meta name="keywords" content="اعجاز عددی قرآن, رمزگشایی عددی قرآن, حروف مقطعه, ابجد کبیر, ابجد صغیر, معجزه عددی, نظم ریاضی قرآن, تحقیق قرآنی">
 <meta name="author" content="تحقیق شخصی">
+<meta name="robots" content="index, follow, max-image-preview:large">
+
 <meta property="og:type" content="article">
 <meta property="og:locale" content="fa_IR">
 <meta property="og:title" content="اعجاز عددی قرآن؛ کاوشی در لایه‌های پنهان">
-<meta property="og:description" content="تحقیق شخصی درباره اعجاز عددی قرآن کریم">
+<meta property="og:description" content="تحقیق شخصی در رمزگشایی عددی قرآن کریم">
+<meta property="og:image" content="images/quran-numeric-cover.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="اعجاز عددی قرآن؛ کاوشی در لایه‌های پنهان">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Amiri+Quran&family=Amiri:ital,wght@0,400;0,700;1,400&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "اعجاز عددی قرآن؛ کاوشی در لایه‌های پنهان",
+  "description": "تحقیق شخصی در رمزگشایی عددی قرآن کریم",
+  "inLanguage": "fa-IR",
+  "author": {"@type": "Person", "name": "تحقیق شخصی"},
+  "datePublished": "1403-01-01"
+}
+</script>
 
 <style>
-  :root {
-    --primary: #0d5c47;
-    --primary-dark: #063527;
-    --primary-light: #1b8a6b;
-    --accent: #b8860b;
-    --bg: #fbfaf7;
-    --bg-card: #ffffff;
-    --bg-soft: #f5f2ea;
-    --text: #1e2b26;
-    --text-light: #5e6d67;
-    --text-muted: #8a9691;
-    --border: #e5e0d3;
-    --border-light: #efe9db;
-    --success: #2e7d32;
-    --warning: #b87333;
-    --nav-h: 56px;
-    --sidebar-w: 280px;
-  }
+/* ============================================
+   🎨 متغیرهای رنگ (برای حالت شب/روز)
+   ============================================ */
+:root {
+  --gold: #d4af37;
+  --gold-light: #f4d35e;
+  --gold-dark: #b8941f;
+  --gold-glow: rgba(212,175,55,0.4);
+  --green-darkest: #0a1512;
+  --green-dark: #0d1f18;
+  --green-mid: #1a3a2e;
+  --green-light: #2c5545;
+  --text: #2a2a2a;
+  --text-muted: #666;
+  --bg: #f4f1ea;
+  --bg-alt: #f9f7f2;
+  --card-bg: #ffffff;
+  --border: #e8e4dc;
+  --border-light: #f0ece4;
+  --calc-bg: #1a1a1a;
+  --calc-text: #e0e0e0;
+  --sidebar-bg: #0d1f18;
+  --sidebar-text: #b8c4be;
+  --shadow-sm: 0 4px 12px rgba(0,0,0,0.06);
+  --shadow-md: 0 10px 24px rgba(0,0,0,0.08);
+  --shadow-lg: 0 20px 40px rgba(0,0,0,0.12);
+}
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+[data-theme="dark"] {
+  --text: #e0e8e4;
+  --text-muted: #9aac9f;
+  --bg: #0a1512;
+  --bg-alt: #14261f;
+  --card-bg: #14261f;
+  --border: #24352c;
+  --border-light: #1e2f26;
+  --calc-bg: #050a08;
+  --calc-text: #d0dcd6;
+}
 
-  html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 76px;
-  }
+/* ============================================
+   🔤 پایه
+   ============================================ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-  body {
-    font-family: 'Vazirmatn', -apple-system, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.9;
-    font-size: 15.5px;
-    -webkit-font-smoothing: antialiased;
-  }
+html { scroll-behavior: smooth; }
 
-  body.menu-open { overflow: hidden; }
+body {
+  font-family: 'Vazirmatn', 'Tahoma', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 2;
+  font-size: 16px;
+  transition: background 0.3s, color 0.3s;
+  overflow-x: hidden;
+}
 
-  /* ============ Reading Progress ============ */
-  .progress {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    height: 2px;
-    background: transparent;
-    z-index: 1001;
-  }
-  .progress .bar {
-    height: 100%;
-    background: linear-gradient(90deg, #b8860b, #1b8a6b);
-    width: 0;
-    transition: width 0.1s linear;
-  }
+/* ============================================
+   📊 نوار پیشرفت مطالعه
+   ============================================ */
+.read-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-light));
+  z-index: 9999;
+  box-shadow: 0 0 12px var(--gold-glow);
+  transition: width 0.1s linear;
+}
 
-  /* ============ Top Nav ============ */
-  .topnav {
-    position: fixed;
-    top: 2px;
-    right: 0;
-    left: 0;
-    height: var(--nav-h);
-    background: rgba(251,250,247,0.95);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border-light);
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-    gap: 14px;
-  }
-  .topnav .brand {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    color: var(--primary);
-    font-weight: 700;
-    font-size: 0.9rem;
-    flex-shrink: 0;
-  }
-  .topnav .brand .logo {
-    width: 30px;
-    height: 30px;
-    border-radius: 8px;
-    background: var(--primary);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.85rem;
-    font-weight: 800;
-  }
-  .topnav .nav-scroll {
-    display: flex;
-    align-items: center;
-    gap: 2px;
-    overflow-x: auto;
-    flex: 1;
-    scrollbar-width: none;
-    padding: 4px 0;
-  }
-  .topnav .nav-scroll::-webkit-scrollbar { display: none; }
-  .topnav .nav-scroll a {
-    color: var(--text-light);
-    text-decoration: none;
-    font-size: 0.8rem;
-    font-weight: 500;
-    padding: 6px 11px;
-    border-radius: 6px;
-    white-space: nowrap;
-    transition: 0.15s;
-  }
-  .topnav .nav-scroll a:hover {
-    background: var(--bg-soft);
-    color: var(--primary);
-  }
-  .topnav .nav-scroll a.current {
-    background: var(--primary);
-    color: #fff;
-    font-weight: 600;
-  }
-  .topnav .menu-btn {
-    display: none;
-    width: 36px;
-    height: 36px;
-    background: var(--primary);
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    flex-shrink: 0;
-  }
+/* ============================================
+   🧭 نوار سایت + کنترل‌ها
+   ============================================ */
+.site-nav-wrap {
+  background: linear-gradient(135deg, #0a1512 0%, #0d1f18 100%);
+  padding: 12px 20px;
+  position: sticky;
+  top: 4px;
+  z-index: 900;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  border-bottom: 1px solid rgba(212,175,55,0.2);
+}
 
-  /* ============ Layout ============ */
-  .page {
-    display: grid;
-    grid-template-columns: 1fr var(--sidebar-w);
-    gap: 40px;
-    max-width: 1220px;
-    margin: 0 auto;
-    padding: calc(var(--nav-h) + 32px) 24px 60px;
-  }
+.site-nav-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(212,175,55,0.15);
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
-  /* ============ Content ============ */
-  .content { min-width: 0; max-width: 760px; }
+.site-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--gold);
+  font-weight: 800;
+  font-size: 1rem;
+}
 
-  /* Compact Header */
-  .article-head {
-    padding-bottom: 24px;
-    margin-bottom: 28px;
-    border-bottom: 1px solid var(--border-light);
-  }
-  .article-head .bism {
-    font-family: 'Amiri', serif;
-    font-size: 1.3rem;
-    color: var(--accent);
-    text-align: center;
-    margin-bottom: 12px;
-    direction: rtl;
-  }
-  .article-head h1 {
-    font-size: 1.75rem;
-    font-weight: 800;
-    color: var(--primary-dark);
-    line-height: 1.5;
-    margin-bottom: 10px;
-  }
-  .article-head .lede {
-    font-size: 1rem;
-    color: var(--text-light);
-    line-height: 1.8;
-    margin-bottom: 14px;
-  }
-  .article-head .info {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    font-size: 0.78rem;
-    color: var(--text-muted);
-  }
-  .article-head .info span {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    background: var(--bg-soft);
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-weight: 500;
-  }
+.site-brand .dot {
+  width: 10px;
+  height: 10px;
+  background: var(--gold);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--gold);
+  animation: pulse 2s infinite;
+}
 
-  /* Author note */
-  .author-note {
-    background: #fdf8ed;
-    border-right: 3px solid var(--warning);
-    padding: 18px 22px;
-    margin-bottom: 26px;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    line-height: 1.85;
-  }
-  .author-note .note-h {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--warning);
-    font-weight: 700;
-    margin-bottom: 10px;
-    font-size: 0.95rem;
-  }
-  .author-note .note-h::before {
-    content: '✎';
-    font-size: 1rem;
-  }
-  .author-note p {
-    color: #5a4a2a;
-    margin-bottom: 8px;
-    text-align: justify;
-  }
-  .author-note p:last-child { margin-bottom: 0; }
-  .author-note strong { color: #8a5a1f; }
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+}
 
-  /* Headings */
-  .content h2 {
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: var(--primary-dark);
-    margin: 42px 0 16px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid var(--border-light);
-    line-height: 1.5;
-  }
-  .content h2:first-of-type { margin-top: 28px; }
-  .content h3 {
-    font-size: 1.08rem;
-    font-weight: 700;
-    color: var(--primary);
-    margin: 26px 0 12px;
-  }
-  .content p {
-    margin-bottom: 14px;
-    color: #33423c;
-    text-align: justify;
-    line-height: 1.95;
-  }
-  .content strong { color: var(--primary-dark); font-weight: 700; }
-  .content em { color: var(--text-light); }
+.site-controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
 
-  /* Section block (each numbered section) */
-  .sec {
-    padding: 26px 0 6px;
-    scroll-margin-top: 76px;
-  }
-  .sec + .sec {
-    margin-top: 34px;
-    border-top: 1px dashed var(--border-light);
-    padding-top: 34px;
-  }
+.ctrl-btn {
+  background: rgba(212,175,55,0.1);
+  border: 1px solid rgba(212,175,55,0.3);
+  color: var(--gold);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
 
-  .sec-head {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    margin-bottom: 18px;
-  }
-  .sec-num {
-    width: 42px;
-    height: 42px;
-    border-radius: 10px;
-    background: var(--primary);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
-    font-size: 1rem;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-  .sec-num.gold { background: var(--accent); }
-  .sec-head .meta { flex: 1; min-width: 0; }
-  .sec-head h2 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--primary-dark);
-    margin: 0 0 4px;
-    padding: 0;
-    border: none;
-    line-height: 1.5;
-  }
-  .sec-head .ref {
-    font-size: 0.78rem;
-    color: var(--text-muted);
-    font-weight: 500;
-  }
-  .sec-head .ref a {
-    color: var(--primary);
-    text-decoration: none;
-  }
+.ctrl-btn:hover {
+  background: var(--gold);
+  color: #0d1f18;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(212,175,55,0.4);
+}
 
-  /* Part divider */
-  .part-divider {
-    margin: 40px 0 20px;
-    padding: 16px 20px;
-    background: var(--primary-dark);
-    color: #fff;
-    border-radius: 10px;
-    text-align: center;
-  }
-  .part-divider .label {
-    display: inline-block;
-    background: var(--accent);
-    color: var(--primary-dark);
-    padding: 3px 12px;
-    border-radius: 14px;
-    font-size: 0.72rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-  }
-  .part-divider h2 {
-    color: #fff;
-    font-size: 1.2rem;
-    margin: 0;
-    padding: 0;
-    border: none;
-  }
-  .part-divider p {
-    color: rgba(255,255,255,0.85);
-    margin: 8px 0 0;
-    font-size: 0.88rem;
-    text-align: center;
-  }
+.site-nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
 
-  /* Ayah box */
-  .ayah {
-    background: #f8f5ec;
-    border-right: 3px solid var(--accent);
-    padding: 18px 22px;
-    margin: 18px 0;
-    border-radius: 6px;
-    text-align: center;
-  }
-  .ayah .ar {
-    font-family: 'Amiri', serif;
-    font-size: 1.35rem;
-    color: var(--primary-dark);
-    line-height: 2;
-    margin-bottom: 10px;
-    direction: rtl;
-  }
-  .ayah .tr {
-    color: var(--text-light);
-    font-size: 0.86rem;
-    line-height: 1.8;
-  }
+.site-nav-links a {
+  color: #b8c4be;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 18px;
+  transition: 0.2s;
+  white-space: nowrap;
+}
 
-  /* Data inline (compact) */
-  .data-inline {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 14px 0;
-  }
-  .data-inline .d {
-    background: var(--bg-soft);
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 0.82rem;
-    border: 1px solid var(--border-light);
-  }
-  .data-inline .d .k {
-    color: var(--text-muted);
-    margin-left: 5px;
-  }
-  .data-inline .d .v {
-    color: var(--primary);
-    font-weight: 700;
-    font-size: 0.9rem;
-  }
+.site-nav-links a:hover,
+.site-nav-links a.active {
+  background: var(--gold);
+  color: #0d1f18;
+}
 
-  /* Calc line */
-  .calc {
-    background: #eef7f2;
-    border-right: 3px solid var(--primary-light);
-    padding: 10px 16px;
-    margin: 8px 0;
-    border-radius: 6px;
-    font-family: 'Courier New', monospace;
-    font-size: 0.9rem;
-    color: #1a3d2e;
-    direction: ltr;
-    text-align: left;
-    overflow-x: auto;
-    font-weight: 600;
-  }
-  .calc .lbl {
-    direction: rtl;
-    text-align: right;
-    display: block;
-    color: var(--text-muted);
-    font-size: 0.76rem;
-    margin-bottom: 4px;
-    font-family: 'Vazirmatn', sans-serif;
-    font-weight: 600;
-  }
-  .calc .hl {
-    color: var(--success);
-    font-weight: 800;
-    background: rgba(46,125,50,0.12);
-    padding: 1px 6px;
-    border-radius: 4px;
-  }
+/* ============================================
+   📐 Layout اصلی
+   ============================================ */
+.layout {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: var(--card-bg);
+  box-shadow: 0 0 60px rgba(0,0,0,0.15);
+  min-height: 100vh;
+  position: relative;
+}
 
-  /* Result box */
-  .result {
-    background: #f0f7ee;
-    border-right: 3px solid var(--success);
-    padding: 14px 18px;
-    margin: 16px 0;
-    border-radius: 6px;
-  }
-  .result .rh {
-    color: var(--success);
-    font-weight: 700;
-    font-size: 0.9rem;
-    margin-bottom: 6px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .result .rh::before {
-    content: '✓';
-    font-weight: 800;
-  }
-  .result p {
-    font-size: 0.92rem;
-    color: #2e4d3a;
-    margin: 0;
-    text-align: justify;
-  }
+/* ============================================
+   📚 Sidebar
+   ============================================ */
+.sidebar {
+  width: 290px;
+  background: var(--sidebar-bg);
+  color: #e0e8e4;
+  position: sticky;
+  top: 100px;
+  height: calc(100vh - 100px);
+  overflow-y: auto;
+  flex-shrink: 0;
+  padding: 25px 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold) var(--sidebar-bg);
+  border-left: 1px solid rgba(212,175,55,0.15);
+}
 
-  /* List */
-  .content ul, .content ol {
-    margin: 12px 24px 16px 0;
-    padding: 0;
-  }
-  .content li {
-    margin-bottom: 8px;
-    line-height: 1.85;
-    color: #33423c;
-  }
-  .content li strong { color: var(--primary-dark); }
+.sidebar::-webkit-scrollbar { width: 6px; }
+.sidebar::-webkit-scrollbar-track { background: var(--sidebar-bg); }
+.sidebar::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--gold-dark), var(--gold));
+  border-radius: 3px;
+}
 
-  /* Quote */
-  .quote {
-    background: #fdf8ed;
-    border-right: 3px solid var(--accent);
-    padding: 14px 20px;
-    margin: 18px 0;
-    border-radius: 6px;
-    color: #5a4a1a;
-    font-size: 0.95rem;
-    line-height: 1.9;
-    font-style: italic;
-    position: relative;
-  }
-  .quote::before {
-    content: '❝';
-    color: var(--accent);
-    font-size: 1.4rem;
-    margin-left: 6px;
-    vertical-align: -0.15em;
-    opacity: 0.7;
-  }
+.sidebar-header {
+  padding: 0 20px 20px;
+  border-bottom: 1px solid rgba(212,175,55,0.3);
+  margin-bottom: 15px;
+}
 
-  /* Sub ayah */
-  .sub {
-    background: var(--bg-soft);
-    padding: 14px 18px;
-    border-radius: 8px;
-    margin: 14px 0;
-    border: 1px solid var(--border-light);
-  }
-  .sub h4 {
-    color: var(--primary);
-    font-size: 0.95rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    padding-bottom: 8px;
-    border-bottom: 1px dashed var(--border);
-  }
+.sidebar-header h2 {
+  color: var(--gold);
+  font-size: 1.1em;
+  font-weight: 800;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 8px rgba(212,175,55,0.3));
+}
 
-  /* Disclaimer */
-  .disclaimer {
-    background: #fdf6ec;
-    border-right: 3px solid var(--warning);
-    padding: 16px 20px;
-    margin: 20px 0;
-    border-radius: 6px;
-    color: #5a4a2a;
-    font-size: 0.88rem;
-    line-height: 1.85;
-  }
-  .disclaimer .dh {
-    color: var(--warning);
-    font-weight: 700;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.92rem;
-  }
-  .disclaimer .dh::before { content: '⚠'; }
-  .disclaimer p { margin-bottom: 8px; }
-  .disclaimer p:last-child { margin-bottom: 0; }
+.sidebar-header p {
+  font-size: 0.8em;
+  color: #8a9a92;
+  text-align: right;
+  margin: 0;
+}
 
-  /* Table */
-  .tbl {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 14px 0;
-    font-size: 0.86rem;
-    border-radius: 6px;
-    overflow: hidden;
-    border: 1px solid var(--border-light);
-  }
-  .tbl th {
-    background: var(--primary-dark);
-    color: #fff;
-    padding: 10px 12px;
-    text-align: right;
-    font-weight: 600;
-  }
-  .tbl td {
-    padding: 8px 12px;
-    border-bottom: 1px solid var(--border-light);
-  }
-  .tbl tr:nth-child(even) td { background: #faf8f3; }
-  .tbl tr:last-child td {
-    background: #fdf0d5;
-    font-weight: 700;
-    color: var(--primary-dark);
-    border-bottom: none;
-  }
+.nav-group { margin-bottom: 12px; }
 
-  /* Highlight text */
-  .hl-text {
-    background: linear-gradient(180deg, transparent 60%, rgba(184,134,11,0.35) 60%);
-    padding: 0 2px;
-    font-weight: 600;
-    color: inherit;
-  }
+.nav-group-title {
+  padding: 10px 20px 6px;
+  font-size: 0.72em;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+  opacity: 0.85;
+}
 
-  /* ============ Sidebar ============ */
+.sidebar a {
+  display: block;
+  padding: 9px 20px;
+  color: var(--sidebar-text);
+  text-decoration: none;
+  font-size: 0.9em;
+  border-right: 3px solid transparent;
+  transition: all 0.25s ease;
+  line-height: 1.6;
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(212,175,55,0.1), transparent);
+  transition: right 0.4s;
+}
+
+.sidebar a:hover::before { right: 100%; }
+
+.sidebar a:hover {
+  background: rgba(212,175,55,0.08);
+  color: var(--gold);
+  border-right-color: var(--gold);
+  padding-right: 24px;
+}
+
+.sidebar a.active {
+  background: rgba(212,175,55,0.15);
+  color: var(--gold);
+  border-right-color: var(--gold);
+  font-weight: 700;
+  box-shadow: inset 0 0 20px rgba(212,175,55,0.1);
+}
+
+.sidebar a .num {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background: rgba(212,175,55,0.2);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 22px;
+  font-size: 0.72em;
+  margin-left: 8px;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* ============================================
+   🎨 Main Content
+   ============================================ */
+.main-content { flex: 1; min-width: 0; }
+
+/* ============================================
+   🌟 Hero
+   ============================================ */
+header.hero {
+  background: linear-gradient(135deg, #1a3a2e 0%, #0d1f18 60%, #0a1512 100%);
+  color: #fff;
+  padding: 65px 45px 55px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* الگوی هندسی اسلامی */
+header.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23d4af37' stroke-width='0.5' opacity='0.15'%3E%3Cpath d='M40 0 L80 40 L40 80 L0 40 Z'/%3E%3Cpath d='M40 15 L65 40 L40 65 L15 40 Z'/%3E%3Ccircle cx='40' cy='40' r='8'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 80px 80px;
+  opacity: 0.4;
+  animation: bgShift 60s linear infinite;
+}
+
+@keyframes bgShift {
+  from { background-position: 0 0; }
+  to { background-position: 80px 80px; }
+}
+
+/* ذرات طلایی */
+header.hero .particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+header.hero .particles span {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--gold);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--gold);
+  opacity: 0;
+  animation: floatUp 8s infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(100px) scale(0); opacity: 0; }
+  30% { opacity: 1; }
+  100% { transform: translateY(-300px) scale(1.5); opacity: 0; }
+}
+
+header.hero h1 {
+  font-size: 2.4em;
+  font-weight: 900;
+  margin-bottom: 16px;
+  position: relative;
+  line-height: 1.4;
+  background: linear-gradient(135deg, #fff 0%, var(--gold-light) 50%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 4px 12px rgba(212,175,55,0.3));
+  animation: shimmer 4s ease-in-out infinite;
+  background-size: 200% 100%;
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+header.hero .subtitle {
+  font-size: 1.08em;
+  color: var(--gold-light);
+  font-weight: 500;
+  position: relative;
+  opacity: 0.95;
+}
+
+header.hero .meta {
+  margin-top: 24px;
+  font-size: 0.85em;
+  color: #b8c4be;
+  position: relative;
+  border-top: 1px solid rgba(212,175,55,0.3);
+  padding-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+header.hero .meta .item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+header.hero .meta .item i {
+  color: var(--gold);
+}
+
+/* ============================================
+   📖 Main
+   ============================================ */
+main { padding: 45px 45px 60px; }
+
+/* ============================================
+   📌 Research Notice
+   ============================================ */
+.research-notice {
+  background: linear-gradient(135deg, #fdf8ec 0%, #faf2da 100%);
+  border: 2px solid var(--gold);
+  border-radius: 16px;
+  padding: 26px 30px;
+  margin-bottom: 40px;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(212,175,55,0.15);
+}
+
+[data-theme="dark"] .research-notice {
+  background: linear-gradient(135deg, #1e2b1f 0%, #1a2a1e 100%);
+}
+
+.research-notice::before {
+  content: '📌';
+  position: absolute;
+  top: -18px;
+  right: 24px;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 6px 16px rgba(212,175,55,0.4);
+}
+
+.research-notice h3 {
+  color: var(--green-mid);
+  font-size: 1.25em;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed var(--gold);
+  font-weight: 800;
+}
+
+[data-theme="dark"] .research-notice h3 { color: var(--gold-light); }
+
+.research-notice p {
+  font-size: 0.96em;
+  color: var(--text);
+  line-height: 2;
+  margin-bottom: 12px;
+  text-align: justify;
+}
+
+.research-notice strong { color: var(--green-mid); }
+[data-theme="dark"] .research-notice strong { color: var(--gold-light); }
+
+.method-box {
+  background: rgba(255,255,255,0.7);
+  border-right: 3px solid var(--gold);
+  padding: 14px 18px;
+  margin: 14px 0;
+  border-radius: 8px;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
+[data-theme="dark"] .method-box {
+  background: rgba(0,0,0,0.3);
+}
+
+/* ============================================
+   📄 Sections
+   ============================================ */
+section {
+  scroll-margin-top: 130px;
+  margin-bottom: 60px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--border);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s, transform 0.6s;
+}
+
+section.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section:last-child { border-bottom: none; }
+
+.section-tag {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+  color: var(--green-dark);
+  padding: 5px 16px;
+  border-radius: 20px;
+  font-size: 0.75em;
+  font-weight: 800;
+  margin-bottom: 14px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(212,175,55,0.3);
+}
+
+h2 {
+  font-size: 1.75em;
+  color: var(--green-mid);
+  margin: 10px 0 24px;
+  padding-bottom: 14px;
+  border-bottom: 3px solid var(--gold);
+  font-weight: 800;
+  line-height: 1.5;
+  position: relative;
+}
+
+[data-theme="dark"] h2 { color: var(--gold-light); }
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  right: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold-light), transparent);
+  box-shadow: 0 0 12px var(--gold);
+}
+
+h3 {
+  font-size: 1.28em;
+  color: var(--green-light);
+  margin: 32px 0 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+[data-theme="dark"] h3 { color: var(--gold); }
+
+h3::before {
+  content: '◆';
+  color: var(--gold);
+  font-size: 0.7em;
+}
+
+h4 {
+  font-size: 1.05em;
+  color: var(--green-light);
+  margin: 22px 0 10px;
+  font-weight: 700;
+}
+
+[data-theme="dark"] h4 { color: var(--gold-light); }
+
+p {
+  margin-bottom: 14px;
+  text-align: justify;
+  color: var(--text);
+  line-height: 2;
+}
+
+p strong { color: var(--green-mid); }
+[data-theme="dark"] p strong { color: var(--gold-light); }
+
+/* ============================================
+   📦 Intro Box
+   ============================================ */
+.intro-box {
+  background: var(--bg-alt);
+  border-right: 4px solid var(--gold);
+  padding: 24px 30px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  font-size: 1.02em;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ============================================
+   📜 Ayah Box (آیات قرآنی)
+   ============================================ */
+.ayah-box {
+  background: linear-gradient(135deg, #f0f7f4 0%, #e8f2ed 100%);
+  border: 2px solid #c5d9d0;
+  border-radius: 16px;
+  padding: 30px 32px 22px;
+  margin: 26px 0;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(26,58,46,0.08);
+  overflow: hidden;
+}
+
+[data-theme="dark"] .ayah-box {
+  background: linear-gradient(135deg, #14261f 0%, #0d1f18 100%);
+  border-color: #24352c;
+}
+
+.ayah-box::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(212,175,55,0.3);
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+.ayah-box::after {
+  content: '﷽';
+  position: absolute;
+  top: 12px;
+  left: 18px;
+  font-family: 'Amiri Quran', serif;
+  font-size: 1.6em;
+  color: var(--gold);
+  opacity: 0.35;
+}
+
+.ayah-text {
+  font-family: 'Amiri Quran', 'Scheherazade New', serif;
+  font-size: 1.75em;
+  color: var(--green-mid);
+  text-align: center;
+  line-height: 2.4;
+  font-weight: 400;
+  margin: 16px 0 12px;
+  direction: rtl;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(212,175,55,0.1);
+}
+
+[data-theme="dark"] .ayah-text {
+  color: var(--gold-light);
+}
+
+.ayah-box p {
+  text-align: center !important;
+  color: var(--text-muted);
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+/* ============================================
+   📊 Data Grid
+   ============================================ */
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.data-item {
+  background: var(--card-bg);
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  padding: 14px 12px;
+  text-align: center;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.data-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(212,175,55,0.15), transparent);
+  transition: left 0.5s;
+}
+
+.data-item:hover::before { left: 100%; }
+
+.data-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(212,175,55,0.25);
+  border-color: var(--gold-light);
+}
+
+.data-item .label {
+  display: block;
+  font-size: 0.75em;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.data-item .value {
+  display: block;
+  font-size: 1.3em;
+  font-weight: 800;
+  color: var(--green-mid);
+  font-family: 'Vazirmatn', monospace;
+  letter-spacing: 1px;
+}
+
+[data-theme="dark"] .data-item .value { color: var(--gold-light); }
+
+/* ============================================
+   🧮 Calc Box
+   ============================================ */
+.calc {
+  background: var(--calc-bg);
+  color: var(--calc-text);
+  padding: 20px 24px;
+  border-radius: 12px;
+  margin: 18px 0;
+  font-family: 'Courier New', monospace;
+  direction: ltr;
+  text-align: left;
+  font-size: 0.92em;
+  line-height: 2;
+  overflow-x: auto;
+  position: relative;
+  border: 1px solid rgba(212,175,55,0.2);
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.calc::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-light));
+}
+
+.calc .result {
+  color: var(--gold-light);
+  font-weight: 700;
+  background: rgba(212,175,55,0.1);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.calc .comment { color: #7a9a8a; font-style: italic; }
+
+.calc-copy {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(212,175,55,0.15);
+  border: 1px solid rgba(212,175,55,0.3);
+  color: var(--gold);
+  padding: 4px 10px;
+  border-radius: 14px;
+  font-size: 0.7rem;
+  cursor: pointer;
+  font-family: 'Vazirmatn', sans-serif;
+  transition: 0.2s;
+  font-weight: 700;
+}
+
+.calc-copy:hover {
+  background: var(--gold);
+  color: var(--green-dark);
+}
+
+.calc-copy.copied {
+  background: #4caf50;
+  border-color: #4caf50;
+  color: white;
+}
+
+/* ============================================
+   🔗 Relation Box
+   ============================================ */
+.relation {
+  background: var(--bg-alt);
+  border: 1px dashed var(--gold);
+  border-radius: 10px;
+  padding: 14px 20px;
+  margin: 12px 0;
+  font-size: 0.95em;
+  transition: 0.3s;
+  position: relative;
+}
+
+.relation:hover {
+  background: rgba(212,175,55,0.08);
+  border-style: solid;
+  transform: translateX(-4px);
+}
+
+.relation strong { color: var(--green-mid); }
+[data-theme="dark"] .relation strong { color: var(--gold-light); }
+
+.highlight {
+  background: linear-gradient(180deg, transparent 60%, rgba(255,233,168,0.7) 60%);
+  padding: 0 3px;
+  font-weight: 600;
+}
+
+[data-theme="dark"] .highlight {
+  background: linear-gradient(180deg, transparent 60%, rgba(212,175,55,0.3) 60%);
+}
+
+/* ============================================
+   ✅ Conclusion
+   ============================================ */
+.conclusion {
+  background: linear-gradient(135deg, #1a3a2e 0%, #0d1f18 100%);
+  color: #fff;
+  padding: 28px 32px;
+  border-radius: 16px;
+  margin: 28px 0;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(13,31,24,0.4);
+}
+
+.conclusion::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(212,175,55,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.conclusion h3 {
+  color: var(--gold) !important;
+  margin-top: 0 !important;
+  font-size: 1.2em;
+  position: relative;
+  padding-right: 0;
+}
+
+.conclusion h3::before { content: '✦'; }
+
+.conclusion p {
+  color: #e0e8e4;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+/* ============================================
+   ✦ Divider
+   ============================================ */
+.divider {
+  text-align: center;
+  margin: 40px 0;
+  color: var(--gold);
+  font-size: 1.4em;
+  letter-spacing: 12px;
+  position: relative;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 25%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.divider::before { right: 0; }
+.divider::after { left: 0; }
+
+/* ============================================
+   🦶 Footer
+   ============================================ */
+footer {
+  background: linear-gradient(135deg, #0a1512 0%, #0d1f18 100%);
+  color: #8a9a92;
+  text-align: center;
+  padding: 32px;
+  font-size: 0.9em;
+  border-top: 1px solid rgba(212,175,55,0.2);
+}
+
+footer .quote {
+  font-family: 'Amiri Quran', serif;
+  color: var(--gold);
+  font-size: 1.35em;
+  margin-bottom: 12px;
+  line-height: 2;
+}
+
+/* ============================================
+   🎈 دکمه‌های شناور
+   ============================================ */
+.float-controls {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 998;
+}
+
+.float-btn {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #1a3a2e, #0d1f18);
+  color: var(--gold);
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  font-size: 1.15em;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  transition: 0.25s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.float-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  background: var(--gold);
+  color: var(--green-dark);
+  box-shadow: 0 8px 24px rgba(212,175,55,0.5);
+}
+
+.float-btn svg {
+  position: absolute;
+  inset: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  transform: rotate(-90deg);
+  pointer-events: none;
+}
+
+.float-btn .ring {
+  fill: none;
+  stroke: var(--gold-light);
+  stroke-width: 3;
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
+  transition: stroke-dashoffset 0.1s linear;
+  filter: drop-shadow(0 0 4px var(--gold));
+}
+
+/* ============================================
+   🔀 Share Buttons
+   ============================================ */
+.share-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin: 24px 0;
+  padding: 16px;
+  background: var(--bg-alt);
+  border-radius: 14px;
+  border: 1px solid var(--border);
+}
+
+.share-bar .label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-left: 8px;
+  align-self: center;
+  font-weight: 600;
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: 0.2s;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.share-btn.wa { background: #25D366; color: white; }
+.share-btn.tg { background: #0088CC; color: white; }
+.share-btn.tw { background: #1DA1F2; color: white; }
+.share-btn.copy { background: var(--gold); color: var(--green-dark); }
+
+.share-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* ============================================
+   📱 Mobile Toggle
+   ============================================ */
+.mobile-toggle {
+  display: none;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 1000;
+  background: linear-gradient(135deg, #1a3a2e, #0d1f18);
+  color: var(--gold);
+  border: 2px solid var(--gold);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  font-size: 1.3em;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+/* ============================================
+   📱 Mobile
+   ============================================ */
+@media (max-width: 900px) {
   .sidebar {
-    position: sticky;
-    top: calc(var(--nav-h) + 20px);
-    align-self: start;
-    max-height: calc(100vh - var(--nav-h) - 40px);
-    overflow-y: auto;
-    padding: 20px 18px;
-    background: var(--bg-card);
-    border: 1px solid var(--border-light);
-    border-radius: 12px;
-    font-size: 0.82rem;
-    scrollbar-width: thin;
-    scrollbar-color: var(--border) transparent;
-  }
-  .sidebar::-webkit-scrollbar { width: 4px; }
-  .sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
-
-  .sidebar-h {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--primary-dark);
-    margin-bottom: 14px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--border-light);
-  }
-  .sidebar-h::before {
-    content: '';
-    width: 3px;
-    height: 14px;
-    background: var(--accent);
-    border-radius: 2px;
-  }
-
-  .sidebar .part {
-    display: block;
-    color: var(--accent);
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin: 14px 0 6px;
-    padding-right: 4px;
-  }
-  .sidebar .part:first-of-type { margin-top: 0; }
-
-  .sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    counter-reset: s;
-  }
-  .sidebar ul li {
-    counter-increment: s;
-    margin-bottom: 1px;
-  }
-  .sidebar ul li a {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    padding: 5px 8px;
-    border-radius: 5px;
-    color: var(--text-light);
-    text-decoration: none;
-    font-size: 0.79rem;
-    line-height: 1.5;
-    transition: 0.15s;
-  }
-  .sidebar ul li a::before {
-    content: counter(s);
-    min-width: 18px;
-    height: 18px;
-    background: var(--bg-soft);
-    color: var(--text-muted);
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.65rem;
-    font-weight: 700;
-    flex-shrink: 0;
-    margin-top: 1px;
-    transition: 0.15s;
-  }
-  .sidebar ul li a:hover {
-    background: var(--bg-soft);
-    color: var(--primary);
-  }
-  .sidebar ul li a.active {
-    background: #eaf2ee;
-    color: var(--primary-dark);
-    font-weight: 700;
-  }
-  .sidebar ul li a.active::before {
-    background: var(--primary);
-    color: #fff;
-  }
-
-  /* ============ Back to top ============ */
-  .btt {
     position: fixed;
-    bottom: 24px;
-    left: 24px;
-    width: 42px;
-    height: 42px;
-    background: var(--primary);
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 0.95rem;
-    box-shadow: 0 4px 14px rgba(13,92,71,0.28);
-    opacity: 0;
-    pointer-events: none;
-    transition: 0.25s;
-    z-index: 500;
+    right: -310px;
+    top: 0;
+    height: 100vh;
+    z-index: 999;
+    transition: right 0.35s ease;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.4);
   }
-  .btt.show { opacity: 1; pointer-events: auto; }
-  .btt:hover { background: var(--primary-dark); transform: translateY(-2px); }
+  .sidebar.open { right: 0; }
+  .mobile-toggle { display: block; }
+  header.hero { padding: 80px 22px 40px; }
+  header.hero h1 { font-size: 1.55em; }
+  main { padding: 30px 20px 40px; }
+  h2 { font-size: 1.35em; }
+  .ayah-text { font-size: 1.35em; }
+  .data-grid { grid-template-columns: repeat(2, 1fr); }
+  .research-notice { padding: 22px 20px; }
+  .site-nav-links a { font-size: 0.75rem; padding: 5px 10px; }
+  .site-nav-top { padding-bottom: 8px; }
+  .site-brand { font-size: 0.88rem; }
+  .ctrl-btn { font-size: 0.72rem; padding: 4px 9px; }
+  .calc { font-size: 0.82em; padding: 16px 16px; }
+  .conclusion { padding: 22px 20px; }
+  .float-controls { bottom: 15px; left: 15px; }
+  .float-btn { width: 42px; height: 42px; font-size: 1em; }
+}
 
-  /* ============ Footer ============ */
-  .footer {
-    background: var(--primary-dark);
-    color: #fff;
-    padding: 40px 20px 32px;
-    margin-top: 60px;
-    text-align: center;
-  }
-  .footer .dua {
-    font-family: 'Amiri', serif;
-    font-size: 1.15rem;
-    color: var(--accent);
-    margin-bottom: 8px;
-    direction: rtl;
-  }
-  .footer p {
-    font-size: 0.88rem;
-    opacity: 0.85;
-    margin-bottom: 6px;
-  }
-  .footer .nav-row {
-    margin: 20px 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 6px;
-  }
-  .footer .nav-row a {
-    color: rgba(255,255,255,0.75);
-    text-decoration: none;
-    font-size: 0.78rem;
-    padding: 5px 11px;
-    background: rgba(255,255,255,0.08);
-    border-radius: 20px;
-    transition: 0.2s;
-  }
-  .footer .nav-row a:hover {
-    background: rgba(255,255,255,0.18);
-    color: #fff;
-  }
-  .footer .sig {
-    margin-top: 20px;
-    padding-top: 16px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    font-size: 0.8rem;
-    opacity: 0.65;
-    line-height: 1.8;
-  }
-
-  /* ============ Overlay (mobile) ============ */
-  .overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.45);
-    z-index: 998;
-    opacity: 0;
-    transition: opacity 0.25s;
-  }
-  .overlay.show { opacity: 1; }
-
-  /* ============ Responsive ============ */
-  @media (max-width: 1024px) {
-    .page {
-      grid-template-columns: 1fr;
-      padding: calc(var(--nav-h) + 24px) 16px 40px;
-      gap: 0;
-    }
-    .content { max-width: 100%; }
-    .sidebar {
-      position: fixed;
-      top: 0;
-      right: -300px;
-      width: 280px;
-      max-width: 85vw;
-      height: 100vh;
-      max-height: 100vh;
-      z-index: 999;
-      border-radius: 0;
-      border-right: none;
-      border-left: 1px solid var(--border-light);
-      padding-top: 70px;
-      transition: right 0.3s ease;
-    }
-    .sidebar.open { right: 0; }
-    .overlay { display: block; }
-    .topnav .menu-btn { display: flex; align-items: center; justify-content: center; }
-  }
-
-  @media (max-width: 640px) {
-    :root { --nav-h: 54px; }
-    body { font-size: 15px; }
-    .topnav { padding: 0 12px; }
-    .article-head h1 { font-size: 1.35rem; }
-    .article-head .lede { font-size: 0.92rem; }
-    .content h2 { font-size: 1.15rem; }
-    .sec-head h2 { font-size: 1.1rem; }
-    .sec-num { width: 36px; height: 36px; font-size: 0.9rem; }
-    .ayah { padding: 14px 16px; }
-    .ayah .ar { font-size: 1.15rem; }
-    .ayah .tr { font-size: 0.82rem; }
-    .calc { font-size: 0.82rem; padding: 9px 12px; }
-    .btt { bottom: 16px; left: 16px; width: 38px; height: 38px; }
-    .data-inline { gap: 6px; }
-    .data-inline .d { padding: 5px 9px; font-size: 0.76rem; }
-    .footer { padding: 32px 16px 24px; }
-  }
+/* ============================================
+   🖨️ Print
+   ============================================ */
+@media print {
+  .sidebar, .site-nav-wrap, .float-controls, .mobile-toggle, .calc-copy, .share-bar { display: none !important; }
+  .layout { display: block; }
+  .main-content { width: 100%; }
+  .read-progress { display: none; }
+}
 </style>
 </head>
 <body>
 
-<div class="progress"><div class="bar" id="progressBar"></div></div>
+<!-- نوار پیشرفت -->
+<div class="read-progress" id="readProgress"></div>
 
-<!-- Top Nav -->
-<nav class="topnav">
-  <a href="index.html" class="brand">
-    <span class="logo">آ</span>
-    <span>خدمات آلفا</span>
-  </a>
-  <div class="nav-scroll">
+<!-- نوار سایت -->
+<div class="site-nav-wrap">
+  <div class="site-nav-top">
+    <div class="site-brand">
+      <span class="dot"></span>
+      رمزگشایی عددی قرآن | تحقیق شخصی
+    </div>
+    <div class="site-controls">
+      <button class="ctrl-btn" id="fontDec" aria-label="کاهش اندازه فونت">A−</button>
+      <button class="ctrl-btn" id="fontInc" aria-label="افزایش اندازه فونت">A+</button>
+      <button class="ctrl-btn" id="themeToggle" aria-label="تغییر حالت شب/روز">🌙 حالت شب</button>
+      <button class="ctrl-btn" id="printBtn" aria-label="چاپ صفحه">🖨 چاپ</button>
+    </div>
+  </div>
+  <div class="site-nav-links">
     <a href="index.html">خانه</a>
     <a href="laptop-repair-shiraz.html">تعمیر لپ تاپ شیراز</a>
-    <a href="laptop-repair-moaliabad.html">تعمیر لپ تاپ معالی‌آباد</a>
+    <a href="laptop-repair-moaliabad.html">تعمیر لپ تاپ معالی آباد</a>
     <a href="computer-repair-shiraz.html">تعمیر کامپیوتر شیراز</a>
-    <a href="computer-repair-moaliabad.html">تعمیر کامپیوتر معالی‌آباد</a>
+    <a href="computer-repair-moaliabad.html">تعمیر کامپیوتر معالی آباد</a>
     <a href="corporate.html">خدمات سازمانی</a>
     <a href="estimate.html">تخمین هزینه</a>
     <a href="gallery.html">نمونه کارها</a>
-    <a href="shop.html">فروشگاه</a>
     <a href="blog.html">وبلاگ</a>
+    <a href="shop.html">فروشگاه</a>
+    <a href="quran-numeric.html" class="active">اعجاز عددی</a>
   </div>
-  <button class="menu-btn" id="menuBtn" aria-label="فهرست">☰</button>
-</nav>
-
-<div class="overlay" id="overlay"></div>
-
-<div class="page">
-
-  <!-- MAIN CONTENT -->
-  <main class="content">
-
-    <!-- Compact Header -->
-    <header class="article-head">
-      <div class="bism">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
-      <h1>اعجاز عددی قرآن؛ کاوشی در لایه‌های پنهان</h1>
-      <p class="lede">از فلسفه معجزه تا رمزگشایی عددی آیات — سفری از «چرا» به «چگونه». حاصل یک سفر فکری و معنوی که از پرسش ساده‌ای آغاز شد و به کشف شبکه‌ای از هماهنگی‌های عددی در قرآن کریم رسید.</p>
-      <div class="info">
-        <span>✍️ تحقیق شخصی</span>
-        <span>📖 ۲۰ بخش</span>
-        <span>🕌 ۲۵+ آیه</span>
-        <span>📚 ۱۲ سوره</span>
-      </div>
-    </header>
-
-    <!-- Author Note -->
-    <section class="author-note">
-      <div class="note-h">یادداشت نویسنده</div>
-      <p>آنچه در ادامه می‌خوانید، <strong>حاصل تحقیق، بررسی و کشفیات شخصی نویسنده</strong> است و به‌عنوان یک پژوهش فردی و تأملی ارائه می‌شود، نه یک متن علمی مرجع یا فتوای دینی.</p>
-      <p><strong>روش‌های استفاده‌شده:</strong> محاسبات بر پایه <strong>ابجد کبیر</strong>، <strong>ابجد صغیر</strong>، شمارش دقیق حروف و کلمات آیات، تحلیل روابط ریاضی میان شماره سوره، شماره آیه و ارزش عددی، و بررسی تطبیقی ساختار سوره‌های دارای حروف مقطعه.</p>
-      <p>یافته‌های عددی این تحقیق، حاصل بررسی شخصی نویسنده است و صحت آن‌ها باید با منابع معتبر و توسط متخصصان علوم قرآنی و ریاضیات راستی‌آزمایی شود. هدف این پژوهش، <strong>تأمل و تدبر</strong> در ساختار قرآن کریم است، نه اثبات قطعی ادعایی.</p>
-    </section>
-
-    <!-- Intro -->
-    <h2>مقدمه</h2>
-    <p>این تحقیق حاصل یک سفر فکری و معنوی است. سفری که از یک پرسش ساده آغاز شد: <span class="hl-text">«چگونه پیامبران معجزات را انجام می‌دادند؟»</span> و به کشف شبکه‌ای پیچیده از هماهنگی‌های عددی در قرآن کریم رسید.</p>
-    <p>در بخش اول، به بررسی <strong>فلسفه معجزه</strong> پرداخته‌ام: اینکه معجزه چیست، چگونه باید آن را فهمید، و چرا انسان عصر مدرن با آن چالش دارد. سپس به سراغ <strong>نقش دل</strong> در پذیرش یا انکار حقیقت رفته‌ام و از «کد دیجیتال» به عنوان چارچوبی برای فهم قرآن استفاده کرده‌ام.</p>
-    <p>در بخش دوم، با استفاده از روش‌های محاسباتی مبتنی بر <strong>ابجد کبیر</strong>، <strong>ابجد صغیر</strong> و شمارش دقیق حروف و کلمات، به بررسی بیش از ۲۵ آیه از ۱۲ سوره قرآن پرداخته‌ام.</p>
-
-    <!-- ============ PART 1 ============ -->
-    <div class="part-divider">
-      <span class="label">بخش اول</span>
-      <h2>مبانی فلسفی و معنوی</h2>
-      <p>چیستی معجزه، چالش عقل مدرن، نقش دل، و قرآن به مثابه کد منبع</p>
-    </div>
-
-    <!-- 1 -->
-    <section class="sec" id="sec1">
-      <div class="sec-head">
-        <div class="sec-num gold">۱</div>
-        <div class="meta">
-          <h2>چیستی معجزه و پیش‌فرض‌های آن</h2>
-          <span class="ref">از پرسش تا چارچوب</span>
-        </div>
-      </div>
-      <p>پرسش آغازین این بود: <em>«چگونه پیامبران معجزات را انجام می‌دادند؟ مثلاً حضرت موسی با زدن عصا به رودخانه، چگونه مانع حرکت آن شد؟»</em></p>
-      <p>برای پاسخ، ابتدا باید «چیستی» معجزه را روشن کنیم. در متون دینی، معجزه دارای این ویژگی‌هاست:</p>
-      <ul>
-        <li><strong>خارق‌العاده بودن:</strong> عملی است که از چارچوب عادت‌های بشری و قوانین شناخته‌شده طبیعت خارج است.</li>
-        <li><strong>توأم با ادعای نبوت:</strong> صرفاً یک کار خارق‌العاده نیست، بلکه برای اثبات صدق مدعی نبوت انجام می‌شود.</li>
-        <li><strong>تحدی (هم‌آوردی‌طلبی):</strong> همراه با دعوت به مقابله‌آوری و اثبات ناتوانی دیگران در آوردن مثل آن است.</li>
-        <li><strong>اراده و اذن الهی:</strong> منشأ آن قدرت بی‌نهایت خداوند است، نه قدرت بشری.</li>
-      </ul>
-      <div class="quote">معجزه در ذات خود، «قانون‌شکنی» نیست، بلکه استفاده از قوانین و سنن برتر الهی است که برای ما ناشناخته است.</div>
-      <div class="result">
-        <div class="rh">نکته کلیدی</div>
-        <p>معجزه، «فعل الله» است که در آینه وجود پیامبر و ابزار او منعکس می‌شود. عصا و حتی خود پیامبر صرفاً «مجرا» و «ظرف» تحقق اراده الهی هستند. فاعل اصلی، خداوند است.</p>
-      </div>
-    </section>
-
-    <!-- 2 -->
-    <section class="sec" id="sec2">
-      <div class="sec-head">
-        <div class="sec-num gold">۲</div>
-        <div class="meta">
-          <h2>مواجهه عقل مدرن با معجزه</h2>
-          <span class="ref">چالش ذهن علمی</span>
-        </div>
-      </div>
-      <p>ذهن علمی امروز که بر پایه تجربه و آزمایش بنا شده، با پدیده‌ای مواجه می‌شود که «غیرقابل تکرار» و «یک‌باره» است. اینجا دو دیدگاه عمده وجود دارد:</p>
-      <h3>🔹 دیدگاه اول: علم‌گرایی افراطی</h3>
-      <p>هر چیزی که با قوانین شناخته‌شده فیزیک و علوم تجربی قابل تبیین نباشد، خرافه یا افسانه است. از این منظر، معجزات یا به پدیده‌های طبیعی (مثلاً جزر و مد برای رود نیل) تأویل می‌روند، یا به‌کلی رد می‌شوند.</p>
-      <h3>🔹 دیدگاه دوم: الهیاتی</h3>
-      <p>علم تجربی، قوانین حاکم بر طبیعت را کشف می‌کند، اما «خالق» این قوانین می‌تواند در موارد خاصی (برای هدفی والاتر) تصرفی انجام دهد که از دید ما «معجزه» نامیده می‌شود.</p>
-      <div class="quote">علم می‌گوید «آب در حالت عادی در ۱۰۰ درجه می‌جوشد»، اما نمی‌تواند بگوید «آب هرگز نمی‌تواند به اذن خدا نجوشد».</div>
-      <h3>🔹 نظریه‌های «چگونگی» معجزه</h3>
-      <ul>
-        <li><strong>تبدیل ماهیت (تغییر جوهر):</strong> خداوند در لحظه معجزه، ماهیت شیء را تغییر می‌دهد. مثلاً چوب عصا موقتاً ماهیت دیگری پیدا می‌کند.</li>
-        <li><strong>بهره‌گیری از قوانین ناشناخته طبیعت:</strong> انبیا به دلیل مقام والای خود، به قوانین پنهان طبیعت دسترسی پیدا می‌کردند.</li>
-        <li><strong>تصرف در ادراک مخاطبان:</strong> خداوند در سیستم ادراکی مخاطبان تصرف می‌کند و آن‌ها چیزی را می‌بینند که در عالم خارج به آن شکل نیست.</li>
-        <li><strong>توقف قوانین طبیعی (تعطیل سنت):</strong> خداوند به صورت موقت قانون علت و معلول حاکم بر طبیعت را تعطیل می‌کند.</li>
-      </ul>
-    </section>
-
-    <!-- 3 -->
-    <section class="sec" id="sec3">
-      <div class="sec-head">
-        <div class="sec-num gold">۳</div>
-        <div class="meta">
-          <h2>خورشید: معجزه‌ای که هر روز می‌بینیم و غافلیم</h2>
-          <span class="ref">پرسش کلیدی بحث</span>
-        </div>
-      </div>
-      <p>پرسش مهمی مطرح شد: <em>«اگر به خورشید نگاه می‌کردند در آن زمان، علت استوار بودنش را در آسمان چه می‌دانستند؟»</em></p>
-      <p>این پرسش، ما را به یکی از عمیق‌ترین نقاط بحث رساند. انسان‌ها معمولاً چیزهایی را که هر روز می‌بینند، «عادی» فرض می‌کنند:</p>
-      <ul>
-        <li><strong>خورشید را می‌دیدند</strong> که هر روز طلوع می‌کند — این برایشان عادی بود.</li>
-        <li><strong>رود نیل را می‌دیدند</strong> که همیشه جاری است — این برایشان عادی بود.</li>
-        <li><strong>عصا را می‌دیدند</strong> که یک تکه چوب خشک است — این برایشان عادی بود.</li>
-      </ul>
-      <p>اما وقتی همان عصا تبدیل به اژدها شد، یا همان رود نیل شکافته شد، ناگهان «عادت‌شان شکست» و متوجه شدند که نیرویی فراتر از قوانین عادی در کار است.</p>
-      <h3>🔹 تفاوت معجزه با قانون طبیعت</h3>
-      <p><strong>نگاه اول:</strong> تفاوت در «تکرار» vs «عدم تکرار» — قانون طبیعت دائماً تکرار می‌شود، معجزه یک بار رخ می‌دهد.</p>
-      <p><strong>نگاه دوم (عمیق‌تر):</strong> از منظر الهی، خودِ قوانین طبیعت هم «معجزه» هستند. این که خورشید میلیاردها سال با نظم دقیق می‌سوزد و نور می‌دهد، از شکافتن دریا شگفت‌انگیزتر است. اما چون هر روز می‌بینیمش، برایمان «طبیعی» شده.</p>
-      <div class="quote">معجزات انبیا در واقع «زنگ بیدارباش» هستند برای انسان‌هایی که در خواب عادت فرو رفته‌اند. این معجزات به ما می‌گویند: «همان قدرتی که الان این رود را شکافت، همان قدرتی است که هر روز خورشید را طلوع می‌دهد.»</div>
-      <div class="ayah">
-        <div class="ar" lang="ar">إِنَّ فِي خَلْقِ السَّمَاوَاتِ وَالْأَرْضِ وَاخْتِلَافِ اللَّيْلِ وَالنَّهَارِ لَآيَاتٍ لِأُولِي الْأَلْبَابِ</div>
-        <div class="tr">همانا در آفرینش آسمان‌ها و زمین و آمد و شد شب و روز، نشانه‌هایی برای خردمندان است (آل‌عمران: ۱۹۰)</div>
-      </div>
-    </section>
-
-    <!-- 4 -->
-    <section class="sec" id="sec4">
-      <div class="sec-head">
-        <div class="sec-num gold">۴</div>
-        <div class="meta">
-          <h2>امکان انکار و ریشه‌های آن در دل</h2>
-          <span class="ref">پرسش از امکان انکار</span>
-        </div>
-      </div>
-      <p>پرسش مهمی مطرح شد: <em>«آیا می‌شود این چیزها را انکار هم کرد؟»</em></p>
-      <p>پاسخ کوتاه: <strong>بله، نه تنها ممکن، بلکه کاملاً ممکن و حتی برای بسیاری از انسان‌ها راحت‌ترین کار است.</strong></p>
-      <h3>🔹 چرا انکار ممکن است؟</h3>
-      <ul>
-        <li><strong>تبیین جایگزین (نگاه علمی‌زده):</strong> فرد با ارائه یک «تبیین طبیعی» (هرچند ضعیف)، نیاز به پذیرش «ماوراء طبیعی» را از بین می‌برد.</li>
-        <li><strong>اصل عدم باور به ماوراء (نگاه فلسفی):</strong> «من اصولاً وجود نیروی فراطبیعی را قبول ندارم. جهان یک سیستم بسته علّی است.»</li>
-        <li><strong>ضعف اسناد تاریخی (نگاه تاریخی‌گرایانه):</strong> «این داستان‌ها بعدها نوشته شده‌اند و ممکن است تحریف شده باشند.»</li>
-        <li><strong>عادت‌زدگی:</strong> فرد در برابر «معجزه لحظه‌ای» می‌ایستد اما در برابر «معجزه دائمی» مثل خورشید، حتی سوال هم نمی‌پرسد.</li>
-      </ul>
-      <h3>🔹 نکته فلسفی مهم: «انکار» در برابر «نپذیرفتن»</h3>
-      <ul>
-        <li><strong>نپذیرفتن:</strong> فرد می‌گوید «من دلیل کافی برای پذیرش ندارم.»</li>
-        <li><strong>انکار:</strong> فرد می‌گوید «قطعاً این دروغ است.»</li>
-      </ul>
-      <p>انکار، ادعایی قوی‌تر از نپذیرفتن است. برای انکار یک پدیده تاریخی، فرد باید «علم غیب» داشته باشد! یعنی باید بداند قطعاً در ۳۰۰۰ سال پیش چه رخ داده. این خودش نوعی «ایمان منفی» است.</p>
-      <h3>🔹 نکته تاریخی تکان‌دهنده</h3>
-      <p>بیشتر کسانی که با پیامبران دشمنی کردند، «نخبگان» و «خواص» زمانه بودند، نه عوام مردم:</p>
-      <ul>
-        <li>فرعون: یک نابغه سیاسی و مدیریتی</li>
-        <li>قارون: ثروتمندی که اقتصاد زمانه خود را در دست داشت</li>
-        <li>ابوجهل: از تیزهوشان و رهبران فکری قریش</li>
-        <li>علمای یهود در زمان پیامبر اسلام: کسانی که آیات تورات را بهتر از مسلمانان می‌شناختند</li>
-      </ul>
-      <p>اینها کم‌هوش نبودند. کم‌اطلاع نبودند. برعکس، از بالاترین سطح دانش و هوش زمانه خود برخوردار بودند. پس مشکل کجا بود؟ <strong>«دل»</strong>.</p>
-      <div class="result">
-        <div class="rh">نتیجه</div>
-        <p>انکار، ریشه در «دل» دارد، نه در «عقل». عقل ابزار است، اما این دل است که انتخاب می‌کند کدام تبیین را بپذیرد.</p>
-      </div>
-    </section>
-
-    <!-- 5 -->
-    <section class="sec" id="sec5">
-      <div class="sec-head">
-        <div class="sec-num gold">۵</div>
-        <div class="meta">
-          <h2>بیماری دل در عصر مدرن</h2>
-          <span class="ref">شکل‌های جدید یک بیماری قدیمی</span>
-        </div>
-      </div>
-      <p>«بیماری دل» امروز شکل‌های تازه پیدا کرده، اما ماهیتش همان است که همیشه بوده:</p>
-      <ul>
-        <li><strong>بت‌وارگی علم (ساینتیسم):</strong> هر چه علم تجربی نگوید، وجود ندارد. هر چه در آزمایشگاه تکرار نشود، خرافه است. این همان بت‌پرستی مدرن است.</li>
-        <li><strong>سرگرمی و غفلت دیجیتال:</strong> امروز دیگر نیازی به «تعمق» نیست. دل چه زمانی بیمار می‌شود؟ وقتی «سکوت» را تجربه نکند.</li>
-        <li><strong>مصرف‌گرایی افراطی:</strong> انسان امروز یاد گرفته برای هر دردی، راه حل «مصرفی» پیدا کند.</li>
-        <li><strong>تکبر تکنولوژیک:</strong> انسان امروز با قدرت تکنولوژی می‌گوید «من نیازی به رب ندارم». این همان تکبر فرعونی است، با لباس مدرن.</li>
-      </ul>
-      <div class="quote">بزرگترین معجزه امروز، نه شکافتن دریا، نه زنده کردن مرده، که «بیدار شدن دل از خواب مدرنیته» است.</div>
-      <div class="ayah">
-        <div class="ar" lang="ar">إِنَّ فِي ذَٰلِكَ لَذِكْرَىٰ لِمَن كَانَ لَهُ قَلْبٌ</div>
-        <div class="tr">در اینها تذکری است برای کسی که دل داشته باشد (ق: ۳۷)</div>
-      </div>
-    </section>
-
-    <!-- 6 -->
-    <section class="sec" id="sec6">
-      <div class="sec-head">
-        <div class="sec-num gold">۶</div>
-        <div class="meta">
-          <h2>قرآن به مثابه کد منبع (Source Code)</h2>
-          <span class="ref">تشبیهی برای عصر دیجیتال</span>
-        </div>
-      </div>
-      <p>ایده‌ای مطرح شد که قرآن را می‌توان به یک «کد» تشبیه کرد — نه یک کتاب ساده، بلکه یک «کد منبع» که نیاز به «دیکود» شدن دارد.</p>
-      <h3>🔹 چرا قرآن «کد» است؟</h3>
-      <ul>
-        <li><strong>نیاز به «دیکودر» دارد:</strong> همانطور که کد باینری برای یک انسان عادی بی‌معناست اما برای یک برنامه‌نویس دنیایی از اطلاعات را حمل می‌کند، قرآن هم برای «اهلش» لایه‌های عمیقی از معنا دارد.</li>
-        <li><strong>چندلایه بودن (Multi-layer):</strong> در برنامه‌نویسی مدرن، کدها لایه‌لایه هستند. پیامبر اسلام (ص) فرمود: «همانا قرآن را ظاهری و باطنی است، و باطن آن هم باطنی دارد تا هفت بطن.»</li>
-        <li><strong>قابلیت اجرا در «سیستم‌عامل»های مختلف:</strong> یک کد خوب باید روی پلتفرم‌های مختلف اجرا شود.</li>
-      </ul>
-      <h3>🔹 ویژگی‌های کد بودن قرآن</h3>
-      <ul>
-        <li><strong>فشردگی اطلاعات:</strong> در یک خط کد باینری می‌تواند یک عملیات پیچیده تعریف شود. در قرآن هم یک آیه می‌تواند چنان بار معنایی داشته باشد که کتاب‌ها درباره‌اش نوشته شود.</li>
-        <li><strong>نیاز به تفسیر (Decoding):</strong> کد را نمی‌توان «همین‌جوری» خواند. باید «دیکد» کرد.</li>
-        <li><strong>پویایی (Dynamic):</strong> یک نرم‌افزار خوب با تغییر شرایط، به‌روزرسانی نمی‌خواهد.</li>
-        <li><strong>متن‌باز بودن (Open Source):</strong> هر کس می‌تواند بیاید در آن تدبر کند، نقد کند، بفهمد.</li>
-      </ul>
-      <div class="ayah">
-        <div class="ar" lang="ar">إِنَّهُ لَقُرْآنٌ كَرِيمٌ ۝ فِي كِتَابٍ مَّكْنُونٍ ۝ لَّا يَمَسُّهُ إِلَّا الْمُطَهَّرُونَ</div>
-        <div class="tr">این قرآنی کریم است که در کتابی پنهان جای دارد و جز پاکان به آن دست نمی‌یابند (واقعه: ۷۷-۷۹)</div>
-      </div>
-      <div class="result">
-        <div class="rh">نتیجه</div>
-        <p>قرآن یک «الگوریتم هدایت» است، نه یک «داده تاریخی». یک «سیستم عامل» است، نه «نرم‌افزار کاربردی». و یک «کد متن‌باز» است که هر کس به اندازه طهارت دلش می‌تواند از آن بهره ببرد.</p>
-      </div>
-    </section>
-
-    <!-- ============ PART 2 ============ -->
-    <div class="part-divider">
-      <span class="label">بخش دوم</span>
-      <h2>رمزگشایی عددی آیات</h2>
-      <p>هر آیه یک کد است که با ابجد کبیر، ابجد صغیر و شمارش حروف و کلمات دیکود می‌شود</p>
-    </div>
-
-    <div class="disclaimer">
-      <div class="dh">یادداشت مهم درباره بخش عددی</div>
-      <p>روش‌های عددی به‌کاررفته در این بخش، بر پایه <strong>ابجد کبیر، ابجد صغیر و شمارش حروف و کلمات</strong> است. این روش‌ها در میان محققان اسلامی <strong>دیدگاه‌های متفاوتی</strong> دارد؛ برخی آن را نشانه‌ای از اعجاز قرآن می‌دانند و برخی دیگر با روش‌شناسی آن مخالفند و معتقدند این نوع محاسبات می‌تواند به «انتخاب‌گری» و «سوگیری تأییدی» منجر شود.</p>
-      <p>یافته‌های این بخش، <strong>حاصل بررسی شخصی نویسنده</strong> است و صحت آن‌ها باید با منابع معتبر راستی‌آزمایی شود. هدف، <strong>تأمل، تدبر و طرح پرسش</strong> است، نه اثبات قطعی.</p>
-    </div>
-
-    <!-- 7 -->
-    <section class="sec" id="sec7">
-      <div class="sec-head">
-        <div class="sec-num">۷</div>
-        <div class="meta">
-          <h2>سوره قصص: «طسم» و اشاره به سوره نمل</h2>
-          <span class="ref">سوره ۲۸، آیه ۱</span>
-        </div>
-      </div>
-      <div class="ayah">
-        <div class="ar" lang="ar">طسٓمٓ</div>
-        <div class="tr">طسم</div>
-      </div>
-      <div class="data-inline">
-        <div class="d"><span class="k">حروف:</span><span class="v">۳</span></div>
-        <div class="d"><span class="k">ابجد کبیر:</span><span class="v">۱۰۹</span></div>
-        <div class="d"><span class="k">ابجد صغیر:</span><span class="v">۱۳</span></div>
-      </div>
-      <h3>🔍 کشف: اشاره به تعداد آیات سوره ماقبل</h3>
-      <div class="calc"><span class="lbl">محاسبه:</span>109 − 13 − 3 = <span class="hl">93</span></div>
-      <div class="result">
-        <div class="rh">نتیجه</div>
-        <p>سوره نمل (۲۷) که سوره ماقبل قصص است، دقیقاً <strong>۹۳ آیه</strong> دارد. عدد ۹۳ از تفریق ابجد کبیر و صغیر و تعداد حروف «طسم» به دست می‌آید. این یک ارتباط پنهان بین دو سوره را نشان می‌دهد.</p>
-      </div>
-    </section>
-
-    <!-- 8 -->
-    <section class="sec" id="sec8">
-      <div class="sec-head">
-        <div class="sec-num">۸</div>
-        <div class="meta">
-          <h2>سوره نحل: زنبور عسل و کروموزوم‌ها</h2>
-          <span class="ref">سوره ۱۶، آیه ۶۸</span>
-        </div>
-      </div>
-      <div class="ayah">
-        <div class="ar" lang="ar">وَأَوْحَىٰ رَبُّكَ إِلَى النَّحْلِ أَنِ اتَّخِذِي مِنَ الْجِبَالِ بُيُوتًا وَمِنَ الشَّجَرِ وَمِمَّا يَعْرِشُونَ</div>
-        <div class="tr">و پروردگارت به زنبور عسل وحی کرد که از کوه‌ها و درختان و آنچه می‌سازند، خانه‌هایی برگزین</div>
-      </div>
-      <div class="data-inline">
-        <div class="d"><span class="k">شماره سوره:</span><span class="v">۱۶</span></div>
-        <div class="d"><span class="k">شماره آیه:</span><span class="v">۶۸</span></div>
-        <div class="d"><span class="k">کلمات:</span><span class="v">۱۶</span></div>
-        <div class="d"><span class="k">ابجد کبیر:</span><span class="v">۴۱۰۰</span></div>
-        <div class="d"><span class="k">ابجد صغیر:</span><span class="v">۲۳۶</span></div>
-        <div class="d"><span class="k">حروف:</span><span class="v">۵۰</span></div>
-      </div>
-      <h3>🔍 کشف: کروموزوم‌های زنبور عسل</h3>
-      <ul>
-        <li>زنبور نر: <strong>۱۶</strong> کروموزوم (هاپلوئید)</li>
-        <li>زنبور ماده: <strong>۳۲</strong> کروموزوم (دیپلوئید = ۱۶ جفت)</li>
-        <li>شماره سوره = <strong>۱۶</strong>، تعداد کلمات آیه = <strong>۱۶</strong></li>
-      </ul>
-      <div class="calc"><span class="lbl">گام اول:</span>16 + 68 = <span class="hl">84</span></div>
-      <div class="calc"><span class="lbl">گام دوم:</span>4100 ÷ 50 = <span class="hl">82</span></div>
-      <div class="calc"><span class="lbl">گام سوم:</span>82 − 50 = <span class="hl">32</span></div>
-      <div class="calc"><span class="lbl">گام چهارم:</span>84 − 82 = <span class="hl">2</span></div>
-      <div class="result">
-        <div class="rh">نتیجه</div>
-        <p>عدد ۳۲ برابر تعداد کروموزوم‌های زنبور ماده و عدد ۲ نماد دو جنس (نر و ماده) است. این هماهنگی در آیه‌ای که ۱۴۰۰ سال پیش نازل شده و هیچ اطلاعی از ژنتیک وجود نداشت، بسیار شگفت‌انگیز است.</p>
-      </div>
-    </section>
-
-    <!-- 9 -->
-    <section class="sec" id="sec9">
-      <div class="sec-head">
-        <div class="sec-num">۹</div>
-        <div class="meta">
-          <h2>سوره انسان: آفرینش انسان از نطفه</h2>
-          <span class="ref">سوره ۷۶، آیه ۲</span>
-        </div>
-      </div>
-      <div class="ayah">
-        <div class="ar" lang="ar">إِنَّا خَلَقْنَا الْإِنسَانَ مِن نُّطْفَةٍ أَمْشَاجٍ نَّبْتَلِيهِ فَجَعَلْنَاهُ سَمِيعًا بَصِيرًا</div>
-        <div class="tr">ما انسان را از نطفه‌ای مختلط آفریدیم و او را می‌آزماییم، پس او را شنوا و بینا قرار دادیم</div>
-      </div>
-      <div class="data-inline">
-        <div class="d"><span class="k">حروف:</span><span class="v">۴۶</span></div>
-        <div class="d"><span class="k">ابجد کبیر:</span><span class="v">۲۸۲۲</span></div>
-        <div class="d"><span class="k">ابجد صغیر:</span><span class="v">۱۸۲</span></div>
-      </div>
-      <h3>🔍 کشف اول: تعداد کروموزوم‌های انسان</h3>
-      <p>انسان دارای <strong>۴۶ کروموزوم</strong> است (۲۳ جفت). این آیه که از خلقت انسان از نطفه سخن می‌گوید، دقیقاً <strong>۴۶ حرف</strong> دارد.</p>
-      <h3>🔍 کشف دوم: تکرار واژه «الإنسان»</h3>
-      <table class="tbl">
-        <tr><th>حالت کلمه</th><th style="text-align: center;">تعداد تکرار</th></tr>
-        <tr><td>الْإِنسَانُ</td><td style="text-align: center;">۲۷</td></tr>
-        <tr><td>الْإِنسَانَ</td><td style="text-align: center;">۲۷</td></tr>
-        <tr><td>لِلْإِنسَانِ</td><td style="text-align: center;">۶</td></tr>
-        <tr><td>إِنسَانٍ</td><td style="text-align: center;">۱</td></tr>
-        <tr><td>الْإِنسَانِ</td><td style="text-align: center;">۴</td></tr>
-        <tr><td>أَنسَانِيهُ</td><td style="text-align: center;">۱</td></tr>
-        <tr><td>مجموع</td><td style="text-align: center;">۶۶</td></tr>
-      </table>
-      <div class="calc"><span class="lbl">نکته:</span>Abjad("الله") = 1+30+30+5 = <span class="hl">66</span></div>
-      <div class="result">
-        <div class="rh">نتیجه</div>
-        <p>تعداد حروف آیه (۴۶) برابر تعداد کروموزوم‌های انسان است. واژه «الإنسان» با تمام مشتقاتش ۶۶ بار در قرآن آمده که برابر ابجد کلمه «الله» است. این نشان می‌دهد انسان از نظر فیزیکی و معنوی، با دقتی شگفت‌انگیز در قرآن ترسیم شده است.</p>
-      </div>
-    </section>
-
-    <!-- 10 -->
-    <section class="sec" id="sec10">
-      <div class="sec-head">
-        <div class="sec-num">۱۰</div>
-        <div class="meta">
-          <h2>سوره مؤمنون: مراحل خلقت و کروموزوم انسان</h2>
-          <span class="ref">سوره ۲۳، آیه ۱۴</span>
-        </div>
-      </div>
-      <div class="ayah">
-        <div class="ar" lang="ar">ثُمَّ خَلَقْنَا النُّطْفَةَ عَلَقَةً فَخَلَقْنَا الْعَلَقَةَ مُضْغَةً فَخَلَقْنَا الْمُضْغَةَ عِظَٰمًا فَكَسَوْنَا الْعِظَٰمَ لَحْمًا ثُمَّ أَنشَأْنَٰهُ خَلْقًا آخَرَ ۚ فَتَبَارَكَ اللَّهُ أَحْسَنُ الْخَٰلِقِينَ</div>
-        <div class="tr">سپس نطفه را به صورت خون بسته، و خون بسته را مضغه، و مضغه را استخوان‌هایی آفریدیم، پس بر استخوان‌ها گوشت پوشاندیم، سپس او را آفرینشی دیگر پدید آوردیم. پس بزرگ است خدایی که بهترین آفرینندگان است</div>
-      </div>
-      <div class="data-inline">
-        <div class="d"><span class="k">حروف:</span><span class="v">۹۵</span></div>
-        <div class="d"><span class="k">ابجد کبیر:</span><span class="v">۱۲۱۱۱</span></div>
-        <div class="d"><span class="k">ابجد صغیر ۱:</span><span class="v">۴۱۱</span></div>
-        <div class="d"><span class="k">ابجد صغیر ۲:</span><span class="v">۳۹۰</span></div>
-        <div class="d"><span class="k">کلمات:</span><span class="v">۲۱</span></div>
-      </div>
-      <div class="calc"><span class="lbl">رابطه ۱:</span>411 − 390 = <span class="hl">21</span>  (تعداد کلمات آیه)</div>
-      <div class="calc"><span class="lbl">رابطه ۲:</span>411 + 390 = <span class="hl">801</span>  (ابجد کلمه «آخر»)</div>
-      <div class="calc"><span class="lbl">رابطه ۳:</span>12111 = 95 × 127 + <span class="hl">46</span>  (کروموزوم انسان)</div>
-      <div class="calc"><span class="lbl">رابطه ۴:</span>95 + 23 = <span class="hl">118</span>  (تعداد آیات سوره مؤمنون)</div>
-      <div class="result">
-        <div class="rh">نتیجه</div>
-        <p>در این آیه که مراحل خلقت انسان را توصیف می‌کند، باقی‌مانده تقسیم ابجد کبیر بر تعداد حروف، عدد ۴۶ (کروموزوم انسان) است. مجموع دو ابجد صغیر برابر ابجد کلمه «آخر» است که در خود آیه آمده.</p>
-      </div>
-    </section>
-
-    <!-- 11 -->
-    <section class="sec" id="sec11">
-      <div class="sec-head">
-        <div class="sec-num">۱۱</div>
-        <div class="meta">
-          <h2>سوره مؤمنون: حضرت نوح و تکرار نامش</h2>
-          <span class="ref">سوره ۲۳، آیه ۲۳</span>
-        </div>
-      </div>
-      <div class="ayah">
-        <div class="ar" lang="ar">وَلَقَدْ أَرْسَلْنَا نُوحًا إِلَىٰ قَوْمِهِ فَقَالَ يَا قَوْمِ اعْبُدُوا اللَّهَ مَا لَكُم مِّنْ إِلَٰهٍ غَيْرُهُ أَفَلَا تَتَّقُونَ</div>
-        <div class="tr">و به راستی نوح را به سوی قومش فرستادیم، پس گفت: ای قوم من! خدا را بپرستید که جز او معبودی ندارید، آیا تقوا پیشه نمی‌کنید؟</div>
-      </div>
-      <div class="data-inline">
-        <div class="d"><span class="k">حروف:</span><span class="v">۶۰</span></div>
-        <div class="d"><span class="k">کلمات:</span><span class="v">۱۷</span></div>
-        <div class="d"><span class="k">ابجد کبیر:</span><span class="v">۲۸۹۴</span></div>
-        <div class="d"><span class="k">ابجد صغیر ۱:</span><span class="v">۲۷۸</span></div>
-        <div class="d"><span class="k">ابجد صغیر ۲:</span><span class="v">۲۰۵</span></div>
-      </div>
-      <div class="calc"><span class="lbl">رابطه ۱:</span>Sum_digits(2894) = 2+8+9+4 = <span class="hl">23</span>  (شماره سوره)</div>
-      <div class="calc"><span class="lbl">رابطه ۲:</span>Sum_digits(278) = 2+7+8 = <span class="hl">17</span>  (تعداد کلمات)</div>
-      <div class="calc"><span class="lbl">رابطه ۳:</span>60 − 17 = <span class="hl">43</span>  (تعداد تکرار نام «نوح» در قرآن)</div>
-      <div class="result">
-        <div class="rh">نتیجه</div>
-        <p>تفاوت بین تعداد حروف و کلمات آیه (۶۰ − ۱۷ = ۴۳) دقیقاً برابر تعداد تکرار نام «نوح» در کل قرآن کریم است. این هماهنگی میان ساختار آیه و محتوای آن، بسیار قابل تأمل است.</p>
-      </div>
-    </section>
-
-    <!-- 12 -->
-    <section class="sec" id="sec12">
-      <div class="sec-head">
-        <div class="sec-num">۱۲</div>
-        <div class="meta">
-          <h2>سوره حجر: «الر» و آیات کتاب</h2>
-          <span class="ref">سوره ۱۵، آیه ۱</span>
-        </div>
-      </div>
-      <div class="ayah">
-        <div class="ar" lang="ar">الٓر ۚ تِلْكَ آيَاتُ الْكِتَابِ وَقُرْآنٍ مُّبِينٍ</div>
-        <div class="tr">الر، اینها آیات کتاب و قرآن مبین است</div>
-      </div>
-      <div class="data-inline">
-        <div class="d"><span class="k">حروف:</span><span class="v">۲۴</span></div>
-        <div class="d"><span class="k">کلمات:</span><span class="v">۶</span></div>
-        <div class="d"><span class="k">ابجد کبیر:</span><span class="v">۲۰۰۵</span></div>
-        <div class="d"><span class="k">ابجد صغیر ۱:</span><span class="v">۱۰۹</span></div>
-        <div class="d"><span class="k">ابجد صغیر ۲:</span><span class="v">۶۲</span></div>
-      </div>
-      <div class="calc"><span class="lbl">رابطه ۱:</span>Sum_digits(2005) = 2+0+0+5 = <span class="hl">7</span> = 1 + 6</div>
-      <div class="calc"><span class="lbl">رابطه ۲:</span>Sum_digits(62) = 6+2 = <span class="hl">8</span> = 15 − (1+6)</div>
-      <div class="calc"><span class="lbl">رابطه ۳:</span>Sum_digits(109) = 1+0+9 = <span class="hl">10</span> = (24−6) − 8</div>
-      <div class="calc"><span class="lbl">رابطه ۴:</span>109 − 62 = <span class="hl">47</span> = (24+15+6+1) + 1</div>
-      <div class="result">
-        <div class="rh">نتیجه</div>
-        <p>در این آیه، روابط متعددی کشف شد که هر کدام با اجزای آیه (شماره سوره، شماره آیه، تعداد حروف، تعداد کلمات) هماهنگی دقیقی دارند. عدد ۴۷ (شماره سوره محمد) نیز در تفاضل دو ابجد صغیر ظاهر می‌شود.</p>
-      </div>
-    </section>
-
-    <!-- 13 -->
-    <section class="sec" id="sec13">
-      <div class="sec-head">
-        <div class="sec-num">۱۳</div>
-        <div class="meta">
-          <h2>سوره یس: پنج آیه اول (تحلیل کامل)</h2>
-          <span class="ref">سوره ۳۶، آیات ۱ تا ۵</span>
-        </div>
-      </div>
-      <div class="ayah">
-        <div class="ar" lang="ar">يسٓ ۝ وَالْقُرْآنِ الْحَكِيمِ ۝ إِنَّكَ لَمِنَ الْمُرْسَلِينَ ۝ عَلَىٰ صِرَاطٍ مُّسْتَقِيمٍ ۝ تَنزِيلَ الْعَزِيزِ الرَّحِيمِ</div>
-        <div class="tr">یس، سوگند به قرآن حکیم، که تو قطعاً از فرستادگانی، بر صراطی مستقیم، نازل شده از سوی خداوند عزیز و رحیم</div>
-      </div>
-
-      <div class="sub">
-        <h4>آیه ۱: يسٓ</h4>
-        <div class="data-inline">
-          <div class="d"><span class="k">حروف:</span><span class="v">۲</span></div>
-          <div class="d"><span class="k">ابجد کبیر:</span><span class="v">۷۰</span></div>
-          <div class="d"><span class="k">صغیر ۱:</span><span class="v">۱۰</span></div>
-          <div class="d"><span class="k">صغیر ۲:</span><span class="v">۷</span></div>
-        </div>
-        <div class="calc"><span class="lbl">رابطه:</span>Sum_digits(10) = 1+0 = <span class="hl">1</span>  (شماره آیه)</div>
-      </div>
-
-      <div class="sub">
-        <h4>آیه ۲: وَالْقُرْآنِ الْحَكِيمِ</h4>
-        <div class="data-inline">
-          <div class="d"><span class="k">حروف:</span><span class="v">۱۲</span></div>
-          <div class="d"><span class="k">ابجد کبیر:</span><span class="v">۴۹۶</span></div>
-          <div class="d"><span class="k">صغیر ۱:</span><span class="v">۶۴</span></div>
-          <div class="d"><span class="k">صغیر ۲:</span><span class="v">۳۹</span></div>
-        </div>
-        <div class="calc"><span class="lbl">رابطه ۱:</span>Sum_digits(39) = 3+9 = <span class="hl">12</span>  (تعداد حروف آیه)</div>
-        <div class="calc"><span class="lbl">رابطه ۲:</span>496 = عدد کامل (Perfect Number) = مجموع مقسوم‌علیه‌هایش</div>
-        <div class="calc"><span class="lbl">رابطه ۳:</span>Sum_digits(496) = 4+9+6 = <span class="hl">19</span>  (عدد کلیدی قرآن)</div>
-      </div>
-
-      <div class="sub">
-        <h4>آیه ۳: إِنَّكَ لَمِنَ الْمُرْسَلِينَ</h4>
-        <div class="data-inline">
-          <div class="d"><span class="k">حروف:</span><span class="v">۱۳</span></div>
-          <div class="d"><span class="k">کلمات:</span><span class="v">۳</span></div>
-          <div class="d"><span class="k">ابجد کبیر:</span><span class="v">۶۱۱</span></div>
-          <div class="d"><span class="k">صغیر ۱:</span><span class="v">۵۹</span></div>
-          <div class="d"><span class="k">صغیر ۲:</span><span class="v">۴۵</span></div>
-        </div>
-        <div class="calc"><span class="lbl">رابطه کلیدی:</span>611 = 13 × <span class="hl">47</span>  (شماره سوره محمد)</div>
-        <div class="calc"><span class="lbl">رابطه ۲:</span>Sum_digits(45) = 4+5 = <span class="hl">9</span> = 3 × 3</div>
-      </div>
-
-      <div class="sub">
-        <h4>آیه ۴: عَلَىٰ صِرَاطٍ مُّسْتَقِيمٍ</h4>
-        <div class="data-inline">
-          <div class="d"><span class="k">حروف:</span><span class="v">۱۲</span></div>
-          <div class="d"><span class="k">کلمات:</span><span class="v">۳</span></div>
-          <div class="d"><span class="k">ابجد کبیر:</span><span class="v">۱۰۵۹</span></div>
-          <div class="d"><span class="k">صغیر ۱:</span><span class="v">۷۵</span></div>
-          <div class="d"><span class="k">صغیر ۲:</span><span class="v">۵۱</span></div>
-        </div>
-        <div class="calc"><span class="lbl">رابطه ۱:</span>4 × 3 = <span class="hl">12</span>  (تعداد حروف)</div>
-        <div class="calc"><span class="lbl">رابطه ۲:</span>Sum_digits(75) = 7+5 = <span class="hl">12</span></div>
-        <div class="calc"><span class="lbl">رابطه ۳:</span>75 − 51 = <span class="hl">24</span> = 2 × 12</div>
-      </div>
-
-      <div class="sub">
-        <h4>آیه ۵: تَنزِيلَ الْعَزِيزِ الرَّحِيمِ</h4>
-        <div class="data-inline">
-          <div class="d"><span class="k">حروف:</span><span class="v">۱۵</span></div>
-          <div class="d"><span class="k">کلمات:</span><span class="v">۳</span></div>
-          <div class="d"><span class="k">ابجد کبیر:</span><span class="v">۹۰۹</span></div>
-          <div class="d"><span class="k">صغیر ۱:</span><span class="v">۱۰۵</span></div>
-          <div class="d"><span class="k">صغیر ۲:</span><span class="v">۶۵</span></div>
-        </div>
-        <div class="calc"><span class="lbl">رابطه ۱:</span>5 × 3 = <span class="hl">15</span>  (تعداد حروف)</div>
-        <div class="calc"><span class="lbl">رابطه ۲:</span>Sum_digits(909) = 9+0+9 = <span class="hl">18</span> = 15 + 3</div>
-        <div class="calc"><span class="lbl">رابطه ۳:</span>105 − 65 = <span class="hl">40</span>  (سن نبوت پیامبر)</div>
-      </div>
-
-      <div class="result">
-        <div class="rh">نتیجه کلی سوره یس</div>
-        <p>در پنج آیه اول سوره یس، الگوهای متعددی از نظم عددی دیده می‌شود: حاصل‌ضرب شماره آیه در تعداد کلمات برابر تعداد حروف (آیات ۴ و ۵)، هماهنگی ابجد کبیر با ساختار آیه، ارتباط با سوره محمد (۴۷)، و اشاره به عدد ۴۰ (سن نبوت) در آیه «تنزیل».</p>
-      </div>
-    </section>
-
-    <!-- 14 -->
-    <section class="sec" id="sec14">
-      <div class="sec-head">
-        <div class="sec-num">۱۴</div>
-        <div class="meta">
-          <h2>سوره ص: سوگند به قرآن ذی‌الذکر</h2>
-          <span class="ref">سوره ۳۸، آیه ۱</span>
-        </div>
-      </div>
-      <div class="ayah">
-        <div class="ar" lang="ar">صٓ ۚ وَالْقُرْآنِ ذِي الذِّكْرِ</div>
-        <div class="tr">ص، سوگند به قرآن دارای یادآوری</div>
-      </div>
-      <div class="data-inline">
-        <div class="d"><span class="k">حروف:</span><span class="v">۱۴</span></div>
-        <div class="d"><span class="k">کلمات:</span><span class="v">۴</span></div>
-        <div class="d"><span class="k">ابجد کبیر:</span><span class="v">۲۱۳۸</span></div>
-        <div class="d"><span class="k">صغیر ۱:</span><span class="v">۷۴</span></div>
-        <div class="d"><span class="k">صغیر ۲:</span><span class="v">۵۲</span></div>
-      </div>
-      <div class="calc"><span class="lbl">رابطه ۱:</span>Sum_digits(2138) = 2+1+3+8 = <span class="hl">14</span>  (تعداد حروف)</div>
-      <div class="calc"><span class="lbl">رابطه ۲:</span>14 + 38 = <span class="hl">52</span>  (ابجد صغیر ۲)</div>
-      <div class="calc"><span class="lbl">رابطه ۳:</span>Sum_digits(74) + Sum_digits(52) = 11 + 7 = <span class="hl">18</span> = 14 + 4</div>
-      <div class="calc"><span class="lbl">رابطه ۴:</span>38 × (14 × 4) + (11−1) = 2128 + 10 = <span class="hl">2138</span></div>
-      <div class="result">
-        <div class="rh">نتیجه</div>
-        <p>در این آیه، ابجد کبیر (۲۱۳۸) از رابطه‌ای دقیق با شماره سوره (۳۸)، تعداد حروف (۱۴)، تعداد کلمات (۴) و جمع ارقام ابجد صغیر اول (۱۱) به دست می‌آید. این یک هماهنگی ریاضی کامل و فراتر از تصادف است.</p>
-      </div>
-    </section>
-
-    <!-- 15 -->
-    <section class="sec" id="sec15">
-      <div class="sec-head">
-        <div class="sec-num">۱۵</div>
-        <div class="meta">
-          <h2>سوره غافر: «حم» و تنزیل کتاب</h2>
-          <span class="ref">سوره ۴۰، آیات ۱ و ۲</span>
-        </div>
-      </div>
-      <div class="ayah">
-        <div class="ar" lang="ar">حمٓ ۝ تَنزِيلُ الْكِتَابِ مِنَ اللَّهِ الْعَزِيزِ الْعَلِيمِ</div>
-        <div class="tr">حم، نزول کتاب از سوی خداوند عزیز و داناست</div>
-      </div>
-      <div class="sub">
-        <h4>آیه ۱: حمٓ</h4>
-        <div class="data-inline">
-          <div class="d"><span class="k">حروف:</span><span class="v">۲</span></div>
-          <div class="d"><span class="k">کلمات:</span><span class="v">۱</span></div>
-          <div class="d"><span class="k">ابجد کبیر:</span><span class="v">۴۸</span></div>
-          <div class="d"><span class="k">ابجد صغیر:</span><span class="v">۱۲</span></div>
-        </div>
-        <div class="calc"><span class="lbl">رابطه ۱:</span>Sum_digits(48) = 4+8 = <span class="hl">12</span></div>
-        <div class="calc"><span class="lbl">رابطه ۲:</span>48 = 12 × (2+1+1) = <span class="hl">48</span></div>
-        <div class="calc"><span class="lbl">رابطه ۳:</span>40 − 12 = <span class="hl">28</span>  (حروف الفبای عربی)</div>
-      </div>
-      <div class="sub">
-        <h4>آیه ۲: تَنزِيلُ الْكِتَابِ مِنَ اللَّهِ الْعَزِيزِ الْعَلِيمِ</h4>
-        <div class="data-inline">
-          <div class="d"><span class="k">حروف:</span><span class="v">۲۴</span></div>
-          <div class="d"><span class="k">کلمات:</span><span class="v">۶</span></div>
-          <div class="d"><span class="k">ابجد کبیر:</span><span class="v">۱۴۰۸</span></div>
-          <div class="d"><span class="k">صغیر ۱:</span><span class="v">۱۴۸</span></div>
-          <div class="d"><span class="k">صغیر ۲:</span><span class="v">۹۸</span></div>
-        </div>
-        <div class="calc"><span class="lbl">رابطه ۱:</span>148 = 24×6 + 4 = <span class="hl">148</span></div>
-        <div class="calc"><span class="lbl">رابطه ۲:</span>98 = 24×4 + 2 = <span class="hl">98</span></div>
-        <div class="calc"><span class="lbl">رابطه ۳:</span>1408 = (40+4) × (24+6+2) = 44 × 32 = <span class="hl">1408</span></div>
-        <div class="calc"><span class="lbl">رابطه ۴:</span>Sum_digits(1408) = 1+4+0+8 = <span class="hl">13</span> = Sum_digits(148)</div>
-      </div>
-      <div class="result">
-        <div class="rh">نتیجه</div>
-        <p>در سوره غافر، آیه اول «حم» به عنوان کلید عمل می‌کند و ابجد صغیر آن (۱۲) در ساختار آیه دوم نقش دارد. ابجد کبیر آیه دوم از رابطه‌ای دقیق با شماره سوره و اجزای آیه به دست می‌آید.</p>
-      </div>
-    </section>
-
-    <!-- 16 -->
-    <section class="sec" id="sec16">
-      <div class="sec-head">
-        <div class="sec-num">۱۶</div>
-        <div class="meta">
-          <h2>سوره فصلت: «حم» و تنزیل از رحمان</h2>
-          <span class="ref">سوره ۴۱، آیات ۱ و ۲</span>
-        </div>
-      </div>
-      <div class="ayah">
-        <div class="ar" lang="ar">حمٓ ۝ تَنزِيلٌ مِّنَ الرَّحْمَٰنِ الرَّحِيمِ</div>
-        <div class="tr">حم، نازل شده از سوی رحمان و رحیم</div>
-      </div>
-      <div class="sub">
-        <h4>آیه ۱: حمٓ (کلید)</h4>
-        <div class="data-inline">
-          <div class="d"><span class="k">حروف:</span><span class="v">۲</span></div>
-          <div class="d"><span class="k">ابجد کبیر:</span><span class="v">۴۸</span></div>
-          <div class="d"><span class="k">ابجد صغیر:</span><span class="v">۱۲</span></div>
-        </div>
-        <div class="calc"><span class="lbl">رابطه ۱:</span>Sum_digits(48) = 4+8 = <span class="hl">12</span></div>
-        <div class="calc"><span class="lbl">رابطه ۲:</span>48 = 12 × 4 (حروف+کلمات+شماره آیه+۱)</div>
-        <div class="calc"><span class="lbl">رابطه ۳:</span>41 − 12 = <span class="hl">29</span>  (تعداد سوره‌های مقطعه‌دار)</div>
-      </div>
-      <div class="sub">
-        <h4>آیه ۲: تَنزِيلٌ مِّنَ الرَّحْمَٰنِ الرَّحِيمِ</h4>
-        <div class="data-inline">
-          <div class="d"><span class="k">حروف:</span><span class="v">۱۷</span></div>
-          <div class="d"><span class="k">کلمات:</span><span class="v">۴</span></div>
-          <div class="d"><span class="k">ابجد کبیر:</span><span class="v">۱۲۰۳</span></div>
-          <div class="d"><span class="k">صغیر ۱:</span><span class="v">۹۹</span></div>
-          <div class="d"><span class="k">صغیر ۲:</span><span class="v">۷۱</span></div>
-        </div>
-        <div class="calc"><span class="lbl">رابطه ۱:</span>Sum_digits(1203) = <span class="hl">6</span> = 2 + 4</div>
-        <div class="calc"><span class="lbl">رابطه ۲:</span>Sum_digits(71) = <span class="hl">8</span> = 2 × 4</div>
-        <div class="calc"><span class="lbl">رابطه ۳:</span>71 = 17 × 4 + 3 = <span class="hl">71</span></div>
-        <div class="calc"><span class="lbl">رابطه کلیدی:</span>1203 = (41 × 29) + 14 = 1189 + 14 = <span class="hl">1203</span></div>
-      </div>
-      <div class="result">
-        <div class="rh">نتیجه</div>
-        <p>ابجد کبیر آیه دوم (۱۲۰۳) برابر است با: (شماره سوره × تعداد سوره‌های دارای حروف مقطعه) + تعداد حروف مقطعه. یعنی ۴۱ × ۲۹ + ۱۴ = ۱۲۰۳. این رابطه، آیه را به یکی از اساسی‌ترین رموز ساختاری قرآن پیوند می‌زند.</p>
-      </div>
-    </section>
-
-    <!-- 17 -->
-    <section class="sec" id="sec17">
-      <div class="sec-head">
-        <div class="sec-num">۱۷</div>
-        <div class="meta">
-          <h2>سوره شوری: «حم عسق» و وحی</h2>
-          <span class="ref">سوره ۴۲، آیات ۱ تا ۳</span>
-        </div>
-      </div>
-      <div class="ayah">
-        <div class="ar" lang="ar">حمٓ ۝ عٓسٓقٓ ۝ كَذَٰلِكَ يُوحِي إِلَيْكَ وَإِلَى الَّذِينَ مِن قَبْلِكَ اللَّهُ الْعَزِيزُ الْحَكِيمُ</div>
-      </div>
-      <div class="sub">
-        <h4>آیه ۱: حمٓ</h4>
-        <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">ابجد کبیر ۴۸، صغیر ۱۲، حروف ۲</p>
-      </div>
-      <div class="sub">
-        <h4>آیه ۲: عٓسٓقٓ</h4>
-        <div class="data-inline">
-          <div class="d"><span class="k">حروف:</span><span class="v">۳</span></div>
-          <div class="d"><span class="k">ابجد کبیر:</span><span class="v">۲۳۰</span></div>
-          <div class="d"><span class="k">ابجد صغیر:</span><span class="v">۱۴</span></div>
-        </div>
-        <div class="calc"><span class="lbl">رابطه ۱:</span>42 − 14 = <span class="hl">28</span>  (حروف الفبا)</div>
-        <div class="calc"><span class="lbl">رابطه ۲:</span>230 = 42×5 + 11 + 9 = <span class="hl">230</span></div>
-      </div>
-      <div class="sub">
-        <h4>آیه ۳: كَذَٰلِكَ يُوحِي...</h4>
-        <div class="data-inline">
-          <div class="d"><span class="k">حروف:</span><span class="v">۳۹</span></div>
-          <div class="d"><span class="k">کلمات:</span><span class="v">۱۱</span></div>
-          <div class="d"><span class="k">ابجد کبیر:</span><span class="v">۲۲۴۱</span></div>
-          <div class="d"><span class="k">صغیر ۱:</span><span class="v">۲۴۹</span></div>
-          <div class="d"><span class="k">صغیر ۲:</span><span class="v">۱۳۹</span></div>
-        </div>
-        <div class="calc"><span class="lbl">رابطه ۱:</span>39 + 3 = <span class="hl">42</span>  (شماره سوره)</div>
-        <div class="calc"><span class="lbl">رابطه ۲:</span>249 − 139 = <span class="hl">110</span> = 11 × 10</div>
-        <div class="calc"><span class="lbl">رابطه ۳:</span>139 = 14×10 − 1 = <span class="hl">139</span></div>
-        <div class="calc"><span class="lbl">رابطه ۴:</span>249 = 14×17 + 11 = <span class="hl">249</span></div>
-        <div class="calc"><span class="lbl">رابطه ۵:</span>2241 = 42 × 53 + 15 = <span class="hl">2241</span></div>
-      </div>
-      <div class="result">
-        <div class="rh">نتیجه</div>
-        <p>شماره سوره (۴۲) برابر مجموع حروف آیه ۳ و آیه ۲ است (۳۹+۳). تفاوت دو ابجد صغیر آیه ۳ (۱۱۰) برابر ۱۰ × ۱۱ (تعداد کلمات) است. حروف مقطعه «عسق» و آیه پس از آن، یک واحد به هم پیوسته عددی را تشکیل می‌دهند.</p>
-      </div>
-    </section>
-
-    <!-- 18 -->
-    <section class="sec" id="sec18">
-      <div class="sec-head">
-        <div class="sec-num">۱۸</div>
-        <div class="meta">
-          <h2>سوره زخرف: «حم» و کتاب مبین</h2>
-          <span class="ref">سوره ۴۳، آیات ۱ و ۲</span>
-        </div>
-      </div>
-      <div class="ayah">
-        <div class="ar" lang="ar">حمٓ ۝ وَالْكِتَابِ الْمُبِينِ</div>
-        <div class="tr">حم، سوگند به کتاب مبین</div>
-      </div>
-      <div class="sub">
-        <h4>آیه ۱: حمٓ</h4>
-        <div class="data-inline">
-          <div class="d"><span class="k">حروف:</span><span class="v">۲</span></div>
-          <div class="d"><span class="k">ابجد کبیر:</span><span class="v">۴۸</span></div>
-          <div class="d"><span class="k">ابجد صغیر:</span><span class="v">۱۲</span></div>
-        </div>
-      </div>
-      <div class="sub">
-        <h4>آیه ۲: وَالْكِتَابِ الْمُبِينِ</h4>
-        <div class="data-inline">
-          <div class="d"><span class="k">حروف:</span><span class="v">۱۰</span></div>
-          <div class="d"><span class="k">کلمات:</span><span class="v">۳</span></div>
-          <div class="d"><span class="k">ابجد کبیر:</span><span class="v">۵۹۰</span></div>
-          <div class="d"><span class="k">صغیر ۱:</span><span class="v">۵۰</span></div>
-          <div class="d"><span class="k">صغیر ۲:</span><span class="v">۳۴</span></div>
-        </div>
-        <div class="calc"><span class="lbl">رابطه ۱:</span>Sum_digits(590) = <span class="hl">14</span> = 10+3+1</div>
-        <div class="calc"><span class="lbl">رابطه ۲:</span>Sum_digits(50) = <span class="hl">5</span> = 3+2</div>
-        <div class="calc"><span class="lbl">رابطه ۳:</span>Sum_digits(34) = <span class="hl">7</span> = 10−3</div>
-        <div class="calc"><span class="lbl">رابطه ۴:</span>50 = 43 + (10−3) = <span class="hl">50</span></div>
-        <div class="calc"><span class="lbl">رابطه ۵:</span>34 = 43 − (7+2) = <span class="hl">34</span></div>
-        <div class="calc"><span class="lbl">رابطه ۶:</span>590 = 50×12 − 10 = <span class="hl">590</span></div>
-        <div class="calc"><span class="lbl">رابطه ۷:</span>590 = 43×13 + (43−12) = <span class="hl">590</span></div>
-      </div>
-      <div class="result">
-        <div class="rh">نتیجه</div>
-        <p>آیه ۱ (حم) به عنوان کلید عمل می‌کند و ابجد صغیر آن (۱۲) در ساخت ابجد کبیر و صغیر آیه ۲ نقش مستقیم دارد. عدد ۳۴ (تکرار مریم) نیز در این محاسبات ظاهر می‌شود.</p>
-      </div>
-    </section>
-
-    <!-- 19 -->
-    <section class="sec" id="sec19">
-      <div class="sec-head">
-        <div class="sec-num">۱۹</div>
-        <div class="meta">
-          <h2>سوره مریم: «کهیعص» و عدد ۳۴ (تحلیل اول)</h2>
-          <span class="ref">سوره ۱۹، آیه ۱</span>
-        </div>
-      </div>
-      <div class="ayah">
-        <div class="ar" lang="ar">كٓهيعٓصٓ</div>
-        <div class="tr">کهیعص</div>
-      </div>
-      <div class="data-inline">
-        <div class="d"><span class="k">حروف:</span><span class="v">۵</span></div>
-        <div class="d"><span class="k">ابجد کبیر:</span><span class="v">۱۹۵</span></div>
-        <div class="d"><span class="k">صغیر ۱:</span><span class="v">۳۹</span></div>
-        <div class="d"><span class="k">صغیر ۲:</span><span class="v">۲۴</span></div>
-      </div>
-      <p>نام «مریم» در قرآن دقیقاً <strong>۳۴ بار</strong> تکرار شده. از طرفی، حرف «ص» در «کهیعص» <strong>سی و چهارمین حرف مقطعه</strong> از ابتدای قرآن است.</p>
-      <div class="calc"><span class="lbl">راه اول:</span>39 − 5 = <span class="hl">34</span></div>
-      <div class="calc"><span class="lbl">راه دوم:</span>19 + (1+9+5) = 19+15 = <span class="hl">34</span></div>
-      <div class="calc"><span class="lbl">راه سوم:</span>5 + 29 = <span class="hl">34</span></div>
-      <div class="calc"><span class="lbl">راه چهارم:</span>24 + 5 + 5 = <span class="hl">34</span></div>
-      <div class="result">
-        <div class="rh">نتیجه</div>
-        <p>عدد ۳۴ (تعداد تکرار «مریم» و جایگاه حرف «ص») از چهار مسیر مستقل از دل ساختار خود آیه بیرون می‌آید. این هماهنگی چندلایه، نشان‌دهنده پیوند عمیق میان حروف مقطعه و محتوای سوره است.</p>
-      </div>
-    </section>
-
-    <!-- 20 -->
-    <section class="sec" id="sec20">
-      <div class="sec-head">
-        <div class="sec-num">۲۰</div>
-        <div class="meta">
-          <h2>سوره مریم: تحلیل عمیق (عدد ۳۴ و حرف «ص»)</h2>
-          <span class="ref">سوره ۱۹، آیات ۱ و ۲</span>
-        </div>
-      </div>
-      <div class="ayah">
-        <div class="ar" lang="ar">كٓهيعٓصٓ ۝ ذِكْرُ رَحْمَتِ رَبِّكَ عَبْدَهُ زَكَرِيَّا</div>
-        <div class="tr">کهیعص، یاد رحمت پروردگارت بر بنده‌اش زکریا</div>
-      </div>
-      <div class="data-inline">
-        <div class="d"><span class="k">حروف آیه ۱:</span><span class="v">۵</span></div>
-        <div class="d"><span class="k">کلمات آیه ۱:</span><span class="v">۱</span></div>
-        <div class="d"><span class="k">ابجد کبیر ۱:</span><span class="v">۱۹۵</span></div>
-        <div class="d"><span class="k">صغیر ۱ (آ):</span><span class="v">۳۹</span></div>
-        <div class="d"><span class="k">صغیر ۲ (آ):</span><span class="v">۲۴</span></div>
-        <div class="d"><span class="k">حروف آیه ۲:</span><span class="v">۱۹</span></div>
-        <div class="d"><span class="k">کلمات آیه ۲:</span><span class="v">۵</span></div>
-        <div class="d"><span class="k">ابجد کبیر ۲:</span><span class="v">۲۱۰۹</span></div>
-        <div class="d"><span class="k">صغیر ۱ (۲):</span><span class="v">۱۱۷</span></div>
-        <div class="d"><span class="k">صغیر ۲ (۲):</span><span class="v">۶۶</span></div>
-      </div>
-      <h3>🔍 پیوند با حرف «ص»</h3>
-      <div class="calc"><span class="lbl">ارزش «ص»:</span>90 = 24 + 66 = <span class="hl">90</span></div>
-      <p>ابجد کبیر حرف «ص» (سی و چهارمین حرف مقطعه) برابر ۹۰ است. این عدد دقیقاً برابر مجموع ابجد صغیر ۲ آیه ۱ (۲۴) و ابجد صغیر ۲ آیه ۲ (۶۶) است.</p>
-      <h3>🔍 روابط بین دو آیه</h3>
-      <div class="calc"><span class="lbl">رابطه ۱:</span>19 = <span class="hl">19</span>  (شماره سوره = تعداد حروف آیه ۲)</div>
-      <div class="calc"><span class="lbl">رابطه ۲:</span>5 = <span class="hl">5</span>  (حروف آیه ۱ = کلمات آیه ۲)</div>
-      <div class="calc"><span class="lbl">رابطه ۳:</span>5 + 19 = <span class="hl">24</span></div>
-      <div class="calc"><span class="lbl">رابطه ۴:</span>117 = 3 × 39 = <span class="hl">117</span></div>
-      <div class="calc"><span class="lbl">رابطه ۵:</span>66 = 39 + 24 + 3 = <span class="hl">66</span></div>
-      <div class="calc"><span class="lbl">رابطه ۶:</span>2109 − 195 = 1914 = 66 × 29 = <span class="hl">1914</span></div>
-      <div class="calc"><span class="lbl">رابطه ۷:</span>2109 + 195 = 2304 = 4 × 24² = <span class="hl">2304</span></div>
-      <div class="calc"><span class="lbl">رابطه ۸:</span>2109 = 90 × 23 + 39 = <span class="hl">2109</span></div>
-      <div class="result">
-        <div class="rh">نتیجه نهایی مریم</div>
-        <p>این دو آیه با محوریت عدد ۳۴ و ارزش عددی «ص» = ۹۰، شبکه‌ای منظم از روابط را می‌سازند. تفاضل کبیرها (۱۹۱۴ = ۶۶ × ۲۹) و مجموع کبیرها (۲۳۰۴ = ۴ × ۲۴²) به ترتیب با ابجد صغیر ۲ آیه ۲ و ابجد صغیر ۲ آیه ۱ گره خورده‌اند.</p>
-      </div>
-    </section>
-
-    <!-- Conclusion -->
-    <section class="sec" id="conclusion">
-      <div class="sec-head">
-        <div class="sec-num gold">✓</div>
-        <div class="meta">
-          <h2>نتیجه‌گیری</h2>
-        </div>
-      </div>
-      <p>این تحقیق از یک پرسش فلسفی آغاز شد: <em>«چگونه پیامبران معجزات را انجام می‌دادند؟»</em> و در مسیر خود، از لایه‌های مختلفی گذشت:</p>
-      <ul>
-        <li><strong>لایه اول (فلسفی):</strong> معجزه چیست و چگونه باید آن را فهمید.</li>
-        <li><strong>لایه دوم (معرفت‌شناختی):</strong> چرا انسان مدرن با معجزه چالش دارد و نقش «دل» در پذیرش یا انکار حقیقت چیست.</li>
-        <li><strong>لایه سوم (قرآنی):</strong> قرآن به مثابه یک «کد» که نیاز به دیکود شدن دارد.</li>
-        <li><strong>لایه چهارم (عددی):</strong> کشف هماهنگی‌های عددی دقیق در ساختار آیات، حروف مقطعه و سوره‌ها.</li>
-      </ul>
-      <h3>🔹 مهم‌ترین یافته‌ها</h3>
-      <ul>
-        <li>حروف مقطعه، کلیدهای رمزگشایی ساختار سوره‌ها هستند و با محتوای آن‌ها پیوند عددی مستقیم دارند.</li>
-        <li>اعداد کلیدی مانند ۱۹، ۲۸، ۲۹، ۳۴ و ۴۶ در جای‌جای ساختار آیات ظاهر می‌شوند.</li>
-        <li>برخی هماهنگی‌ها به حقایق علمی اشاره دارند (کروموزوم‌های زنبور عسل و انسان) که ۱۴۰۰ سال پیش ناشناخته بودند.</li>
-        <li>هر آیه یک واحد به هم پیوسته عددی است که با شماره سوره، شماره آیه، تعداد حروف، تعداد کلمات و محتوای خود گره خورده است.</li>
-      </ul>
-      <div class="quote">این هماهنگی‌های عددی، برای اهل تدبر، نشانه‌ای از طراحی حکیمانه قرآن کریم است. هر چه بیشتر در قرآن غور می‌کنیم، لایه‌های جدیدی از نظم و حکمت آشکار می‌شود.</div>
-      <div class="ayah">
-        <div class="ar" lang="ar">وَمَا أُوتِيتُم مِّنَ الْعِلْمِ إِلَّا قَلِيلًا</div>
-        <div class="tr">و از علم، جز اندکی به شما داده نشده است (اسراء: ۸۵)</div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- SIDEBAR -->
-  <aside class="sidebar" id="sidebar">
-    <div class="sidebar-h">فهرست مطالب</div>
-
-    <span class="part">بخش اول · مبانی فلسفی</span>
-    <ul>
-      <li><a href="#sec1">چیستی معجزه</a></li>
-      <li><a href="#sec2">عقل مدرن و معجزه</a></li>
-      <li><a href="#sec3">خورشید: معجزه روزانه</a></li>
-      <li><a href="#sec4">امکان انکار</a></li>
-      <li><a href="#sec5">بیماری دل</a></li>
-      <li><a href="#sec6">قرآن به مثابه کد</a></li>
-    </ul>
-
-    <span class="part">بخش دوم · رمزگشایی عددی</span>
-    <ul>
-      <li><a href="#sec7">قصص: طسم و نمل</a></li>
-      <li><a href="#sec8">نحل: زنبور عسل</a></li>
-      <li><a href="#sec9">انسان: آفرینش از نطفه</a></li>
-      <li><a href="#sec10">مؤمنون: مراحل خلقت</a></li>
-      <li><a href="#sec11">مؤمنون: حضرت نوح</a></li>
-      <li><a href="#sec12">حجر: الر</a></li>
-      <li><a href="#sec13">یس: پنج آیه اول</a></li>
-      <li><a href="#sec14">ص: قرآن ذی‌الذکر</a></li>
-      <li><a href="#sec15">غافر: حم و تنزیل</a></li>
-      <li><a href="#sec16">فصلت: تنزیل از رحمان</a></li>
-      <li><a href="#sec17">شوری: حم عسق</a></li>
-      <li><a href="#sec18">زخرف: کتاب مبین</a></li>
-      <li><a href="#sec19">مریم: کهیعص و ۳۴</a></li>
-      <li><a href="#sec20">مریم: تحلیل عمیق</a></li>
-    </ul>
-
-    <span class="part">پایان</span>
-    <ul>
-      <li><a href="#conclusion">نتیجه‌گیری</a></li>
-    </ul>
-  </aside>
-
 </div>
 
-<button class="btt" id="btt" aria-label="بازگشت به بالا">↑</button>
+<button class="mobile-toggle" aria-label="باز کردن منو" id="mobileToggle">☰</button>
 
-<footer class="footer">
-  <div class="dua">رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا</div>
-  <p>پروردگارا، دل‌های ما را پس از آنکه هدایت کردی، منحرف مگردان</p>
+<div class="layout">
 
-  <div class="nav-row">
-    <a href="index.html">خانه</a>
-    <a href="laptop-repair-shiraz.html">تعمیر لپ تاپ شیراز</a>
-    <a href="laptop-repair-moaliabad.html">تعمیر لپ تاپ معالی‌آباد</a>
-    <a href="computer-repair-shiraz.html">تعمیر کامپیوتر شیراز</a>
-    <a href="computer-repair-moaliabad.html">تعمیر کامپیوتر معالی‌آباد</a>
-    <a href="corporate.html">خدمات سازمانی</a>
-    <a href="estimate.html">تخمین هزینه</a>
-    <a href="gallery.html">نمونه کارها</a>
-    <a href="shop.html">فروشگاه</a>
-    <a href="blog.html">وبلاگ</a>
+<!-- ==================== SIDEBAR ==================== -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <h2>رمزگشایی عددی قرآن</h2>
+    <p>تحقیق شخصی | فهرست مطالب</p>
   </div>
-
-  <div class="sig">
-    <p>هر چه گویم عشق را شرح و بیان &nbsp;|&nbsp; چون به قرآن آیم، خجل مانم از آن</p>
-    <p style="margin-top: 10px;">یافته‌ها و محاسبات این تحقیق، حاصل بررسی شخصی نویسنده است و باید با منابع معتبر راستی‌آزمایی شود.</p>
+  
+  <div class="nav-group">
+    <div class="nav-group-title">بخش اول: مبانی</div>
+    <a href="#sec-intro"><span class="num">۱</span> مقدمه و مفهوم معجزه</a>
+    <a href="#sec-how"><span class="num">۲</span> چگونگی وقوع معجزات</a>
+    <a href="#sec-between"><span class="num">۳</span> جماعت مابین دو زمان</a>
+    <a href="#sec-sun"><span class="num">۴</span> خورشید: معجزه دائمی</a>
+    <a href="#sec-deny"><span class="num">۵</span> امکان انکار</a>
+    <a href="#sec-heart"><span class="num">۶</span> دل، مرکز پذیرش</a>
+    <a href="#sec-modern"><span class="num">۷</span> بیماری دل در عصر مدرن</a>
   </div>
+  
+  <div class="nav-group">
+    <div class="nav-group-title">بخش دوم: قرآن به مثابه کد</div>
+    <a href="#sec-code"><span class="num">۸</span> قرآن به مثابه کد دیجیتال</a>
+    <a href="#sec-horouf"><span class="num">۹</span> حروف مقطعه و رمزگشایی</a>
+  </div>
+  
+  <div class="nav-group">
+    <div class="nav-group-title">بخش سوم: کشفیات عددی</div>
+    <a href="#sec-maryam"><span class="num">۱۰</span> سوره مریم (۱۹)</a>
+    <a href="#sec-nahl"><span class="num">۱۱</span> سوره نحل (۱۶)</a>
+    <a href="#sec-insan"><span class="num">۱۲</span> سوره انسان (۷۶)</a>
+    <a href="#sec-muminun14"><span class="num">۱۳</span> مؤمنون (۲۳) آیه ۱۴</a>
+    <a href="#sec-muminun23"><span class="num">۱۴</span> مؤمنون (۲۳) آیه ۲۳</a>
+    <a href="#sec-yasin"><span class="num">۱۵</span> سوره یس (۳۶)</a>
+    <a href="#sec-sad"><span class="num">۱۶</span> سوره ص (۳۸)</a>
+    <a href="#sec-fussilat"><span class="num">۱۷</span> سوره فصلت (۴۱)</a>
+    <a href="#sec-shura"><span class="num">۱۸</span> سوره شورى (۴۲)</a>
+    <a href="#sec-zukhruf"><span class="num">۱۹</span> سوره زخرف (۴۳)</a>
+    <a href="#sec-ghafir"><span class="num">۲۰</span> سوره غافر (۴۰)</a>
+  </div>
+  
+  <div class="nav-group">
+    <div class="nav-group-title">بخش چهارم: نتیجه</div>
+    <a href="#sec-final"><span class="num">۲۱</span> جمع‌بندی نهایی</a>
+  </div>
+</aside>
+
+<!-- ==================== MAIN ==================== -->
+<div class="main-content">
+
+<header class="hero">
+  <div class="particles" id="particles"></div>
+  <h1>اعجاز عددی قرآن؛ کاوشی در لایه‌های پنهان</h1>
+  <div class="subtitle">کشف لایه‌های پنهان حروف مقطعه و نظام ریاضی الهی</div>
+  <div class="meta">
+    <span class="item"><i>✍</i> تحقیق شخصی</span>
+    <span class="item"><i>📅</i> سال ۱۴۰۳</span>
+    <span class="item"><i>⏱</i> <span id="readTime">۲۵ دقیقه</span> مطالعه</span>
+    <span class="item"><i>📖</i> ۲۱ بخش</span>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ اعلان تحقیق شخصی ============ -->
+<div class="research-notice">
+  <h3>📌 درباره این تحقیق</h3>
+  <p>این مقاله حاصل <strong>تحقیق شخصی و مستقل نویسنده</strong> است و تمام کشفیات، محاسبات و تحلیل‌های عددی مندرج در آن، <strong>برداشت و یافته‌های شخصی ایشان</strong> می‌باشد و لزوماً مورد تأیید نهاد دینی یا علمی خاصی نیست.</p>
+  
+  <div class="method-box">
+    <strong>روش تحقیق:</strong> تجزیه و تحلیل ساختار عددی آیات با استفاده از محاسبه <strong>ابجد کبیر</strong> و <strong>ابجد صغیر</strong>، شمارش حروف و کلمات، شماره سوره و آیه، و برقراری ارتباط بین این عناصر با مفاهیم و مضامین دینی، علمی و تاریخی.
+  </div>
+  
+  <p><strong>توجه:</strong> خوانندگان محترم می‌توانند نتایج این تحقیق را با معیارهای علمی، دینی و شخصی خود بسنجند و در صورت تمایل، با روش‌های مستقل، محاسبات را راستی‌آزمایی کنند. هدف این نوشتار، ارائه یک <strong>تلاش تحقیقاتی و تدبری</strong> در قرآن کریم است، نه اثبات قطعی یک ادعا.</p>
+
+  <!-- اشتراک‌گذاری -->
+  <div class="share-bar">
+    <span class="label">اشتراک‌گذاری:</span>
+    <a class="share-btn wa" href="https://wa.me/?text=اعجاز%20عددی%20قرآن%20-%20کاوشی%20در%20لایه‌های%20پنهان" target="_blank" rel="noopener">واتساپ</a>
+    <a class="share-btn tg" href="https://t.me/share/url?url=&text=اعجاز%20عددی%20قرآن" target="_blank" rel="noopener">تلگرام</a>
+    <a class="share-btn tw" href="https://twitter.com/intent/tweet?text=اعجاز%20عددی%20قرآن" target="_blank" rel="noopener">توییتر</a>
+    <button class="share-btn copy" id="copyLink">📋 کپی لینک</button>
+  </div>
+</div>
+
+<!-- ===== 1 ===== -->
+<section id="sec-intro">
+  <span class="section-tag">بخش اول: مبانی</span>
+  <h2>۱. مقدمه و مفهوم معجزه</h2>
+  
+  <div class="intro-box">
+    <p>پرسش بنیادین انسان امروز این است: چگونه معجزات پیامبران در گذشته رخ می‌داده است؟ مثلاً حضرت موسی (ع) با زدن عصا به رودخانه، چگونه مانع حرکت آب شد؟</p>
+    <p>این تحقیق با نگاهی فلسفی، معرفت‌شناختی، دینی و علمی به بررسی این موضوع می‌پردازد و سپس به کشف لایه‌های عددی پنهان قرآن کریم می‌رسد.</p>
+  </div>
+  
+  <h3>۱.۱. تعریف معجزه</h3>
+  <p>معجزه در متون دینی معمولاً به این ویژگی‌ها تعریف می‌شود:</p>
+  <p><strong>خارق‌العاده بودن:</strong> عملی است که از چارچوب عادت‌های بشری و قوانین شناخته‌شده طبیعت خارج است.</p>
+  <p><strong>توأم با ادعای نبوت:</strong> صرفاً یک کار خارق‌العاده نیست، بلکه برای اثبات صدق ادعای فردی که خود را فرستاده خدا معرفی می‌کند، انجام می‌شود.</p>
+  <p><strong>تحدی (هم‌آوردی‌طلبی):</strong> همراه با دعوت به مقابله‌آوری و اثبات ناتوانی دیگران در آوردن مثل آن است.</p>
+  <p><strong>اراده و اذن الهی:</strong> منشأ آن قدرت بی‌نهایت خداوند است، نه قدرت بشری.</p>
+  
+  <div class="conclusion">
+    <h3>نکته کلیدی</h3>
+    <p>معجزه در ذات خود، «قانون‌شکنی» نیست، بلکه استفاده از قوانین و سنن برتر الهی است که برای ما ناشناخته است. عصا و حتی خود پیامبر، صرفاً مجرای تحقق اراده الهی هستند. فاعل اصلی، خداوند است.</p>
+  </div>
+</section>
+
+<!-- ===== 2 ===== -->
+<section id="sec-how">
+  <span class="section-tag">بخش اول: مبانی</span>
+  <h2>۲. چگونگی وقوع معجزات</h2>
+  
+  <h3>۲.۱. مواجهه عقل مدرن با معجزه</h3>
+  <p>ذهن علمی امروز که بر پایه تجربه و آزمایش بنا شده، با پدیده‌ای مواجه می‌شود که «غیرقابل تکرار» و «یک‌باره» است. اینجا دو دیدگاه عمده وجود دارد:</p>
+  <p><strong>دیدگاه علم‌گرای افراطی:</strong> هر چیزی که با قوانین شناخته‌شده فیزیک قابل تبیین نباشد، خرافه یا افسانه است.</p>
+  <p><strong>دیدگاه الهیاتی:</strong> علم تجربی، قوانین حاکم بر طبیعت را کشف می‌کند، اما «خالق» این قوانین می‌تواند در موارد خاصی (برای هدفی والاتر) تصرفی انجام دهد که از دید ما «معجزه» نامیده می‌شود.</p>
+  
+  <h3>۲.۲. نظریه‌های فلسفی درباره چگونگی معجزه</h3>
+  
+  <h4>الف) نظریه تبدیل ماهیت (تغییر جوهر)</h4>
+  <p>خداوند در لحظه معجزه، ماهیت شیء را تغییر می‌دهد. مثلاً چوب عصا موقتاً ماهیت آهن پیدا می‌کند.</p>
+  
+  <h4>ب) نظریه بهره‌گیری از قوانین ناشناخته طبیعت</h4>
+  <p>انبیا به دلیل مقام والای خود، به قوانین و نیروهای پنهان طبیعت (مثل انرژی‌های عظیم نهفته در ماده) دسترسی پیدا می‌کردند و با استفاده از آن قوانین برتر، کاری می‌کردند که برای دیگران غیرعادی است.</p>
+  
+  <h4>ج) نظریه تصرف در ادراک مخاطبان</h4>
+  <p>شاید خداوند در سیستم ادراکی مخاطبان تصرف می‌کند و آنها چیزی را می‌بینند که در عالم خارج به آن شکل نیست. این نظریه کمتر مورد قبول متکلمان اسلامی است.</p>
+  
+  <h4>د) نظریه توقف قوانین طبیعی</h4>
+  <p>خداوند به صورت موقت قانون علت و معلول حاکم بر طبیعت را تعطیل می‌کند.</p>
+</section>
+
+<!-- ===== 3 ===== -->
+<section id="sec-between">
+  <span class="section-tag">بخش اول: مبانی</span>
+  <h2>۳. جماعت مابین دو زمان</h2>
+  
+  <p>پرسشی اساسی: چگونه مردمی که در فاصله زمانی بین وقوع یک معجزه و عصر علمی که قادر به تبیین آن است زندگی می‌کنند، باید به آن ایمان بیاورند؟</p>
+  
+  <h3>سطوح مختلف ایمان و دلیل:</h3>
+  
+  <h4>سطح اول: ایمان مبتنی بر تجربه حسی</h4>
+  <p>مردم زمان خود پیامبر بالاترین درجه از یقین را داشتند. آنها با چشم خود صحنه را می‌دیدند.</p>
+  
+  <h4>سطح دوم: ایمان مبتنی بر گواهی و خبر متواتر</h4>
+  <p>این همان «جماعت مابین» است. این افراد معجزه را با چشم خود ندیده بودند، اما:</p>
+  <p><strong>۱. خبر متواتر:</strong> خبر این واقعه آنقدر گسترده و توسط افراد مختلف نقل شده بود که یقین‌آور بود.</p>
+  <p><strong>۲. انطباق با عقل سلیم:</strong> آنها از طریق «صدق مدعی» به آن ایمان می‌آوردند.</p>
+  
+  <h4>سطح سوم: ایمان مبتنی بر عقل و امکان‌سنجی فلسفی</h4>
+  <p>متکلمان و فیلسوفان دینی وظیفه داشتند که «امکان وقوع» چنین رخدادی را اثبات کنند.</p>
+  
+  <h4>سطح چهارم: ایمان مبتنی بر تبیین علمی</h4>
+  <p>انسان امروزی که با تبیین‌های علمی می‌تواند معجزه را توجیه کند، در موقعیت ممتازی قرار دارد.</p>
+  
+  <div class="conclusion">
+    <h3>نتیجه</h3>
+    <p>ایمان جماعت مابین، «تاریخی» و «شخص‌محور» بود، در حالی که ایمان انسان عصر علم، می‌تواند «علمی» و «تبیینی» نیز باشد. اما هر دو در یک نقطه مشترک هستند: پذیرش یک رخداد خارق‌العاده به عنوان فعل الهی.</p>
+  </div>
+</section>
+
+<!-- ===== 4 ===== -->
+<section id="sec-sun">
+  <span class="section-tag">بخش اول: مبانی</span>
+  <h2>۴. خورشید: معجزه دائمی</h2>
+  
+  <p>در همان زمان پیامبران نیز «پدیده‌های خارق‌العاده» وجود داشته — مثل خورشید که هر روز طلوع و غروب می‌کند و بر فراز آسمان ایستاده. این یک «معجزه دائمی» است که مردم هر روز با چشم خود می‌بینند، اما چون به آن عادت کرده‌اند، از شگفتی آن غافل می‌شوند.</p>
+  
+  <h3>۴.۱. عادت‌زدگی و از دست دادن حس شگفتی</h3>
+  <p>انسان‌ها معمولاً چیزهایی را که هر روز می‌بینند، «عادی» فرض می‌کنند. در زمان موسی (ع)، مردم خورشید را می‌دیدند که هر روز از مشرق طلوع می‌کند — این برایشان عادی بود. اما وقتی همان عصا تبدیل به اژدها شد، ناگهان «عادت‌شان شکست» و متوجه شدند که نیرویی فراتر از قوانین عادی در کار است.</p>
+  
+  <h3>۴.۲. تفاوت معجزه با قانون طبیعت</h3>
+  <p><strong>نگاه اول:</strong> تفاوت در «تکرار» vs «عدم تکرار» — قانون طبیعت دائماً تکرار می‌شود، معجزه یک بار رخ می‌دهد.</p>
+  <p><strong>نگاه دوم (عمیق‌تر):</strong> هر دو «معجزه» هستند، اما یک‌بار «تکراری» و یک‌بار «نوظهور». از منظر الهی، خودِ قوانین طبیعت هم «معجزه» هستند.</p>
+  
+  <div class="ayah-box">
+    <div class="ayah-text">إِنَّ فِي خَلْقِ السَّمَاوَاتِ وَالْأَرْضِ وَاخْتِلَافِ اللَّيْلِ وَالنَّهَارِ لَآيَاتٍ لِأُولِي الْأَلْبَابِ</div>
+    <p>(آل‌عمران: ۱۹۰) — همانا در آفرینش آسمان‌ها و زمین و آمد و شد شب و روز، نشانه‌هایی برای خردمندان است.</p>
+  </div>
+  
+  <div class="conclusion">
+    <h3>نکته کلیدی</h3>
+    <p>معجزات انبیا در واقع «زنگ بیدارباش» هستند برای انسان‌هایی که در خواب عادت فرو رفته‌اند. همان قدرتی که الان این رود را شکافت، همان قدرتی است که هر روز خورشید را طلوع می‌دهد.</p>
+  </div>
+</section>
+
+<!-- ===== 5 ===== -->
+<section id="sec-deny">
+  <span class="section-tag">بخش اول: مبانی</span>
+  <h2>۵. امکان انکار</h2>
+  
+  <p>آیا می‌شود این چیزها را انکار کرد؟ پاسخ کوتاه: بله، نه تنها ممکن، بلکه کاملاً ممکن و حتی برای بسیاری از انسان‌ها راحت‌ترین کار است.</p>
+  
+  <h3>۵.۱. چرا انکار ممکن است؟</h3>
+  
+  <h4>الف) انکار به دلیل «تبیین جایگزین»</h4>
+  <p>یک نفر می‌گوید: «شکافتن دریا؟ این همان پدیده جزر و مد است.» این فرد با ارائه یک «تبیین طبیعی»، نیاز به پذیرش «ماوراء طبیعی» را از بین می‌برد.</p>
+  
+  <h4>ب) انکار به دلیل «اصل عدم باور به ماوراء»</h4>
+  <p>برخی می‌گویند: «من اصولاً وجود نیروی فراطبیعی را قبول ندارم. جهان یک سیستم بسته علّی است.»</p>
+  
+  <h4>ج) انکار به دلیل «ضعف اسناد تاریخی»</h4>
+  <p>برخی می‌گویند: «این داستان‌ها بعدها نوشته شده‌اند. چند هزار سال از آنها می‌گذرد.»</p>
+  
+  <h4>د) انکار به دلیل «عادت‌زدگی»</h4>
+  <p>فرد در برابر «معجزه لحظه‌ای» می‌ایستد و می‌گوید: «محال است!» اما در برابر «معجزه دائمی» مثل خورشید، حتی سوال هم نمی‌پرسد.</p>
+  
+  <h3>۵.۲. تفاوت «انکار» با «نپذیرفتن»</h3>
+  <p><strong>نپذیرفتن:</strong> فرد می‌گوید «من دلیل کافی برای پذیرش ندارم.»</p>
+  <p><strong>انکار:</strong> فرد می‌گوید «قطعاً این دروغ است.»</p>
+  <p>انکار، ادعایی قوی‌تر از نپذیرفتن است. برای انکار یک پدیده تاریخی، فرد باید «علم غیب» داشته باشد!</p>
+</section>
+
+<!-- ===== 6 ===== -->
+<section id="sec-heart">
+  <span class="section-tag">بخش اول: مبانی</span>
+  <h2>۶. دل، مرکز پذیرش</h2>
+  
+  <p>بیشتر کسانی که با پیامبران دشمنی کردند، «نخبگان» و «خواص» زمانه بودند، نه عوام مردم. فرعون، قارون، ابوجهل — اینها کم‌هوش نبودند. کم‌اطلاع نبودند. پس مشکل کجا بود؟</p>
+  
+  <div class="ayah-box">
+    <div class="ayah-text">إِنَّ فِي ذَٰلِكَ لَذِكْرَىٰ لِمَن كَانَ لَهُ قَلْبٌ</div>
+    <p>(ق: ۳۷) — در اینها تذکری است برای کسی که دل داشته باشد.</p>
+  </div>
+  
+  <h3>دل در قرآن یعنی چه؟</h3>
+  <p>قرآن وقتی می‌گوید «خدا بر دل‌هایشان مهر زد»، یک مفهوم بسیار عمیق را مطرح می‌کند: <strong>دل، «مرکز تشخیص» انسان است، نه صرفاً مرکز احساسات.</strong></p>
+  <p>چشم می‌بیند، اما دل است که «می‌فهمد» چه دیده. گوش می‌شنود، اما دل است که «تصدیق» می‌کند. عقل تحلیل می‌کند، اما دل است که «جهت» را انتخاب می‌کند.</p>
+  
+  <h3>چرا دل بیمار می‌شود؟</h3>
+  <p><strong>۱. تعلق به قدرت و موقعیت:</strong> فرعون وقتی دید با ایمان آوردن به موسی، سلطانه‌اش به خطر می‌افتد، دلش نپذیرفت.</p>
+  <p><strong>۲. تعلق به ثروت:</strong> قارون وقتی دید اگر دین موسی را بپذیرد، باید بخشی از ثروتش را انفاق کند، دلش بیمار شد.</p>
+  <p><strong>۳. تعصب و عادت‌های قبیله‌ای:</strong> ابوجهل می‌گفت: «ما و بنی‌هاشم همیشه رقیب بودیم.»</p>
+  <p><strong>۴. تکبر:</strong> امتناع از پذیرش حقیقت چون از جنس «من» نیست.</p>
+  
+  <div class="conclusion">
+    <h3>نکته پایانی</h3>
+    <p>کسی که دلش سالم باشد، خورشید برایش آیه خداست، شکافتن دریا هم آیه خداست. کسی که دلش بیمار باشد، خورشید را یک پدیده فیزیکی ساده می‌بیند، شکافتن دریا را هم دروغ تاریخ می‌خواند. پس معجزه فقط برای بیدار کردن دل‌هاست، نه برای قانع کردن ذهن‌ها.</p>
+  </div>
+</section>
+
+<!-- ===== 7 ===== -->
+<section id="sec-modern">
+  <span class="section-tag">بخش اول: مبانی</span>
+  <h2>۷. بیماری دل در عصر مدرن</h2>
+  
+  <p>«بیماری دل» امروز شکل‌های تازه پیدا کرده، اما ماهیتش همان است که همیشه بوده:</p>
+  
+  <h3>۱. مدرنیته‌زدگی یا بت‌وارگی علم</h3>
+  <p>امروز خیلی‌ها علم را نه به عنوان یک ابزار، که به عنوان یک «جهان‌بینی» پذیرفته‌اند. هر چه علم تجربی نگوید، وجود ندارد. این همان «بت‌پرستی مدرن» است.</p>
+  
+  <h3>۲. سرگرمی و غفلت دیجیتال</h3>
+  <p>امروز دیگر نیازی به «تعمق» نیست. یک دقیقه بیکار شوی، گوشی را برمی‌داری. دل چه زمانی بیمار می‌شود؟ وقتی «سکوت» را تجربه نکند.</p>
+  
+  <h3>۳. مصرف‌گرایی افراطی</h3>
+  <p>انسان امروز یاد گرفته برای هر دردی، راه حل «مصرفی» پیدا کند. این بمباران مصرفی، فرصت «مواجهه با حقیقت» را می‌گیرد.</p>
+  
+  <h3>۴. تکبر تکنولوژیک</h3>
+  <p>انسان امروز فکر می‌کند چون می‌تواند به ماه سفر کند، پس «نیازی به خدا» ندارد. این همان تکبر فرعونی است، با لباس مدرن.</p>
+  
+  <div class="conclusion">
+    <h3>حرف آخر</h3>
+    <p>بزرگ‌ترین معجزه امروز، نه شکافتن دریا، نه زنده کردن مرده، که «بیدار شدن دل از خواب مدرنیته» است. کسی که در این هیاهوی دیجیتال و مصرف‌گرایی بی‌امان، بتواند دلش را زنده نگه دارد و حقیقت را ببیند، خودش معجزه‌ای است.</p>
+  </div>
+</section>
+
+<div class="divider">✦ ✦ ✦</div>
+
+<!-- ===== 8 ===== -->
+<section id="sec-code">
+  <span class="section-tag">بخش دوم: قرآن به مثابه کد</span>
+  <h2>۸. قرآن به مثابه کد دیجیتال</h2>
+  
+  <p>قرآن یک «کد منبع» (Source Code) است که برای «دیکد» شدن، نیاز به پیش‌نیازهایی دارد. همان‌طور که کد باینری برای یک انسان عادی بی‌معناست اما برای یک برنامه‌نویس دنیایی از اطلاعات را حمل می‌کند، قرآن نیز برای «اهلش» لایه‌های عمیقی از معنا دارد.</p>
+  
+  <div class="ayah-box">
+    <div class="ayah-text">إِنَّهُ لَقُرْآنٌ كَرِيمٌ ۞ فِي كِتَابٍ مَّكْنُونٍ ۞ لَّا يَمَسُّهُ إِلَّا الْمُطَهَّرُونَ</div>
+    <p>(واقعه: ۷۷-۷۹) — این قرآنی کریم است که در کتابی پنهان جای دارد و جز پاکان به آن دست نمی‌یابند.</p>
+  </div>
+  
+  <h3>ویژگی‌های قرآن به عنوان کد:</h3>
+  
+  <h4>۱. نیاز به «دیکودر» دارد</h4>
+  <p>برای دسترسی به لایه‌های عمیق، نیاز به «طهارت» داری — هم پاکی ظاهری، هم پاکی باطن و دل.</p>
+  
+  <h4>۲. چندلایه بودن (Multi-layer Architecture)</h4>
+  <p>در برنامه‌نویسی مدرن، کدها لایه‌لایه هستند. قرآن هم همین طور است. پیامبر اسلام (ص) فرمود: «إِنَّ لِلْقُرْآنِ ظَهْرًا وَبَطْنًا، وَلِبَطْنِهِ بَطْنٌ إِلَى سَبْعَةِ أَبْطُنٍ» (همانا قرآن را ظاهری و باطنی است، و باطن آن هم باطنی دارد تا هفت بطن.)</p>
+  
+  <h4>۳. قابلیت اجرا در «سیستم‌عامل»های مختلف</h4>
+  <p>قرآن در «سیستم‌عامل»های مختلف بشری (فرهنگ‌ها، زمان‌ها، مکان‌های مختلف) قابلیت اجرا دارد.</p>
+  
+  <h4>۴. فشردگی اطلاعات (Information Density)</h4>
+  <p>در یک آیه می‌تواند چنان بار معنایی باشد که کتاب‌ها درباره‌اش نوشته شود.</p>
+  
+  <h4>۵. پویایی (Dynamic)</h4>
+  <p>قرآن با گذر ۱۴۰۰ سال، هنوز برای انسان مدرن حرف تازه دارد. این نشان می‌دهد «کد» آن هوشمندانه نوشته شده.</p>
+  
+  <h4>۶. متن‌باز (Open Source)</h4>
+  <p>هر کس می‌تواند بیاید در آن تدبر کند، نقد کند، بفهمد. قرآن ۱۴۰۰ سال است که «متن‌باز» مانده و بهترین مغزهای بشری روی آن کار کرده‌اند و هنوز هم «باگ» در آن پیدا نکرده‌اند.</p>
+</section>
+
+<!-- ===== 9 ===== -->
+<section id="sec-horouf">
+  <span class="section-tag">بخش دوم: قرآن به مثابه کد</span>
+  <h2>۹. حروف مقطعه و رمزگشایی</h2>
+  
+  <p>۲۹ سوره قرآن با حروفی مثل «الم»، «الر»، «حم»، «یس» و... شروع می‌شود. این حروف را «حروف مقطعه» می‌گویند.</p>
+  
+  <p>اگر حقیقت و حکمت و محبت به این آسانی بود که همه آن را ببینند، آن‌وقت دست هر نالایقی به پاکی دراز می‌شد. حقیقت، «حریم» دارد. اگر حقیقت برای همه به یک اندازه آشکار بود، دیگر «ارزش» نداشت.</p>
+  
+  <div class="conclusion">
+    <h3>حکمت رمز بودن حروف مقطعه</h3>
+    <p>تا دست نالایق به عمق قرآن نرسد. اگر همه چیز در قرآن ظاهری و سطحی بود، هر کسی با کمی سواد می‌آمد و می‌گفت «من همه قرآن را فهمیدم». اما این حروف نشان می‌دهد: یک جای کار عمیق‌تر است، باید اهلش باشی، باید طهارت داشته باشی.</p>
+  </div>
+  
+  <h3>کشف اول: عدد ۳۴ و حرف «ص» در سوره مریم</h3>
+  <p>نام مبارک «مریم» دقیقاً ۳۴ بار در قرآن تکرار شده است. و اگر حروف مقطعه ابتدای سوره‌های قرآن را از ابتدای قرآن (سوره بقره) تا پایان حروف «کهیعص» در ابتدای سوره مریم بشماریم، تعداد حروف به عدد ۳۴ می‌رسد.</p>
+  
+  <div class="calc">
+    <button class="calc-copy" data-target>📋 کپی</button>
+۱. بقره (الم): ۳ حرف &nbsp;→&nbsp; مجموع: <span class="result">۳</span><br>
+۲. آل‌عمران (الم): ۳ حرف &nbsp;→&nbsp; مجموع: <span class="result">۶</span><br>
+۳. اعراف (المص): ۴ حرف &nbsp;→&nbsp; مجموع: <span class="result">۱۰</span><br>
+۴. یونس (الر): ۳ حرف &nbsp;→&nbsp; مجموع: <span class="result">۱۳</span><br>
+۵. هود (الر): ۳ حرف &nbsp;→&nbsp; مجموع: <span class="result">۱۶</span><br>
+۶. یوسف (الر): ۳ حرف &nbsp;→&nbsp; مجموع: <span class="result">۱۹</span><br>
+۷. رعد (المر): ۴ حرف &nbsp;→&nbsp; مجموع: <span class="result">۲۳</span><br>
+۸. ابراهیم (الر): ۳ حرف &nbsp;→&nbsp; مجموع: <span class="result">۲۶</span><br>
+۹. حجر (الر): ۳ حرف &nbsp;→&nbsp; مجموع: <span class="result">۲۹</span><br>
+۱۰. مریم (کهیعص): ۵ حرف &nbsp;→&nbsp; مجموع نهایی: <span class="result">۳۴</span>
+  </div>
+  
+  <p>حرف «ص» در «کهیعص» دقیقاً سی و چهارمین حرف مقطعه از ابتدای قرآن است. و جالب اینکه نام «مریم» نیز ۳۴ بار در قرآن تکرار شده است.</p>
+</section>
+
+<div class="divider">✦ ✦ ✦</div>
+
+<!-- ===== 10 ===== -->
+<section id="sec-maryam">
+  <span class="section-tag">بخش سوم: کشفیات عددی</span>
+  <h2>۱۰. سوره مریم (۱۹)، آیات ۱ و ۲</h2>
+  
+  <h3>آیه ۱: كٓهيعٓصٓ</h3>
+  <div class="data-grid">
+    <div class="data-item"><span class="label">تعداد حروف</span><span class="value">۵</span></div>
+    <div class="data-item"><span class="label">تعداد کلمات</span><span class="value">۱</span></div>
+    <div class="data-item"><span class="label">ابجد کبیر</span><span class="value">۱۹۵</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر ۱</span><span class="value">۳۹</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر ۲</span><span class="value">۲۴</span></div>
+  </div>
+  
+  <h3>آیه ۲: ذِكْرُ رَحْمَتِ رَبِّكَ عَبْدَهُۥ زَكَرِيَّآ</h3>
+  <div class="data-grid">
+    <div class="data-item"><span class="label">تعداد حروف</span><span class="value">۱۹</span></div>
+    <div class="data-item"><span class="label">تعداد کلمات</span><span class="value">۵</span></div>
+    <div class="data-item"><span class="label">ابجد کبیر</span><span class="value">۲۱۰۹</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر ۱</span><span class="value">۱۱۷</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر ۲</span><span class="value">۶۶</span></div>
+  </div>
+  
+  <h3>تحلیل عددی آیه ۱:</h3>
+  <div class="calc">
+    <button class="calc-copy">📋 کپی</button>
+ابجد کبیر = ابجد صغیر ۱ × تعداد حروف<br>
+۳۹ × ۵ = <span class="result">۱۹۵</span> ✓<br><br>
+
+ابجد صغیر ۲ = شماره سوره + تعداد حروف<br>
+۱۹ + ۵ = <span class="result">۲۴</span> ✓<br><br>
+
+ابجد صغیر ۱ = ۲ × شماره سوره + ۱<br>
+۲×۱۹ + ۱ = <span class="result">۳۹</span> ✓<br><br>
+
+تفاوت دو ابجد صغیر = جمع ارقام ابجد کبیر<br>
+۳۹ − ۲۴ = <span class="result">۱۵</span> = ۱+۹+۵ <span class="comment">// برابر ✓</span>
+  </div>
+  
+  <h3>تحلیل عددی آیه ۲:</h3>
+  <div class="calc">
+    <button class="calc-copy">📋 کپی</button>
+تعداد حروف = شماره سوره<br>
+۱۹ = <span class="result">۱۹</span> ✓<br><br>
+
+تعداد کلمات = تعداد حروف آیه ۱<br>
+۵ = <span class="result">۵</span> ✓<br><br>
+
+ابجد صغیر ۱ = ۳ × ابجد صغیر ۱ آیه ۱<br>
+۳ × ۳۹ = <span class="result">۱۱۷</span> ✓<br><br>
+
+ابجد صغیر ۲ = ابجد صغیر ۱ آیه ۱ + ابجد صغیر ۲ آیه ۱ + ۳<br>
+۳۹ + ۲۴ + ۳ = <span class="result">۶۶</span> ✓<br><br>
+
+جمع ارقام ابجد کبیر = جمع ارقام ابجد صغیر ۲<br>
+۲+۱+۰+۹ = <span class="result">۱۲</span> = ۶+۶ <span class="comment">// برابر ✓</span>
+  </div>
+  
+  <h3>کشف کلیدی: پیوند با عدد ۳۴ و حرف «ص»</h3>
+  
+  <div class="relation"><strong>راه اول:</strong> ۳۹ − ۵ = ۳۴ &nbsp;(ابجد صغیر ۱ آیه ۱ منهای تعداد حروف آیه ۱)</div>
+  <div class="relation"><strong>راه دوم:</strong> ۱۹ + ۱۵ = ۳۴ &nbsp;(شماره سوره + جمع ارقام ابجد کبیر آیه ۱)</div>
+  <div class="relation"><strong>راه سوم:</strong> ۵ + ۲۹ = ۳۴ &nbsp;(تعداد حروف آیه ۱ + تعداد سوره‌های مقطعه‌دار)</div>
+  <div class="relation"><strong>راه چهارم:</strong> ۲۴ + ۵ + ۵ = ۳۴ &nbsp;(ابجد صغیر ۲ آیه ۱ + تعداد حروف آیه ۱ + تعداد کلمات آیه ۲)</div>
+  
+  <div class="calc">
+    <button class="calc-copy">📋 کپی</button>
+ارزش ابجد کبیر حرف «ص» = <span class="result">۹۰</span><br><br>
+
+ابجد صغیر ۲ آیه ۱ + ابجد صغیر ۲ آیه ۲<br>
+۲۴ + ۶۶ = <span class="result">۹۰</span> ✓<br><br>
+<span class="comment">// ارزش حرف «ص» = مجموع ابجد صغیر ۲ دو آیه</span><br><br>
+
+تفاضل کبیرها: ۲۱۰۹ − ۱۹۵ = <span class="result">۱۹۱۴</span><br>
+۱۹۱۴ = ۶۶ × ۲۹ <span class="comment">// ابجد صغیر ۲ آیه ۲ × تعداد سوره‌های مقطعه</span><br><br>
+
+مجموع کبیرها: ۲۱۰۹ + ۱۹۵ = <span class="result">۲۳۰۴</span><br>
+۲۳۰۴ = ۴ × ۲۴² <span class="comment">// ۴ برابر مربع ابجد صغیر ۲ آیه ۱</span><br><br>
+
+رابطه با «ص» و سال‌های نزول:<br>
+۲۱۰۹ = ۹۰ × ۲۳ + ۳۹<br>
+<span class="comment">// ۹۰ = ارزش «ص»، ۲۳ = سال‌های نزول، ۳۹ = ابجد صغیر ۱ آیه ۱</span>
+  </div>
+  
+  <div class="conclusion">
+    <h3>نتیجه کشف سوره مریم</h3>
+    <p>این دو آیه با محوریت عدد ۳۴ (تکرار «مریم» و جایگاه حرف «ص») و ارزش عددی «ص» = ۹۰، شبکه‌ای منظم از روابط را می‌سازند. عدد ۳۴ از چهار مسیر مستقل از ساختار آیات بیرون می‌آید. ارزش «ص» دقیقاً مجموع ابجد صغیر ۲ دو آیه است.</p>
+  </div>
+</section>
+
+<!-- ===== 11 ===== -->
+<section id="sec-nahl">
+  <span class="section-tag">بخش سوم: کشفیات عددی</span>
+  <h2>۱۱. سوره نحل (۱۶)، آیه ۶۸: زنبور عسل</h2>
+  
+  <div class="ayah-box">
+    <div class="ayah-text">وَأَوْحَىٰ رَبُّكَ إِلَى النَّحْلِ أَنِ اتَّخِذِي مِنَ الْجِبَالِ بُيُوتًا وَمِنَ الشَّجَرِ وَمِمَّا يَعْرِشُونَ</div>
+  </div>
+  
+  <div class="data-grid">
+    <div class="data-item"><span class="label">شماره سوره</span><span class="value">۱۶</span></div>
+    <div class="data-item"><span class="label">شماره آیه</span><span class="value">۶۸</span></div>
+    <div class="data-item"><span class="label">تعداد کلمات</span><span class="value">۱۶</span></div>
+    <div class="data-item"><span class="label">ابجد کبیر</span><span class="value">۴۱۰۰</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر</span><span class="value">۲۳۶</span></div>
+    <div class="data-item"><span class="label">تعداد حروف</span><span class="value">۵۰</span></div>
+    <div class="data-item"><span class="label">شماره آیه در کل قرآن</span><span class="value">۱۹۶۹</span></div>
+  </div>
+  
+  <h3>تحلیل عددی:</h3>
+  <div class="calc">
+    <button class="calc-copy">📋 کپی</button>
+سوره + آیه: ۱۶ + ۶۸ = <span class="result">۸۴</span><br><br>
+
+ابجد کبیر ÷ تعداد حروف: ۴۱۰۰ ÷ ۵۰ = <span class="result">۸۲</span><br><br>
+
+۸۲ − ۵۰ = <span class="result">۳۲</span><br>
+<span class="comment">// ۳۲ = تعداد کل کروموزوم‌های زنبور ماده (۱۶ جفت)</span><br><br>
+
+۸۴ − ۸۲ = <span class="result">۲</span><br>
+<span class="comment">// ۲ = نماد دو جنس (نر و ماده)</span>
+  </div>
+  
+  <h3>توضیح علمی:</h3>
+  <p>زنبورهای ماده (ملکه و کارگر): دیپلوئید → ۳۲ کروموزوم (۱۶ جفت). زنبورهای نر (پران): هاپلوئید → ۱۶ کروموزوم (تک‌تایی). برای تولید یک زنبور جدید، ۱۶ کروموزوم از مادر + ۱۶ کروموزوم از پدر ترکیب می‌شود.</p>
+  
+  <div class="conclusion">
+    <h3>نتیجه کشف سوره نحل</h3>
+    <p>سوره ۱۶ (نحل) با ۱۶ کلمه درباره زنبور صحبت می‌کند و ابجد کبیر آیه با تعداد حروف، عدد ۳۲ (تعداد کل کروموزوم‌ها) و ۲ (دو جنس) را بیرون می‌دهد. این هماهنگی ۱۴۰۰ سال پیش، زمانی که هیچ کس از کروموزوم و ژنتیک خبر نداشت، نازل شده است.</p>
+  </div>
+</section>
+
+<!-- ===== 12 ===== -->
+<section id="sec-insan">
+  <span class="section-tag">بخش سوم: کشفیات عددی</span>
+  <h2>۱۲. سوره انسان (۷۶)، آیه ۲: آفرینش از نطفه</h2>
+  
+  <div class="ayah-box">
+    <div class="ayah-text">إِنَّا خَلَقْنَا الْإِنسَانَ مِن نُّطْفَةٍ أَمْشَاجٍ نَّبْتَلِيهِ فَجَعَلْنَاهُ سَمِيعًا بَصِيرًا</div>
+  </div>
+  
+  <div class="data-grid">
+    <div class="data-item"><span class="label">شماره سوره</span><span class="value">۷۶</span></div>
+    <div class="data-item"><span class="label">شماره آیه</span><span class="value">۲</span></div>
+    <div class="data-item"><span class="label">تعداد حروف</span><span class="value">۴۶</span></div>
+    <div class="data-item"><span class="label">ابجد کبیر</span><span class="value">۲۸۲۲</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر</span><span class="value">۱۸۲</span></div>
+  </div>
+  
+  <h3>تحلیل عددی:</h3>
+  <div class="calc">
+    <button class="calc-copy">📋 کپی</button>
+تعداد حروف = <span class="result">۴۶</span><br>
+<span class="comment">// ۴۶ = تعداد کروموزوم‌های انسان (۲۳ جفت)</span><br><br>
+
+جمع ارقام ابجد کبیر: ۲+۸+۲+۲ = <span class="result">۱۴</span><br>
+<span class="comment">// ۱۴ = نماد نور و اهل بیت (ع)</span><br><br>
+
+جمع ارقام ابجد صغیر: ۱+۸+۲ = <span class="result">۱۱</span><br>
+<span class="comment">// ۱۱ = نظم الهی و آفرینش</span>
+  </div>
+  
+  <h3>تکرار واژه «الإنسان» در قرآن:</h3>
+  <div class="calc">
+    <button class="calc-copy">📋 کپی</button>
+الْإِنسَانُ: ۲۷ بار<br>
+الْإِنسَانَ: ۲۷ بار<br>
+لِلْإِنسَانِ: ۶ بار<br>
+إِنسَانٍ: ۱ بار<br>
+الْإِنسَانِ: ۴ بار<br>
+أَنسَانِيهُ: ۱ بار<br>
+<span class="result">مجموع = ۶۶</span><br><br>
+
+ابجد کلمه «الله» = <span class="result">۶۶</span><br>
+<span class="comment">// انسان وقتی به کمال برسد، می‌تواند مظهر «الله» شود</span>
+  </div>
+  
+  <div class="conclusion">
+    <h3>نتیجه کشف سوره انسان</h3>
+    <p>آیه‌ای که از خلقت انسان از نطفه سخن می‌گوید، دقیقاً ۴۶ حرف دارد (تعداد کروموزوم‌های انسان). واژه «الإنسان» با تمام مشتقاتش ۶۶ بار در قرآن تکرار شده که برابر با ابجد کلمه «الله» است.</p>
+  </div>
+</section>
+
+<!-- ===== 13 ===== -->
+<section id="sec-muminun14">
+  <span class="section-tag">بخش سوم: کشفیات عددی</span>
+  <h2>۱۳. سوره مؤمنون (۲۳)، آیه ۱۴: مراحل خلقت</h2>
+  
+  <div class="ayah-box">
+    <div class="ayah-text">ثُمَّ خَلَقْنَا النُّطْفَةَ عَلَقَةً فَخَلَقْنَا الْعَلَقَةَ مُضْغَةً فَخَلَقْنَا الْمُضْغَةَ عِظَامًا فَكَسَوْنَا الْعِظَامَ لَحْمًا ثُمَّ أَنشَأْنَاهُ خَلْقًا آخَرَ ۚ فَتَبَارَكَ اللَّهُ أَحْسَنُ الْخَالِقِينَ</div>
+  </div>
+  
+  <div class="data-grid">
+    <div class="data-item"><span class="label">شماره سوره</span><span class="value">۲۳</span></div>
+    <div class="data-item"><span class="label">شماره آیه</span><span class="value">۱۴</span></div>
+    <div class="data-item"><span class="label">تعداد حروف</span><span class="value">۹۵</span></div>
+    <div class="data-item"><span class="label">تعداد کلمات</span><span class="value">۲۱</span></div>
+    <div class="data-item"><span class="label">ابجد کبیر</span><span class="value">۱۲۱۱۱</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر ۱</span><span class="value">۴۱۱</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر ۲</span><span class="value">۳۹۰</span></div>
+  </div>
+  
+  <h3>تحلیل عددی:</h3>
+  <div class="calc">
+    <button class="calc-copy">📋 کپی</button>
+۴۱۱ − ۳۹۰ = <span class="result">۲۱</span> = تعداد کلمات آیه ✓<br><br>
+
+۴۱۱ + ۳۹۰ = <span class="result">۸۰۱</span><br>
+<span class="comment">// ابجد کلمه «آخَرَ» = ۱+۶۰۰+۲۰۰ = ۸۰۱ ✓</span><br><br>
+
+۱۲۱۱۱ = ۹۵ × ۱۲۷ + <span class="result">۴۶</span><br>
+<span class="comment">// باقی‌مانده ۴۶ = تعداد کروموزوم‌های انسان</span><br><br>
+
+تعداد حروف + شماره سوره: ۹۵ + ۲۳ = <span class="result">۱۱۸</span><br>
+<span class="comment">// ۱۱۸ = تعداد آیات سوره مؤمنون ✓</span>
+  </div>
+  
+  <div class="conclusion">
+    <h3>نتیجه کشف مؤمنون ۱۴</h3>
+    <p>در این آیه که مراحل خلقت انسان را توصیف می‌کند، تفاوت دو ابجد صغیر برابر تعداد کلمات آیه (۲۱) است، مجموع دو ابجد صغیر برابر ابجد کلمه «آخر» (۸۰۱) است، باقی‌مانده تقسیم ابجد کبیر بر تعداد حروف برابر ۴۶ (کروموزوم انسان) است، و تعداد حروف + شماره سوره برابر تعداد آیات سوره (۱۱۸) است.</p>
+  </div>
+</section>
+
+<!-- ===== 14 ===== -->
+<section id="sec-muminun23">
+  <span class="section-tag">بخش سوم: کشفیات عددی</span>
+  <h2>۱۴. سوره مؤمنون (۲۳)، آیه ۲۳: حضرت نوح (ع)</h2>
+  
+  <div class="ayah-box">
+    <div class="ayah-text">وَلَقَدْ أَرْسَلْنَا نُوحًا إِلَىٰ قَوْمِهِ فَقَالَ يَا قَوْمِ اعْبُدُوا اللَّهَ مَا لَكُم مِّنْ إِلَٰهٍ غَيْرُهُ أَفَلَا تَتَّقُونَ</div>
+  </div>
+  
+  <div class="data-grid">
+    <div class="data-item"><span class="label">شماره سوره</span><span class="value">۲۳</span></div>
+    <div class="data-item"><span class="label">شماره آیه</span><span class="value">۲۳</span></div>
+    <div class="data-item"><span class="label">تعداد حروف</span><span class="value">۶۰</span></div>
+    <div class="data-item"><span class="label">تعداد کلمات</span><span class="value">۱۷</span></div>
+    <div class="data-item"><span class="label">ابجد کبیر</span><span class="value">۲۸۹۴</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر ۱</span><span class="value">۲۷۸</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر ۲</span><span class="value">۲۰۵</span></div>
+  </div>
+  
+  <h3>تحلیل عددی:</h3>
+  <div class="calc">
+    <button class="calc-copy">📋 کپی</button>
+جمع ارقام ابجد کبیر: ۲+۸+۹+۴ = <span class="result">۲۳</span> = شماره سوره ✓<br><br>
+
+جمع ارقام ابجد صغیر ۱: ۲+۷+۸ = <span class="result">۱۷</span> = تعداد کلمات ✓<br><br>
+
+جمع ارقام ابجد صغیر ۲: ۲+۰+۵ = <span class="result">۷</span><br><br>
+
+تفاوت حروف و کلمات: ۶۰ − ۱۷ = <span class="result">۴۳</span><br>
+<span class="comment">// ۴۳ = تعداد تکرار نام «نوح» در کل قرآن ✓</span>
+  </div>
+  
+  <div class="conclusion">
+    <h3>نتیجه کشف مؤمنون ۲۳</h3>
+    <p>این آیه درباره حضرت نوح (ع) است و تفاوت بین حروف و کلمات آن (۶۰ − ۱۷ = ۴۳) دقیقاً برابر با تعداد تکرار نام نوح در سراسر قرآن است. همچنین جمع ارقام ابجد کبیر با شماره سوره (۲۳) و جمع ارقام ابجد صغیر ۱ با تعداد کلمات (۱۷) برابر است.</p>
+  </div>
+</section>
+
+<!-- ===== 15 ===== -->
+<section id="sec-yasin">
+  <span class="section-tag">بخش سوم: کشفیات عددی</span>
+  <h2>۱۵. سوره یس (۳۶)، آیات ۱ تا ۵</h2>
+  
+  <h3>آیه ۱: یسٓ</h3>
+  <div class="data-grid">
+    <div class="data-item"><span class="label">تعداد حروف</span><span class="value">۲</span></div>
+    <div class="data-item"><span class="label">تعداد کلمات</span><span class="value">۱</span></div>
+    <div class="data-item"><span class="label">ابجد کبیر</span><span class="value">۷۰</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر ۱</span><span class="value">۱۰</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر ۲</span><span class="value">۷</span></div>
+  </div>
+  <div class="calc">
+    <button class="calc-copy">📋 کپی</button>
+جمع ارقام ابجد صغیر ۱: ۱+۰ = <span class="result">۱</span> = شماره آیه ✓<br><br>
+۷۰ + ۳۶ = ۱۰۶ → ۱+۰+۶ = <span class="result">۷</span><br><br>
+۶۲۳۶ − ۷۰ = ۶۱۶۶ → ۶+۱+۶+۶ = <span class="result">۱۹</span>
+  </div>
+  
+  <h3>آیه ۲: وَٱلْقُرْءَانِ ٱلْحَكِيمِ</h3>
+  <div class="data-grid">
+    <div class="data-item"><span class="label">تعداد حروف</span><span class="value">۱۲</span></div>
+    <div class="data-item"><span class="label">ابجد کبیر</span><span class="value">۴۹۶</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر ۱</span><span class="value">۶۴</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر ۲</span><span class="value">۳۹</span></div>
+  </div>
+  <div class="calc">
+    <button class="calc-copy">📋 کپی</button>
+جمع ارقام ابجد صغیر ۲: ۳+۹ = <span class="result">۱۲</span> = تعداد حروف ✓<br><br>
+
+۴۹۶ یک <span class="result">عدد کامل</span> است<br>
+<span class="comment">// مجموع مقسوم‌علیه‌هایش = ۴۹۶</span><br>
+۱+۲+۴+۸+۱۶+۳۱+۶۲+۱۲۴+۲۴۸ = ۴۹۶ ✓<br><br>
+
+جمع ارقام ابجد کبیر: ۴+۹+۶ = <span class="result">۱۹</span><br><br>
+
+شماره سوره ÷ ۳ = ۳۶ ÷ ۳ = <span class="result">۱۲</span> = تعداد حروف ✓
+  </div>
+  
+  <h3>آیه ۳: إِنَّكَ لَمِنَ ٱلْمُرْسَلِينَ</h3>
+  <div class="data-grid">
+    <div class="data-item"><span class="label">تعداد حروف</span><span class="value">۱۳</span></div>
+    <div class="data-item"><span class="label">تعداد کلمات</span><span class="value">۳</span></div>
+    <div class="data-item"><span class="label">ابجد کبیر</span><span class="value">۶۱۱</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر ۱</span><span class="value">۵۹</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر ۲</span><span class="value">۴۵</span></div>
+  </div>
+  <div class="calc">
+    <button class="calc-copy">📋 کپی</button>
+جمع ارقام ابجد صغیر ۲: ۴+۵ = <span class="result">۹</span> = ۳×۳ = شماره آیه × تعداد کلمات ✓<br><br>
+
+۶۱۱ = ۱۳ × <span class="result">۴۷</span><br>
+<span class="comment">// ۱۳ = تعداد حروف آیه، ۴۷ = شماره سوره محمد (ص)</span><br><br>
+
+۵۹ − ۴۵ = <span class="result">۱۴</span><br>
+<span class="comment">// ۱۴ = تعداد حروف مقطعه در قرآن</span>
+  </div>
+  
+  <h3>آیه ۴: عَلَىٰ صِرَٰطٍ مُّسْتَقِيمٍ</h3>
+  <div class="data-grid">
+    <div class="data-item"><span class="label">تعداد حروف</span><span class="value">۱۲</span></div>
+    <div class="data-item"><span class="label">تعداد کلمات</span><span class="value">۳</span></div>
+    <div class="data-item"><span class="label">ابجد کبیر</span><span class="value">۱۰۵۹</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر ۱</span><span class="value">۷۵</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر ۲</span><span class="value">۵۱</span></div>
+  </div>
+  <div class="calc">
+    <button class="calc-copy">📋 کپی</button>
+جمع ارقام ابجد صغیر ۱: ۷+۵ = <span class="result">۱۲</span> = تعداد حروف ✓<br><br>
+
+جمع ارقام ابجد کبیر: ۱+۰+۵+۹ = <span class="result">۱۵</span> = ۱۲+۳ ✓<br><br>
+
+شماره آیه × تعداد کلمات: ۴×۳ = <span class="result">۱۲</span> = تعداد حروف ✓<br><br>
+
+۷۵ − ۵۱ = <span class="result">۲۴</span> = ۲×۱۲
+  </div>
+  
+  <h3>آیه ۵: تَنزِيلَ ٱلْعَزِيزِ ٱلرَّحِيمِ</h3>
+  <div class="data-grid">
+    <div class="data-item"><span class="label">تعداد حروف</span><span class="value">۱۵</span></div>
+    <div class="data-item"><span class="label">تعداد کلمات</span><span class="value">۳</span></div>
+    <div class="data-item"><span class="label">ابجد کبیر</span><span class="value">۹۰۹</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر ۱</span><span class="value">۱۰۵</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر ۲</span><span class="value">۶۵</span></div>
+  </div>
+  <div class="calc">
+    <button class="calc-copy">📋 کپی</button>
+شماره آیه × تعداد کلمات: ۵×۳ = <span class="result">۱۵</span> = تعداد حروف ✓<br><br>
+
+جمع ارقام ابجد کبیر: ۹+۰+۹ = <span class="result">۱۸</span> = ۱۵+۳ ✓<br><br>
+
+جمع ارقام ابجد صغیر ۱: ۱+۰+۵ = <span class="result">۶</span><br><br>
+
+۱۰۵ − ۶۵ = <span class="result">۴۰</span><br>
+<span class="comment">// ۴۰ = سن پیامبر (ص) در زمان نزول وحی</span>
+  </div>
+  
+  <div class="conclusion">
+    <h3>نتیجه کشف سوره یس</h3>
+    <p>در پنج آیه اول سوره یس، شاهد الگوهای عددی متنوع و دقیقی هستیم: از برابری جمع ارقام ابجد صغیر با شماره آیه یا تعداد حروف، تا عدد کامل ۴۹۶، تا اشاره به سوره محمد (۴۷) و سن ۴۰ سالگی پیامبر.</p>
+  </div>
+</section>
+
+<!-- ===== 16 ===== -->
+<section id="sec-sad">
+  <span class="section-tag">بخش سوم: کشفیات عددی</span>
+  <h2>۱۶. سوره ص (۳۸)، آیه ۱</h2>
+  
+  <div class="ayah-box">
+    <div class="ayah-text">صٓ ۚ وَٱلْقُرْءَانِ ذِى ٱلذِّكْرِ</div>
+  </div>
+  
+  <div class="data-grid">
+    <div class="data-item"><span class="label">شماره سوره</span><span class="value">۳۸</span></div>
+    <div class="data-item"><span class="label">تعداد حروف</span><span class="value">۱۴</span></div>
+    <div class="data-item"><span class="label">تعداد کلمات</span><span class="value">۴</span></div>
+    <div class="data-item"><span class="label">ابجد کبیر</span><span class="value">۲۱۳۸</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر ۱</span><span class="value">۷۴</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر ۲</span><span class="value">۵۲</span></div>
+  </div>
+  
+  <h3>تحلیل عددی:</h3>
+  <div class="calc">
+    <button class="calc-copy">📋 کپی</button>
+جمع ارقام ابجد کبیر: ۲+۱+۳+۸ = <span class="result">۱۴</span> = تعداد حروف ✓<br><br>
+
+تعداد حروف + شماره سوره: ۱۴ + ۳۸ = <span class="result">۵۲</span> = ابجد صغیر ۲ ✓<br><br>
+
+تعداد حروف + تعداد کلمات: ۱۴+۴ = <span class="result">۱۸</span><br>
+جمع ارقام ابجد صغیر ۱ + جمع ارقام ابجد صغیر ۲:<br>
+(۷+۴) + (۵+۲) = ۱۱ + ۷ = <span class="result">۱۸</span> ✓<br><br>
+
+ابجد کبیر = [شماره سوره × (حروف × کلمات)] + (جمع ارقام ابجد صغیر ۱ − شماره آیه)<br>
+= ۳۸ × (۱۴×۴) + (۱۱−۱)<br>
+= ۳۸ × ۵۶ + ۱۰<br>
+= ۲۱۲۸ + ۱۰ = <span class="result">۲۱۳۸</span> ✓
+  </div>
+  
+  <div class="conclusion">
+    <h3>نتیجه کشف سوره ص</h3>
+    <p>آیه با سوگند به «قرآن ذی الذکر» آغاز می‌شود و عدد ۳۸ (شماره سوره)، ۱۴ (تعداد حروف)، و ۴ (تعداد کلمات) با هم شبکه‌ای از روابط دقیق می‌سازند.</p>
+  </div>
+</section>
+
+<!-- ===== 17 ===== -->
+<section id="sec-fussilat">
+  <span class="section-tag">بخش سوم: کشفیات عددی</span>
+  <h2>۱۷. سوره فصلت (۴۱)، آیات ۱ و ۲</h2>
+  
+  <h3>آیه ۱: حمٓ</h3>
+  <div class="data-grid">
+    <div class="data-item"><span class="label">شماره سوره</span><span class="value">۴۱</span></div>
+    <div class="data-item"><span class="label">تعداد حروف</span><span class="value">۲</span></div>
+    <div class="data-item"><span class="label">تعداد کلمات</span><span class="value">۱</span></div>
+    <div class="data-item"><span class="label">ابجد کبیر</span><span class="value">۴۸</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر</span><span class="value">۱۲</span></div>
+  </div>
+  <div class="calc">
+    <button class="calc-copy">📋 کپی</button>
+جمع ارقام ابجد کبیر: ۴+۸ = <span class="result">۱۲</span> = ابجد صغیر ✓<br><br>
+
+۴۱ − ۱۲ = <span class="result">۲۹</span><br>
+<span class="comment">// ۲۹ = تعداد سوره‌های دارای حروف مقطعه در قرآن ✓</span><br><br>
+
+۴۸ ÷ ۲ = <span class="result">۲۴</span> = ۲×۱۲
+  </div>
+  
+  <h3>آیه ۲: تَنزِيلٌ مِّنَ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</h3>
+  <div class="data-grid">
+    <div class="data-item"><span class="label">تعداد حروف</span><span class="value">۱۷</span></div>
+    <div class="data-item"><span class="label">تعداد کلمات</span><span class="value">۴</span></div>
+    <div class="data-item"><span class="label">ابجد کبیر</span><span class="value">۱۲۰۳</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر ۱</span><span class="value">۹۹</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر ۲</span><span class="value">۷۱</span></div>
+  </div>
+  <div class="calc">
+    <button class="calc-copy">📋 کپی</button>
+جمع ارقام ابجد کبیر: ۱+۲+۰+۳ = <span class="result">۶</span> = ۲+۴ ✓<br><br>
+
+جمع ارقام ابجد صغیر ۲: ۷+۱ = <span class="result">۸</span> = ۲×۴ ✓<br><br>
+
+ابجد صغیر ۲ = (حروف × کلمات) + (کلمات − ۱)<br>
+= (۱۷×۴) + ۳ = ۶۸+۳ = <span class="result">۷۱</span> ✓<br><br>
+
+ابجد کبیر = (شماره سوره × تعداد سوره‌های مقطعه) + تعداد حروف مقطعه<br>
+= (۴۱ × ۲۹) + ۱۴ = ۱۱۸۹ + ۱۴ = <span class="result">۱۲۰۳</span> ✓
+  </div>
+  
+  <div class="conclusion">
+    <h3>نتیجه کشف سوره فصلت</h3>
+    <p>در سوره فصلت، آیه ۱ (حمٓ) به عنوان کلید عمل می‌کند و ابجد صغیر آن (۱۲) در ساخت ابجد کبیر و صغیر آیه ۲ نقش دارد. عدد ۲۹ (تعداد سوره‌های مقطعه) از تفاضل ۴۱ و ۱۲ به دست می‌آید، و ابجد کبیر آیه ۲ مستقیماً از (شماره سوره × ۲۹) + ۱۴ ساخته می‌شود.</p>
+  </div>
+</section>
+
+<!-- ===== 18 ===== -->
+<section id="sec-shura">
+  <span class="section-tag">بخش سوم: کشفیات عددی</span>
+  <h2>۱۸. سوره شورى (۴۲)، آیات ۱ تا ۳</h2>
+  
+  <h3>آیه ۱: حمٓ</h3>
+  <div class="data-grid">
+    <div class="data-item"><span class="label">ابجد کبیر</span><span class="value">۴۸</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر</span><span class="value">۱۲</span></div>
+    <div class="data-item"><span class="label">تعداد حروف</span><span class="value">۲</span></div>
+    <div class="data-item"><span class="label">تعداد کلمات</span><span class="value">۱</span></div>
+  </div>
+  
+  <h3>آیه ۲: عٓسٓقٓ</h3>
+  <div class="data-grid">
+    <div class="data-item"><span class="label">ابجد کبیر</span><span class="value">۲۳۰</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر</span><span class="value">۱۴</span></div>
+    <div class="data-item"><span class="label">تعداد حروف</span><span class="value">۳</span></div>
+    <div class="data-item"><span class="label">تعداد کلمات</span><span class="value">۱</span></div>
+  </div>
+  <div class="calc">
+    <button class="calc-copy">📋 کپی</button>
+۴۲ − ۱۴ = <span class="result">۲۸</span> = تعداد حروف الفبای عربی ✓<br><br>
+
+جمع ارقام ابجد کبیر: ۲+۳+۰ = <span class="result">۵</span><br>
+جمع ارقام ابجد صغیر: ۱+۴ = <span class="result">۵</span> ✓
+  </div>
+  
+  <h3>آیه ۳: كَذَٰلِكَ يُوحِىٓ إِلَيْكَ وَإِلَى ٱلَّذِينَ مِن قَبْلِكَ ٱللَّهُ ٱلْعَزِيزُ ٱلْحَكِيمُ</h3>
+  <div class="data-grid">
+    <div class="data-item"><span class="label">تعداد حروف</span><span class="value">۳۹</span></div>
+    <div class="data-item"><span class="label">تعداد کلمات</span><span class="value">۱۱</span></div>
+    <div class="data-item"><span class="label">ابجد کبیر</span><span class="value">۲۲۴۱</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر ۱</span><span class="value">۲۴۹</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر ۲</span><span class="value">۱۳۹</span></div>
+  </div>
+  <div class="calc">
+    <button class="calc-copy">📋 کپی</button>
+L3 + L2 = ۳۹ + ۳ = <span class="result">۴۲</span> = شماره سوره ✓<br><br>
+
+S3a − S3b = ۲۴۹ − ۱۳۹ = <span class="result">۱۱۰</span> = ۱۰×۱۱ = W3×(W3−۱) ✓<br><br>
+
+S3b = ۱۳۹ = ۱۴×۱۰ − ۱ = S2×(W3−۱) − ۱ ✓<br><br>
+
+S3a = ۲۴۹ = ۱۴×۱۷ + ۱۱ = S2×(L3−۲W3) + W3 ✓<br><br>
+
+K3 = ۲۲۴۱ = ۴۲×(۴۲+۱۱) + ۱۵<br>
+= ۴۲×۵۳ + ۱۵ = ۲۲۲۶ + ۱۵ = <span class="result">۲۲۴۱</span> ✓<br><br>
+
+K3 = ۲۳۰×۹ + ۱۴×۱۲ + ۳<br>
+= ۲۰۷۰ + ۱۶۸ + ۳ = <span class="result">۲۲۴۱</span> ✓
+  </div>
+  
+  <div class="conclusion">
+    <h3>نتیجه کشف سوره شورى</h3>
+    <p>در این سه آیه، شبکه‌ای از روابط عددی دقیق شکل می‌گیرد: ۴۲ = ۳۹+۳، ۲۸ = ۴۲−۱۴، ۱۱۰ = ۲۴۹−۱۳۹، و ابجد کبیر آیه ۳ هم از دل آیه ۲ و هم از دل ساختار سوره (۴۲ و ۱۱ و ۱۵) بیرون می‌آید.</p>
+  </div>
+</section>
+
+<!-- ===== 19 ===== -->
+<section id="sec-zukhruf">
+  <span class="section-tag">بخش سوم: کشفیات عددی</span>
+  <h2>۱۹. سوره زخرف (۴۳)، آیات ۱ و ۲</h2>
+  
+  <h3>آیه ۱: حمٓ</h3>
+  <div class="data-grid">
+    <div class="data-item"><span class="label">ابجد کبیر</span><span class="value">۴۸</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر</span><span class="value">۱۲</span></div>
+    <div class="data-item"><span class="label">تعداد حروف</span><span class="value">۲</span></div>
+    <div class="data-item"><span class="label">تعداد کلمات</span><span class="value">۱</span></div>
+  </div>
+  
+  <h3>آیه ۲: وَٱلْكِتَٰبِ ٱلْمُبِينِ</h3>
+  <div class="data-grid">
+    <div class="data-item"><span class="label">ابجد کبیر</span><span class="value">۵۹۰</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر ۱</span><span class="value">۵۰</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر ۲</span><span class="value">۳۴</span></div>
+    <div class="data-item"><span class="label">تعداد حروف</span><span class="value">۱۰</span></div>
+    <div class="data-item"><span class="label">تعداد کلمات</span><span class="value">۳</span></div>
+  </div>
+  
+  <div class="calc">
+    <button class="calc-copy">📋 کپی</button>
+جمع ارقام ابجد کبیر: ۵+۹+۰ = <span class="result">۱۴</span> = حروف + کلمات + شماره آیه ۱<br>
+= ۱۰+۳+۱ = ۱۴ ✓<br><br>
+
+جمع ارقام ابجد صغیر ۱: ۵+۰ = <span class="result">۵</span> = کلمات + شماره آیه = ۳+۲ ✓<br><br>
+
+جمع ارقام ابجد صغیر ۲: ۳+۴ = <span class="result">۷</span> = حروف − کلمات = ۱۰−۳ ✓<br><br>
+
+ابجد صغیر ۱ = شماره سوره + (حروف − کلمات)<br>
+= ۴۳ + ۷ = <span class="result">۵۰</span> ✓<br><br>
+
+ابجد صغیر ۲ = شماره سوره − (حروف − کلمات + شماره آیه)<br>
+= ۴۳ − ۹ = <span class="result">۳۴</span> ✓<br><br>
+
+۵۰ − ۳۴ = <span class="result">۱۶</span> = ۱۰+۳+۲+۱ ✓<br><br>
+
+ابجد کبیر = ابجد صغیر ۱ × ابجد صغیر آیه ۱ − تعداد حروف<br>
+= ۵۰ × ۱۲ − ۱۰ = ۶۰۰ − ۱۰ = <span class="result">۵۹۰</span> ✓<br><br>
+
+ابجد کبیر = شماره سوره × (حروف+کلمات) + (شماره سوره − ابجد صغیر آیه ۱)<br>
+= ۴۳×۱۳ + ۳۱ = ۵۵۹ + ۳۱ = <span class="result">۵۹۰</span> ✓
+  </div>
+  
+  <div class="conclusion">
+    <h3>نتیجه کشف سوره زخرف</h3>
+    <p>در این دو آیه، آیه ۱ (حمٓ) به عنوان کلید عمل می‌کند و ابجد صغیر آن (۱۲) در ساخت ابجد کبیر و صغیر آیه ۲ نقش مستقیم دارد. عدد ۲۸ (تعداد حروف الفبا) از ۴۳ − (۱۰+۳+۲) به دست می‌آید.</p>
+  </div>
+</section>
+
+<!-- ===== 20 ===== -->
+<section id="sec-ghafir">
+  <span class="section-tag">بخش سوم: کشفیات عددی</span>
+  <h2>۲۰. سوره غافر (۴۰)، آیات ۱ و ۲</h2>
+  
+  <h3>آیه ۱: حمٓ</h3>
+  <div class="data-grid">
+    <div class="data-item"><span class="label">ابجد کبیر</span><span class="value">۴۸</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر</span><span class="value">۱۲</span></div>
+    <div class="data-item"><span class="label">تعداد حروف</span><span class="value">۲</span></div>
+    <div class="data-item"><span class="label">تعداد کلمات</span><span class="value">۱</span></div>
+  </div>
+  
+  <div class="calc">
+    <button class="calc-copy">📋 کپی</button>
+جمع ارقام ابجد کبیر: ۴+۸ = <span class="result">۱۲</span> = ابجد صغیر ✓<br><br>
+
+جمع ارقام ابجد صغیر: ۱+۲ = <span class="result">۳</span> = ۲+۱ ✓<br><br>
+
+ابجد کبیر = ابجد صغیر × (حروف+کلمات+شماره آیه)<br>
+= ۱۲ × ۴ = <span class="result">۴۸</span> ✓<br><br>
+
+۴۰ − ۱۲ = <span class="result">۲۸</span> = تعداد حروف الفبای عربی ✓
+  </div>
+  
+  <h3>آیه ۲: تَنزِيلُ ٱلْكِتَٰبِ مِنَ ٱللَّهِ ٱلْعَزِيزِ ٱلْعَلِيمِ</h3>
+  <div class="data-grid">
+    <div class="data-item"><span class="label">ابجد کبیر</span><span class="value">۱۴۰۸</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر ۱</span><span class="value">۱۴۸</span></div>
+    <div class="data-item"><span class="label">ابجد صغیر ۲</span><span class="value">۹۸</span></div>
+    <div class="data-item"><span class="label">تعداد حروف</span><span class="value">۲۴</span></div>
+    <div class="data-item"><span class="label">تعداد کلمات</span><span class="value">۶</span></div>
+  </div>
+  
+  <div class="calc">
+    <button class="calc-copy">📋 کپی</button>
+جمع ارقام ابجد کبیر: ۱+۴+۰+۸ = <span class="result">۱۳</span><br>
+جمع ارقام ابجد صغیر ۱: ۱+۴+۸ = <span class="result">۱۳</span> ✓<br><br>
+
+جمع ارقام ابجد صغیر ۲: ۹+۸ = <span class="result">۱۷</span><br>
+۱۳ + ۱۷ = <span class="result">۳۰</span> = ۲۴+۶ ✓<br><br>
+
+ابجد صغیر ۱ = (حروف × کلمات) + (حروف ÷ کلمات)<br>
+= (۲۴×۶) + ۴ = ۱۴۴+۴ = <span class="result">۱۴۸</span> ✓<br><br>
+
+ابجد صغیر ۲ = (حروف × (حروف÷کلمات)) + شماره آیه<br>
+= (۲۴×۴) + ۲ = ۹۶+۲ = <span class="result">۹۸</span> ✓<br><br>
+
+ابجد کبیر = (شماره سوره + ۲×شماره آیه) × (حروف+کلمات+شماره آیه)<br>
+= (۴۰+۴) × (۲۴+۶+۲) = ۴۴ × ۳۲ = <span class="result">۱۴۰۸</span> ✓<br><br>
+
+ابجد کبیر = ابجد کبیر آیه ۱ × ۲۹ + (حروف−کلمات−شماره آیه)<br>
+= ۴۸×۲۹ + ۱۶ = ۱۳۹۲+۱۶ = <span class="result">۱۴۰۸</span> ✓
+  </div>
+  
+  <div class="conclusion">
+    <h3>نتیجه کشف سوره غافر</h3>
+    <p>در سوره غافر، آیه ۱ (حمٓ) کلید است و آیه ۲ از دل آیه ۱ و ساختار خودش ساخته می‌شود. عدد ۲۹ (تعداد سوره‌های مقطعه) و ۲۸ (حروف الفبا) در محاسبات ظاهر می‌شوند.</p>
+  </div>
+</section>
+
+<div class="divider">✦ ✦ ✦</div>
+
+<!-- ===== 21 ===== -->
+<section id="sec-final">
+  <span class="section-tag">بخش چهارم: نتیجه</span>
+  <h2>۲۱. جمع‌بندی نهایی</h2>
+  
+  <p>در این تحقیق، یازده کشف عددی مستقل از سوره‌های مختلف قرآن ارائه شد. هر کشف، شبکه‌ای از روابط دقیق و چندلایه را نشان می‌دهد که فراتر از تصادف محض است.</p>
+  
+  <h3>الگوهای تکراری کشف‌شده:</h3>
+  
+  <div class="relation"><strong>۱. برابری جمع ارقام ابجد کبیر با تعداد حروف یا شماره سوره</strong></div>
+  <div class="relation"><strong>۲. برابری جمع ارقام ابجد صغیر با تعداد کلمات یا شماره آیه</strong></div>
+  <div class="relation"><strong>۳. ساخت ابجد کبیر و صغیر آیه بعدی از دل آیه قبلی</strong></div>
+  <div class="relation"><strong>۴. ظاهر شدن اعداد کلیدی قرآن: ۱۴ (حروف مقطعه)، ۲۸ (حروف الفبا)، ۲۹ (سوره‌های مقطعه)، ۱۹</strong></div>
+  <div class="relation"><strong>۵. پیوند عددی با محتوای آیه (مثل ۴۰ = سن پیامبر، ۴۶ = کروموزوم، ۳۴ = تکرار مریم)</strong></div>
+  
+  <h3>نتیجه‌گیری نهایی:</h3>
+  <p>قرآن کریم نه تنها از نظر معنایی و هدایتی، بلکه از نظر ساختار ریاضی نیز معجزه‌ای بی‌نظیر است. این هماهنگی‌ها نشان می‌دهد که:</p>
+  
+  <p><strong>۱.</strong> چینش سوره‌ها و آیات تصادفی نیست و یک نظم پنهان در سراسر قرآن حاکم است.</p>
+  <p><strong>۲.</strong> حروف مقطعه راز دارند و با محتوای سوره‌ها و ساختار عددی آنها پیوند عمیقی دارند.</p>
+  <p><strong>۳.</strong> این کشفیات برای «اهلش» قابل درک است و همان‌طور که قرآن می‌گوید: «لَّا يَمَسُّهُ إِلَّا الْمُطَهَّرُونَ».</p>
+  
+  <div class="conclusion">
+    <h3>سخن آخر</h3>
+    <p>اگر حقیقت و حکمت و محبت به این آسانی بود که همه آن را ببینند، آن‌وقت دست هر نالایقی به پاکی دراز می‌شد. این رمزها برای کسانی است که با دل پاک و عقل سلیم، در جستجوی حقیقت هستند.</p>
+    <p style="text-align:center; margin-top:20px; color:#d4af37; font-size:1.1em;">یا حق</p>
+  </div>
+</section>
+
+<!-- ===== اشتراک پایانی ===== -->
+<div class="share-bar">
+  <span class="label">این تحقیق را با دیگران به اشتراک بگذارید:</span>
+  <a class="share-btn wa" href="https://wa.me/?text=اعجاز%20عددی%20قرآن" target="_blank" rel="noopener">واتساپ</a>
+  <a class="share-btn tg" href="https://t.me/share/url?url=&text=اعجاز%20عددی%20قرآن" target="_blank" rel="noopener">تلگرام</a>
+  <a class="share-btn tw" href="https://twitter.com/intent/tweet?text=اعجاز%20عددی%20قرآن" target="_blank" rel="noopener">توییتر</a>
+  <button class="share-btn copy" id="copyLink2">📋 کپی لینک</button>
+</div>
+
+</main>
+
+<footer>
+  <div class="quote">﴿ إِنَّ فِي ذَٰلِكَ لَذِكْرَىٰ لِمَن كَانَ لَهُ قَلْبٌ ﴾</div>
+  <p>تحقیق شخصی در رمزگشایی عددی قرآن کریم</p>
 </footer>
 
+</div>
+</div>
+
+<!-- دکمه‌های شناور -->
+<div class="float-controls">
+  <button class="float-btn" id="backTop" aria-label="بازگشت به بالا" title="بازگشت به بالا">
+    <svg viewBox="0 0 50 50">
+      <circle class="ring" cx="25" cy="25" r="23"></circle>
+    </svg>
+    ↑
+  </button>
+</div>
+
 <script>
-/* ============================================
-   Interactive Features
-   ============================================ */
+(function() {
+  'use strict';
 
-// Progress bar
-function updateProgress() {
-  const scrollTop = window.scrollY;
-  const h = document.documentElement.scrollHeight - window.innerHeight;
-  const p = h > 0 ? (scrollTop / h) * 100 : 0;
-  document.getElementById('progressBar').style.width = p + '%';
-}
+  // ============================================
+  // 📊 نوار پیشرفت مطالعه
+  // ============================================
+  var readProgress = document.getElementById('readProgress');
+  var backTop = document.getElementById('backTop');
+  var ringCircle = backTop.querySelector('.ring');
 
-// Back to top
-const btt = document.getElementById('btt');
-function updateBTT() {
-  if (window.scrollY > 400) btt.classList.add('show');
-  else btt.classList.remove('show');
-}
-btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  function updateProgress() {
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var percent = (scrollTop / scrollHeight) * 100;
 
-// Scroll spy
-function updateSpy() {
-  const secs = document.querySelectorAll('section[id]');
-  const links = document.querySelectorAll('.sidebar ul li a');
-  const pos = window.scrollY + 130;
+    readProgress.style.width = percent + '%';
 
-  let current = '';
-  secs.forEach(s => {
-    if (s.offsetTop <= pos) current = s.id;
-  });
+    // حلقه دور دکمه بازگشت
+    var circumference = 2 * Math.PI * 23;
+    var offset = circumference - (percent / 100) * circumference;
+    ringCircle.style.strokeDasharray = circumference;
+    ringCircle.style.strokeDashoffset = offset;
 
-  links.forEach(l => {
-    l.classList.remove('active');
-    if (l.getAttribute('href') === '#' + current) l.classList.add('active');
-  });
-}
-
-// Combined scroll
-let ticking = false;
-window.addEventListener('scroll', () => {
-  if (!ticking) {
-    requestAnimationFrame(() => {
-      updateProgress();
-      updateBTT();
-      updateSpy();
-      ticking = false;
-    });
-    ticking = true;
+    // نمایش/مخفی کردن دکمه
+    if (scrollTop > 400) backTop.classList.add('visible');
+    else backTop.classList.remove('visible');
   }
-}, { passive: true });
 
-// Sidebar (mobile)
-const menuBtn = document.getElementById('menuBtn');
-const sidebar = document.getElementById('sidebar');
-const overlay = document.getElementById('overlay');
+  window.addEventListener('scroll', updateProgress, { passive: true });
 
-function openSb() {
-  sidebar.classList.add('open');
-  overlay.classList.add('show');
-  document.body.classList.add('menu-open');
-}
-function closeSb() {
-  sidebar.classList.remove('open');
-  overlay.classList.remove('show');
-  document.body.classList.remove('menu-open');
-}
-
-menuBtn.addEventListener('click', () => {
-  sidebar.classList.contains('open') ? closeSb() : openSb();
-});
-overlay.addEventListener('click', closeSb);
-
-document.querySelectorAll('.sidebar ul li a').forEach(l => {
-  l.addEventListener('click', () => {
-    if (window.innerWidth <= 1024) setTimeout(closeSb, 200);
+  backTop.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
-});
 
-window.addEventListener('resize', () => {
-  if (window.innerWidth > 1024) closeSb();
-});
+  // ============================================
+  // 🎈 ذرات طلایی در هدر
+  // ============================================
+  var particlesEl = document.getElementById('particles');
+  if (particlesEl) {
+    for (var i = 0; i < 25; i++) {
+      var span = document.createElement('span');
+      span.style.left = Math.random() * 100 + '%';
+      span.style.bottom = '-20px';
+      span.style.animationDelay = (Math.random() * 8) + 's';
+      span.style.animationDuration = (6 + Math.random() * 6) + 's';
+      span.style.width = (2 + Math.random() * 4) + 'px';
+      span.style.height = span.style.width;
+      particlesEl.appendChild(span);
+    }
+  }
 
-// Init
-window.addEventListener('load', () => {
+  // ============================================
+  // 🌙 حالت شب/روز
+  // ============================================
+  var themeToggle = document.getElementById('themeToggle');
+  var html = document.documentElement;
+
+  var savedTheme = localStorage.getItem('quran-theme');
+  if (savedTheme) {
+    html.setAttribute('data-theme', savedTheme);
+    updateThemeBtn(savedTheme);
+  }
+
+  themeToggle.addEventListener('click', function() {
+    var current = html.getAttribute('data-theme');
+    var next = current === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('quran-theme', next);
+    updateThemeBtn(next);
+  });
+
+  function updateThemeBtn(theme) {
+    if (theme === 'dark') {
+      themeToggle.innerHTML = '☀ حالت روز';
+    } else {
+      themeToggle.innerHTML = '🌙 حالت شب';
+    }
+  }
+
+  // ============================================
+  // 🔤 اندازه فونت
+  // ============================================
+  var fontInc = document.getElementById('fontInc');
+  var fontDec = document.getElementById('fontDec');
+  var currentFontSize = parseInt(localStorage.getItem('quran-font-size')) || 16;
+
+  function applyFontSize() {
+    document.body.style.fontSize = currentFontSize + 'px';
+    localStorage.setItem('quran-font-size', currentFontSize);
+  }
+  applyFontSize();
+
+  fontInc.addEventListener('click', function() {
+    if (currentFontSize < 22) {
+      currentFontSize += 1;
+      applyFontSize();
+    }
+  });
+
+  fontDec.addEventListener('click', function() {
+    if (currentFontSize > 13) {
+      currentFontSize -= 1;
+      applyFontSize();
+    }
+  });
+
+  // ============================================
+  // 🖨 چاپ
+  // ============================================
+  document.getElementById('printBtn').addEventListener('click', function() {
+    window.print();
+  });
+
+  // ============================================
+  // 📋 کپی لینک
+  // ============================================
+  function copyLink() {
+    var url = window.location.href;
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(function() {
+        alert('✓ لینک کپی شد');
+      });
+    } else {
+      var input = document.createElement('input');
+      input.value = url;
+      document.body.appendChild(input);
+      input.select();
+      document.execCommand('copy');
+      document.body.removeChild(input);
+      alert('✓ لینک کپی شد');
+    }
+  }
+
+  var copyBtn1 = document.getElementById('copyLink');
+  var copyBtn2 = document.getElementById('copyLink2');
+  if (copyBtn1) copyBtn1.addEventListener('click', copyLink);
+  if (copyBtn2) copyBtn2.addEventListener('click', copyLink);
+
+  // ============================================
+  // 📋 کپی محتوا در هر calc
+  // ============================================
+  document.querySelectorAll('.calc-copy').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var calc = btn.parentElement;
+      var text = calc.innerText.replace('📋 کپی', '').trim();
+
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(function() {
+          btn.textContent = '✓ کپی شد';
+          btn.classList.add('copied');
+          setTimeout(function() {
+            btn.textContent = '📋 کپی';
+            btn.classList.remove('copied');
+          }, 2000);
+        });
+      }
+    });
+  });
+
+  // ============================================
+  // 🎬 Reveal animation on scroll
+  // ============================================
+  var revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('section').forEach(function(sec) {
+    revealObserver.observe(sec);
+  });
+
+  // ============================================
+  // 📖 محاسبه زمان مطالعه
+  // ============================================
+  (function() {
+    var main = document.querySelector('main');
+    if (!main) return;
+    var words = main.innerText.trim().split(/\s+/).length;
+    var minutes = Math.ceil(words / 200);
+    var el = document.getElementById('readTime');
+    if (el) el.textContent = minutes + ' دقیقه';
+  })();
+
+  // ============================================
+  // 🧭 Sidebar active link
+  // ============================================
+  var sections = document.querySelectorAll('section[id]');
+  var navLinks = document.querySelectorAll('.sidebar a');
+
+  var sectionObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        navLinks.forEach(function(link) { link.classList.remove('active'); });
+        var activeLink = document.querySelector('.sidebar a[href="#' + entry.target.id + '"]');
+        if (activeLink) activeLink.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+
+  sections.forEach(function(section) { sectionObserver.observe(section); });
+
+  // ============================================
+  // 📱 Mobile sidebar
+  // ============================================
+  var mobileToggle = document.getElementById('mobileToggle');
+  var sidebar = document.getElementById('sidebar');
+
+  mobileToggle.addEventListener('click', function() {
+    sidebar.classList.toggle('open');
+  });
+
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      var targetId = link.getAttribute('href');
+      var target = document.querySelector(targetId);
+      if (target) {
+        var offsetTop = target.getBoundingClientRect().top + window.pageYOffset - 130;
+        window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+        if (window.innerWidth <= 900) {
+          sidebar.classList.remove('open');
+        }
+      }
+    });
+  });
+
+  // ============================================
+  // ⌨️ Keyboard shortcuts
+  // ============================================
+  document.addEventListener('keydown', function(e) {
+    // Ctrl/Cmd + Plus
+    if ((e.ctrlKey || e.metaKey) && e.key === '=') {
+      e.preventDefault();
+      fontInc.click();
+    }
+    // Ctrl/Cmd + Minus
+    if ((e.ctrlKey || e.metaKey) && e.key === '-') {
+      e.preventDefault();
+      fontDec.click();
+    }
+    // Esc closes sidebar
+    if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+      sidebar.classList.remove('open');
+    }
+  });
+
+  // Initial progress update
   updateProgress();
-  updateBTT();
-  updateSpy();
-});
+
+})();
 </script>
+
 </body>
 </html>
