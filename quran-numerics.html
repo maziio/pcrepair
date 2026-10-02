@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0d1f18">
+
 <title>اعجاز عددی قرآن؛ کاوشی در لایه‌های پنهان | تحقیق شخصی</title>
 <meta name="description" content="تحقیق شخصی در رمزگشایی عددی قرآن کریم — بررسی لایه‌های پنهان حروف مقطعه، نظام ابجد کبیر و صغیر، و کشفیات عددی در سوره‌های مریم، نحل، انسان، مؤمنون، یس، ص، فصلت، شورى، زخرف و غافر.">
 <meta name="keywords" content="اعجاز عددی قرآن, رمزگشایی عددی قرآن, حروف مقطعه, ابجد کبیر, ابجد صغیر, معجزه عددی, نظم ریاضی قرآن, تحقیق قرآنی">
@@ -347,17 +348,173 @@ body {
 .main-content { flex: 1; min-width: 0; }
 
 /* ============================================
-   🌟 Hero
+   🌟 هدر بسم‌الله (جدید)
+   ============================================ */
+.bismillah-header {
+  position: relative;
+  width: 100%;
+  padding: 55px 40px 45px;
+  background: linear-gradient(135deg, #0a1512 0%, #0d1f18 30%, #1a3a2e 50%, #0d1f18 70%, #0a1512 100%);
+  overflow: hidden;
+  border-bottom: 2px solid rgba(212,175,55,0.35);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+.bismillah-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23d4af37' stroke-width='0.5' opacity='0.12'%3E%3Cpath d='M50 0 L100 50 L50 100 L0 50 Z'/%3E%3Cpath d='M50 20 L80 50 L50 80 L20 50 Z'/%3E%3Ccircle cx='50' cy='50' r='15'/%3E%3Cpath d='M50 0 L50 100 M0 50 L100 50'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 100px 100px;
+  animation: patternShift 80s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes patternShift {
+  from { background-position: 0 0; }
+  to { background-position: 100px 100px; }
+}
+
+.bismillah-header::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 50% 50%, rgba(212,175,55,0.18) 0%, transparent 50%);
+  animation: glowPulse 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+.bismillah-header .ornament-top,
+.bismillah-header .ornament-bottom {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 55%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, rgba(212,175,55,0.3) 20%, rgba(212,175,55,0.9) 50%, rgba(212,175,55,0.3) 80%, transparent 100%);
+  z-index: 2;
+}
+
+.bismillah-header .ornament-top { top: 22px; }
+.bismillah-header .ornament-bottom { bottom: 22px; }
+
+.bismillah-header .ornament-top::before,
+.bismillah-header .ornament-bottom::before {
+  content: '◆';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--gold);
+  font-size: 10px;
+  background: #0d1f18;
+  padding: 0 8px;
+  text-shadow: 0 0 10px rgba(212,175,55,0.8);
+}
+
+.bismillah-header .corner {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgba(212,175,55,0.5);
+  z-index: 2;
+}
+.bismillah-header .corner.tl { top: 14px; left: 14px; border-left: none; border-bottom: none; border-top-left-radius: 8px; }
+.bismillah-header .corner.tr { top: 14px; right: 14px; border-right: none; border-bottom: none; border-top-right-radius: 8px; }
+.bismillah-header .corner.bl { bottom: 14px; left: 14px; border-left: none; border-top: none; border-bottom-left-radius: 8px; }
+.bismillah-header .corner.br { bottom: 14px; right: 14px; border-right: none; border-top: none; border-bottom-right-radius: 8px; }
+
+.bismillah-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.bismillah-text {
+  font-family: 'Amiri Quran', serif;
+  font-size: 3.2em;
+  font-weight: 400;
+  line-height: 1.6;
+  background: linear-gradient(135deg, #f4d35e 0%, #d4af37 40%, #f4d35e 60%, #b8941f 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 20px rgba(212,175,55,0.5));
+  animation: shimmer 5s ease-in-out infinite;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.bismillah-translation {
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 1.05em;
+  color: #b8c4be;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.bismillah-ref {
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 0.85em;
+  color: rgba(212,175,55,0.75);
+  font-weight: 500;
+}
+
+.bismillah-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+  color: var(--gold);
+}
+
+.bismillah-divider .line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.bismillah-divider .star {
+  font-size: 0.8em;
+  animation: starTwinkle 3s ease-in-out infinite;
+}
+
+.bismillah-divider .star:nth-child(3) { animation-delay: 0.4s; }
+.bismillah-divider .star:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes starTwinkle {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+/* ============================================
+   🎨 Hero
    ============================================ */
 header.hero {
   background: linear-gradient(135deg, #1a3a2e 0%, #0d1f18 60%, #0a1512 100%);
   color: #fff;
-  padding: 65px 45px 55px;
+  padding: 55px 45px 50px;
   position: relative;
   overflow: hidden;
 }
 
-/* الگوی هندسی اسلامی */
 header.hero::before {
   content: '';
   position: absolute;
@@ -373,7 +530,6 @@ header.hero::before {
   to { background-position: 80px 80px; }
 }
 
-/* ذرات طلایی */
 header.hero .particles {
   position: absolute;
   inset: 0;
@@ -399,23 +555,18 @@ header.hero .particles span {
 }
 
 header.hero h1 {
-  font-size: 2.4em;
+  font-size: 2.3em;
   font-weight: 900;
   margin-bottom: 16px;
   position: relative;
   line-height: 1.4;
   background: linear-gradient(135deg, #fff 0%, var(--gold-light) 50%, var(--gold) 100%);
+  background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   filter: drop-shadow(0 4px 12px rgba(212,175,55,0.3));
   animation: shimmer 4s ease-in-out infinite;
-  background-size: 200% 100%;
-}
-
-@keyframes shimmer {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
 }
 
 header.hero .subtitle {
@@ -447,6 +598,7 @@ header.hero .meta .item {
 
 header.hero .meta .item i {
   color: var(--gold);
+  font-style: normal;
 }
 
 /* ============================================
@@ -494,7 +646,10 @@ main { padding: 45px 45px 60px; }
   padding-bottom: 12px;
   border-bottom: 1px dashed var(--gold);
   font-weight: 800;
+  display: block;
 }
+
+.research-notice h3::before { content: none; }
 
 [data-theme="dark"] .research-notice h3 { color: var(--gold-light); }
 
@@ -631,7 +786,7 @@ p strong { color: var(--green-mid); }
 }
 
 /* ============================================
-   📜 Ayah Box (آیات قرآنی)
+   📜 Ayah Box
    ============================================ */
 .ayah-box {
   background: linear-gradient(135deg, #f0f7f4 0%, #e8f2ed 100%);
@@ -682,9 +837,7 @@ p strong { color: var(--green-mid); }
   text-shadow: 0 1px 2px rgba(212,175,55,0.1);
 }
 
-[data-theme="dark"] .ayah-text {
-  color: var(--gold-light);
-}
+[data-theme="dark"] .ayah-text { color: var(--gold-light); }
 
 .ayah-box p {
   text-align: center !important;
@@ -967,6 +1120,13 @@ footer .quote {
   align-items: center;
   justify-content: center;
   position: relative;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.float-btn.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .float-btn:hover {
@@ -1031,11 +1191,12 @@ footer .quote {
   border: none;
   cursor: pointer;
   font-family: inherit;
+  color: white;
 }
 
-.share-btn.wa { background: #25D366; color: white; }
-.share-btn.tg { background: #0088CC; color: white; }
-.share-btn.tw { background: #1DA1F2; color: white; }
+.share-btn.wa { background: #25D366; }
+.share-btn.tg { background: #0088CC; }
+.share-btn.tw { background: #1DA1F2; }
 .share-btn.copy { background: var(--gold); color: var(--green-dark); }
 
 .share-btn:hover {
@@ -1078,7 +1239,17 @@ footer .quote {
   }
   .sidebar.open { right: 0; }
   .mobile-toggle { display: block; }
-  header.hero { padding: 80px 22px 40px; }
+  .bismillah-header { padding: 38px 20px 32px; }
+  .bismillah-text { font-size: 2.1em; letter-spacing: 1px; }
+  .bismillah-translation { font-size: 0.92em; }
+  .bismillah-ref { font-size: 0.78em; }
+  .bismillah-header .ornament-top { top: 14px; }
+  .bismillah-header .ornament-bottom { bottom: 14px; }
+  .bismillah-header .ornament-top,
+  .bismillah-header .ornament-bottom { width: 75%; }
+  .bismillah-header .corner { width: 20px; height: 20px; }
+  .bismillah-divider .line { width: 40px; }
+  header.hero { padding: 45px 22px 35px; }
   header.hero h1 { font-size: 1.55em; }
   main { padding: 30px 20px 40px; }
   h2 { font-size: 1.35em; }
@@ -1093,6 +1264,10 @@ footer .quote {
   .conclusion { padding: 22px 20px; }
   .float-controls { bottom: 15px; left: 15px; }
   .float-btn { width: 42px; height: 42px; font-size: 1em; }
+}
+
+@media (max-width: 400px) {
+  .bismillah-text { font-size: 1.6em; }
 }
 
 /* ============================================
@@ -1192,11 +1367,40 @@ footer .quote {
 <!-- ==================== MAIN ==================== -->
 <div class="main-content">
 
-<header class="bismillah-header">
-  <h1 class="bismillah-title">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</h1>
-  <div class="main-title">اعجاز عددی قرآن؛ کاوشی در لایه‌های پنهان</div>
-  <div class="sub-title">کشف لایه‌های پنهان حروف مقطعه و نظام ریاضی الهی</div>
-  <div class="divider-line"><span class="star">✦</span></div>
+<!-- 🌟 هدر بسم‌الله -->
+<div class="bismillah-header">
+  <div class="corner tl"></div>
+  <div class="corner tr"></div>
+  <div class="corner bl"></div>
+  <div class="corner br"></div>
+  <div class="ornament-top"></div>
+  <div class="ornament-bottom"></div>
+  
+  <div class="bismillah-content">
+    <div class="bismillah-text">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+    <div class="bismillah-translation">به نام خداوند بخشنده مهربان</div>
+    <div class="bismillah-ref">﴿ الفاتحه: ۱ ﴾</div>
+    
+    <div class="bismillah-divider">
+      <span class="line"></span>
+      <span class="star">✦</span>
+      <span class="star">✦</span>
+      <span class="star">✦</span>
+      <span class="line"></span>
+    </div>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="particles" id="particles"></div>
+  <h1>اعجاز عددی قرآن؛ کاوشی در لایه‌های پنهان</h1>
+  <div class="subtitle">کشف لایه‌های پنهان حروف مقطعه و نظام ریاضی الهی</div>
+  <div class="meta">
+    <span class="item"><i>✍</i> تحقیق شخصی</span>
+    <span class="item"><i>📅</i> سال ۱۴۰۳</span>
+    <span class="item"><i>⏱</i> <span id="readTime">۲۵ دقیقه</span> مطالعه</span>
+    <span class="item"><i>📖</i> ۲۱ بخش</span>
+  </div>
 </header>
 
 <main>
@@ -1212,7 +1416,6 @@ footer .quote {
   
   <p><strong>توجه:</strong> خوانندگان محترم می‌توانند نتایج این تحقیق را با معیارهای علمی، دینی و شخصی خود بسنجند و در صورت تمایل، با روش‌های مستقل، محاسبات را راستی‌آزمایی کنند. هدف این نوشتار، ارائه یک <strong>تلاش تحقیقاتی و تدبری</strong> در قرآن کریم است، نه اثبات قطعی یک ادعا.</p>
 
-  <!-- اشتراک‌گذاری -->
   <div class="share-bar">
     <span class="label">اشتراک‌گذاری:</span>
     <a class="share-btn wa" href="https://wa.me/?text=اعجاز%20عددی%20قرآن%20-%20کاوشی%20در%20لایه‌های%20پنهان" target="_blank" rel="noopener">واتساپ</a>
@@ -1457,7 +1660,7 @@ footer .quote {
   <p>نام مبارک «مریم» دقیقاً ۳۴ بار در قرآن تکرار شده است. و اگر حروف مقطعه ابتدای سوره‌های قرآن را از ابتدای قرآن (سوره بقره) تا پایان حروف «کهیعص» در ابتدای سوره مریم بشماریم، تعداد حروف به عدد ۳۴ می‌رسد.</p>
   
   <div class="calc">
-    <button class="calc-copy" data-target>📋 کپی</button>
+    <button class="calc-copy">📋 کپی</button>
 ۱. بقره (الم): ۳ حرف &nbsp;→&nbsp; مجموع: <span class="result">۳</span><br>
 ۲. آل‌عمران (الم): ۳ حرف &nbsp;→&nbsp; مجموع: <span class="result">۶</span><br>
 ۳. اعراف (المص): ۴ حرف &nbsp;→&nbsp; مجموع: <span class="result">۱۰</span><br>
@@ -2168,7 +2371,7 @@ K3 = ۲۳۰×۹ + ۱۴×۱۲ + ۳<br>
   'use strict';
 
   // ============================================
-  // 📊 نوار پیشرفت مطالعه
+  // 📊 نوار پیشرفت مطالعه + حلقه دور دکمه
   // ============================================
   var readProgress = document.getElementById('readProgress');
   var backTop = document.getElementById('backTop');
@@ -2177,17 +2380,15 @@ K3 = ۲۳۰×۹ + ۱۴×۱۲ + ۳<br>
   function updateProgress() {
     var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     var scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-    var percent = (scrollTop / scrollHeight) * 100;
+    var percent = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
 
     readProgress.style.width = percent + '%';
 
-    // حلقه دور دکمه بازگشت
     var circumference = 2 * Math.PI * 23;
     var offset = circumference - (percent / 100) * circumference;
     ringCircle.style.strokeDasharray = circumference;
     ringCircle.style.strokeDashoffset = offset;
 
-    // نمایش/مخفی کردن دکمه
     if (scrollTop > 400) backTop.classList.add('visible');
     else backTop.classList.remove('visible');
   }
@@ -2236,11 +2437,7 @@ K3 = ۲۳۰×۹ + ۱۴×۱۲ + ۳<br>
   });
 
   function updateThemeBtn(theme) {
-    if (theme === 'dark') {
-      themeToggle.innerHTML = '☀ حالت روز';
-    } else {
-      themeToggle.innerHTML = '🌙 حالت شب';
-    }
+    themeToggle.innerHTML = theme === 'dark' ? '☀ حالت روز' : '🌙 حالت شب';
   }
 
   // ============================================
@@ -2309,7 +2506,10 @@ K3 = ۲۳۰×۹ + ۱۴×۱۲ + ۳<br>
     btn.addEventListener('click', function(e) {
       e.stopPropagation();
       var calc = btn.parentElement;
-      var text = calc.innerText.replace('📋 کپی', '').trim();
+      var clone = calc.cloneNode(true);
+      var btnClone = clone.querySelector('.calc-copy');
+      if (btnClone) btnClone.remove();
+      var text = clone.innerText.trim();
 
       if (navigator.clipboard) {
         navigator.clipboard.writeText(text).then(function() {
@@ -2325,7 +2525,7 @@ K3 = ۲۳۰×۹ + ۱۴×۱۲ + ۳<br>
   });
 
   // ============================================
-  // 🎬 Reveal animation on scroll
+  // 🎬 Reveal animation
   // ============================================
   var revealObserver = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
@@ -2396,26 +2596,22 @@ K3 = ۲۳۰×۹ + ۱۴×۱۲ + ۳<br>
   });
 
   // ============================================
-  // ⌨️ Keyboard shortcuts
+  // ⌨️ کیبورد شورتکات
   // ============================================
   document.addEventListener('keydown', function(e) {
-    // Ctrl/Cmd + Plus
     if ((e.ctrlKey || e.metaKey) && e.key === '=') {
       e.preventDefault();
       fontInc.click();
     }
-    // Ctrl/Cmd + Minus
     if ((e.ctrlKey || e.metaKey) && e.key === '-') {
       e.preventDefault();
       fontDec.click();
     }
-    // Esc closes sidebar
     if (e.key === 'Escape' && sidebar.classList.contains('open')) {
       sidebar.classList.remove('open');
     }
   });
 
-  // Initial progress update
   updateProgress();
 
 })();
