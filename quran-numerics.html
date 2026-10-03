@@ -1228,6 +1228,10 @@ footer .quote {
    📱 Mobile
    ============================================ */
 @media (max-width: 900px) {
+   .site-nav-wrap {
+    position: static;
+    top: auto;
+  }
   .sidebar {
     position: fixed;
     right: -310px;
@@ -1237,6 +1241,7 @@ footer .quote {
     transition: right 0.35s ease;
     box-shadow: -10px 0 30px rgba(0,0,0,0.4);
   }
+  
   .sidebar.open { right: 0; }
   .mobile-toggle { display: block; }
   .bismillah-header { padding: 38px 20px 32px; }
