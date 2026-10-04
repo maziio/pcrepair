@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://shirazpcrepair.ir/sitemap.xml

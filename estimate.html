@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0b5e7e">
+<meta name="google-site-verification" content="ikehDUuVo1FmBLIyd-Ig5Ax3eDY8WpEHJQF7U9bsMYw">
+
+<title>محاسبه‌گر تخمین هزینه تعمیر لپ تاپ و کامپیوتر | خدمات آلفا شیراز</title>
+<meta name="description" content="هزینه تعمیر لپ تاپ یا کامپیوتر چقدر است؟ با محاسبه‌گر آنلاین خدمات آلفا، در چند ثانیه بازه قیمت تقریبی تعمیر لپ تاپ، کامپیوتر، مودم و برد الکترونیک را ببینید. عیب‌یابی رایگان در شیراز. تماس: 09174429089">
+<meta name="keywords" content="هزینه تعمیر لپ تاپ, قیمت تعمیر لپ تاپ, هزینه تعمیر کامپیوتر, قیمت تعمیر کامپیوتر, هزینه تعمیر مودم, تخمین هزینه تعمیر, قیمت تعمیر مادربرد, هزینه تعمیر لپ تاپ شیراز, قیمت تعمیر کامپیوتر شیراز, هزینه تعمیر برد الکترونیک, محاسبه گر تعمیرات">
+<meta name="author" content="مهندس مازیار جاویدی پارسی جانی - خدمات آلفا">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="geo.region" content="IR-07">
+<meta name="geo.placename" content="Shiraz">
+<meta name="geo.position" content="29.6285;52.4697">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:title" content="محاسبه‌گر تخمین هزینه تعمیر لپ تاپ و کامپیوتر">
+<meta property="og:description" content="بازه قیمت تقریبی تعمیر لپ تاپ، کامپیوتر، مودم و برد الکترونیک در چند ثانیه.">
+<meta property="og:url" content="https://shirazpcrepair.ir/estimate.html">
+<meta property="og:image" content="https://shirazpcrepair.ir/images/estimate-cover.jpg">
+
+<link rel="canonical" href="https://shirazpcrepair.ir/estimate.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.media='all'">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* ============ استایل مخصوص محاسبه‌گر ============ */
+
+.calc-wrapper {
+    background: linear-gradient(135deg, #f9fbfd, #ffffff);
+    border-radius: 36px;
+    padding: 34px 30px;
+    box-shadow: 0 16px 32px -10px rgba(0,0,0,0.1);
+    border: 1px solid #e6edf3;
+    margin-top: 26px;
+}
+
+/* نوار پیشرفت */
+.progress-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 34px;
+    position: relative;
+    padding: 0 6px;
+}
+.progress-bar::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    left: 30px;
+    height: 3px;
+    background: #dbe7ee;
+    border-radius: 3px;
+    z-index: 0;
+}
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    height: 3px;
+    background: linear-gradient(90deg, #f4a261, #0b5e7e);
+    border-radius: 3px;
+    z-index: 1;
+    transition: width 0.5s ease;
+    width: 0;
+}
+.progress-bar[data-step="1"]::after { width: 0; }
+.progress-bar[data-step="2"]::after { width: calc(33% - 20px); }
+.progress-bar[data-step="3"]::after { width: calc(66% - 40px); }
+.progress-bar[data-step="4"]::after { width: calc(100% - 60px); }
+
+.step-indicator {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+.step-circle {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid #dbe7ee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    color: #95a8b8;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+.step-indicator.active .step-circle {
+    background: linear-gradient(135deg, #0b5e7e, #0a485f);
+    border-color: #0b5e7e;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 6px 14px rgba(11,94,126,0.35);
+}
+.step-indicator.done .step-circle {
+    background: #f4a261;
+    border-color: #f4a261;
+    color: white;
+}
+.step-label {
+    font-size: 0.75rem;
+    color: #95a8b8;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.step-indicator.active .step-label,
+.step-indicator.done .step-label {
+    color: #0b5e7e;
+}
+
+/* مراحل */
+.calc-step {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+.calc-step.active { display: block; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.calc-step h3 {
+    font-size: 1.3rem;
+    color: #0b5e7e;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+.calc-step .step-help {
+    text-align: center;
+    color: #5d6f7e;
+    font-size: 0.92rem;
+    margin-bottom: 26px;
+}
+
+/* گزینه‌ها */
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 14px;
+    margin-bottom: 24px;
+}
+.option-card {
+    background: #fff;
+    border: 2px solid #e6edf3;
+    border-radius: 20px;
+    padding: 22px 14px 18px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.22s;
+    position: relative;
+    user-select: none;
+}
+.option-card:hover {
+    border-color: #0b5e7e;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 22px -8px rgba(11,94,126,0.2);
+}
+.option-card.selected {
+    border-color: #0b5e7e;
+    background: linear-gradient(135deg, #eaf6fb, #ffffff);
+    box-shadow: 0 12px 22px -8px rgba(11,94,126,0.3);
+}
+.option-card.selected::after {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 22px;
+    height: 22px;
+    background: #0b5e7e;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+}
+.option-card i {
+    font-size: 2rem;
+    color: #0b5e7e;
+    margin-bottom: 10px;
+    display: block;
+}
+.option-card .opt-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #155f74;
+    line-height: 1.5;
+}
+.option-card .opt-desc {
+    font-size: 0.75rem;
+    color: #95a8b8;
+    margin-top: 4px;
+}
+
+/* دکمه‌های ناوبری */
+.nav-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 26px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.nav-btn {
+    padding: 13px 30px;
+    border-radius: 40px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.nav-btn.next {
+    background: linear-gradient(135deg, #0b5e7e, #0a485f);
+    color: white;
+}
+.nav-btn.next:hover:not(:disabled) {
+    transform: scale(1.04);
+    box-shadow: 0 12px 22px -6px rgba(11,94,126,0.4);
+}
+.nav-btn.next:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+.nav-btn.back {
+    background: #e8f4f8;
+    color: #0b5e7e;
+}
+.nav-btn.back:hover {
+    background: #d1e7ef;
+}
+
+/* نمایش نتیجه */
+.result-box {
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+.result-box .result-icon {
+    font-size: 4rem;
+    color: #f4a261;
+    margin-bottom: 14px;
+    display: block;
+}
+.result-box h3 {
+    font-size: 1.5rem;
+    color: #0b5e7e;
+    margin-bottom: 10px;
+}
+.result-box .result-sub {
+    color: #5d6f7e;
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+}
+.price-range {
+    background: linear-gradient(135deg, #0b5e7e, #0a485f);
+    color: white;
+    border-radius: 26px;
+    padding: 28px 26px;
+    margin-bottom: 22px;
+    position: relative;
+    overflow: hidden;
+}
+.price-range::before {
+    content: '';
+    position: absolute;
+    top: -60%;
+    left: -20%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(244,162,97,0.25) 0%, transparent 70%);
+    border-radius: 50%;
+}
+.price-range .range-label {
+    font-size: 0.88rem;
+    opacity: 0.9;
+    margin-bottom: 8px;
+    position: relative;
+}
+.price-range .range-value {
+    font-size: 1.75rem;
+    font-weight: 800;
+    line-height: 1.4;
+    color: #f4a261;
+    position: relative;
+    margin-bottom: 6px;
+}
+.price-range .range-note {
+    font-size: 0.78rem;
+    opacity: 0.85;
+    position: relative;
+    line-height: 1.8;
+}
+
+.result-details {
+    background: #f4f7fa;
+    border-radius: 22px;
+    padding: 22px 22px;
+    text-align: right;
+    margin-bottom: 22px;
+}
+.result-details h4 {
+    color: #155f74;
+    font-size: 1rem;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dbe7ee;
+}
+.result-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.result-details li {
+    font-size: 0.9rem;
+    color: #4a5f6f;
+    padding: 7px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed #e6edf3;
+}
+.result-details li:last-child { border-bottom: none; }
+.result-details li strong { color: #0b5e7e; }
+
+.result-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 22px;
+}
+.result-cta a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 26px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: 0.2s;
+}
+.result-cta a.wa {
+    background: #25D366;
+    color: white;
+}
+.result-cta a.call {
+    background: linear-gradient(135deg, #0b5e7e, #0a485f);
+    color: white;
+}
+.result-cta a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 22px -6px rgba(0,0,0,0.25);
+}
+.result-cta a.restart {
+    background: #f4f7fa;
+    color: #0b5e7e;
+    border: 2px solid #dbe7ee;
+}
+.result-cta a.restart:hover {
+    background: #e8f4f8;
+    box-shadow: none;
+}
+
+/* متن هشدار پایین نتیجه */
+.result-disclaimer {
+    background: #fff4e8;
+    border-right: 4px solid #f4a261;
+    border-radius: 14px;
+    padding: 14px 18px;
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: #8a5a1f;
+    line-height: 1.9;
+    text-align: right;
+}
+
+/* ریسپانسیو */
+@media (max-width: 680px) {
+    .calc-wrapper { padding: 22px 16px; border-radius: 26px; }
+    .progress-bar::before,
+    .progress-bar::after { right: 20px; left: 20px; }
+    .progress-bar::after { right: 20px; }
+    .progress-bar[data-step="2"]::after { width: calc(33% - 14px); }
+    .progress-bar[data-step="3"]::after { width: calc(66% - 28px); }
+    .progress-bar[data-step="4"]::after { width: calc(100% - 40px); }
+    .step-circle { width: 34px; height: 34px; font-size: 0.85rem; }
+    .step-label { font-size: 0.65rem; }
+    .options-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .option-card { padding: 16px 10px 14px; border-radius: 16px; }
+    .option-card i { font-size: 1.6rem; }
+    .option-card .opt-title { font-size: 0.82rem; }
+    .option-card .opt-desc { font-size: 0.68rem; }
+    .calc-step h3 { font-size: 1.1rem; }
+    .price-range .range-value { font-size: 1.35rem; }
+    .nav-btn { padding: 11px 22px; font-size: 0.88rem; }
+    .result-cta a { font-size: 0.85rem; padding: 11px 20px; }
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "محاسبه‌گر تخمین هزینه تعمیر خدمات آلفا",
+  "url": "https://shirazpcrepair.ir/estimate.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Web",
+  "description": "محاسبه‌گر آنلاین تخمین هزینه تعمیر لپ تاپ، کامپیوتر، مودم و برد الکترونیک",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "IRR"}
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"هزینه تعمیر لپ تاپ چقدر است؟","acceptedAnswer":{"@type":"Answer","text":"هزینه تعمیر لپ تاپ به نوع خرابی بستگی دارد. مشکلات نرم‌افزاری از حدود ۳۰۰ هزار تومان شروع می‌شود و تعمیر مادربرد و ریبال چیپ می‌تواند چند میلیون تومان باشد. برای قیمت دقیق، عیب‌یابی رایگان در خدمات آلفا انجام می‌شود."}},
+    {"@type":"Question","name":"آیا تخمین هزینه دقیق است؟","acceptedAnswer":{"@type":"Answer","text":"این محاسبه‌گر فقط بازه تقریبی بر اساس تجربه ۲۰ ساله ما ارائه می‌دهد. قیمت نهایی پس از عیب‌یابی دقیق دستگاه مشخص می‌شود."}},
+    {"@type":"Question","name":"عیب‌یابی هزینه دارد؟","acceptedAnswer":{"@type":"Answer","text":"عیب‌یابی اولیه در خدمات آلفا کاملاً رایگان است. فقط در صورت تایید تعمیر از شما هزینه دریافت می‌شود."}}
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"خانه","item":"https://shirazpcrepair.ir/"},
+    {"@type":"ListItem","position":2,"name":"محاسبه‌گر تخمین هزینه","item":"https://shirazpcrepair.ir/estimate.html"}
+  ]
+}
+</script>
+</head>
+<body>
+<div class="glass-container">
+
+    <div class="top-bar">
+        <div class="brand"><i class="fas fa-microchip"></i> خدمات آلفا | شیراز</div>
+        <div class="info">
+            <span><i class="fas fa-clock"></i> ۹ صبح تا ۸ شب</span>
+            <span><i class="fas fa-medal"></i> ۲۰+ سال سابقه</span>
+            <span><i class="fas fa-phone"></i> 0917-4429089</span>
+        </div>
+    </div>
+
+    <nav class="main-nav">
+        <a href="/">خانه</a>
+        <a href="laptop-repair-shiraz.html">تعمیر لپ تاپ شیراز</a>
+        <a href="laptop-repair-moaliabad.html">تعمیر لپ تاپ معالی آباد</a>
+        <a href="computer-repair-shiraz.html">تعمیر کامپیوتر شیراز</a>
+        <a href="computer-repair-moaliabad.html">تعمیر کامپیوتر معالی آباد</a>
+        <details class="nav-dd"><summary>خدمات تخصصی</summary><div class="nav-dd-panel"><a href="modem-repair-shiraz.html">تعمیر مودم و شبکه</a><a href="industrial-board-repair-shiraz.html">تعمیر برد صنعتی</a><a href="medical-board-repair-shiraz.html">تعمیر برد پزشکی</a><a href="data-recovery-shiraz.html">ریکاوری اطلاعات</a></div></details>
+        <a href="blog.html">وبلاگ</a>
+        <a href="shop.html">فروشگاه</a>
+        <a href="corporate.html">خدمات سازمانی</a>
+        <a href="estimate.html" class="active">تخمین هزینه</a>
+        <a href="about.html">درباره ما</a>
+    </nav>
+
+    <div class="breadcrumb">
+        <a href="/">خانه</a><span>›</span>محاسبه‌گر تخمین هزینه تعمیر
+    </div>
+
+    <header class="hero">
+        <h1>محاسبه‌گر تخمین هزینه تعمیر</h1>
+        <p class="sub-h1">در چند ثانیه بازه قیمت تقریبی تعمیر دستگاه خود را ببینید</p>
+        <p class="tagline">بر اساس ۲۰ سال تجربه در تعمیرات تخصصی شیراز</p>
+        <div class="badges">
+            <span><i class="fas fa-search"></i> عیب‌یابی رایگان</span>
+            <span><i class="fas fa-shield-alt"></i> گارانتی ۳ ماهه</span>
+            <span><i class="fas fa-bolt"></i> پاسخ در چند ثانیه</span>
+        </div>
+    </header>
+
+    <div class="contact-bar">
+        <div class="address-text">
+            <i class="fas fa-map-marker-alt"></i> شیراز، معالی آباد، خیابان پزشکان، کوچه 4/1، ساختمان سپیده 2، طبقه 6، واحد 24
+        </div>
+        <div class="contact-buttons">
+            <a href="tel:09174429089" class="btn-call"><i class="fas fa-phone-alt"></i> تماس فوری</a>
+            <a href="https://wa.me/989174429089" class="btn-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> واتساپ</a>
+            <details class="more-contact"><summary><i class="fas fa-ellipsis-h"></i> پیام‌رسان‌های دیگر</summary><div class="more-list"></div></details>
+        </div>
+    </div>
+
+    <!-- محاسبه‌گر -->
+    <section class="section">
+        <div class="calc-wrapper">
+
+            <!-- نوار پیشرفت -->
+            <div class="progress-bar" id="progressBar" data-step="1">
+                <div class="step-indicator active" data-step="1">
+                    <div class="step-circle">۱</div>
+                    <div class="step-label">نوع دستگاه</div>
+                </div>
+                <div class="step-indicator" data-step="2">
+                    <div class="step-circle">۲</div>
+                    <div class="step-label">برند</div>
+                </div>
+                <div class="step-indicator" data-step="3">
+                    <div class="step-circle">۳</div>
+                    <div class="step-label">مشکل</div>
+                </div>
+                <div class="step-indicator" data-step="4">
+                    <div class="step-circle">۴</div>
+                    <div class="step-label">نتیجه</div>
+                </div>
+            </div>
+
+            <!-- مرحله ۱: نوع دستگاه -->
+            <div class="calc-step active" id="step1">
+                <h3><i class="fas fa-laptop"></i> چه دستگاهی دارید؟</h3>
+                <p class="step-help">نوع دستگاه خود را انتخاب کنید</p>
+
+                <div class="options-grid" data-group="device">
+                    <div class="option-card" data-value="laptop">
+                        <i class="fas fa-laptop"></i>
+                        <div class="opt-title">لپ تاپ</div>
+                        <div class="opt-desc">همه برندها</div>
+                    </div>
+                    <div class="option-card" data-value="desktop">
+                        <i class="fas fa-desktop"></i>
+                        <div class="opt-title">کامپیوتر</div>
+                        <div class="opt-desc">کیس و پاور</div>
+                    </div>
+                    <div class="option-card" data-value="modem">
+                        <i class="fas fa-wifi"></i>
+                        <div class="opt-title">مودم</div>
+                        <div class="opt-desc">ADSL/VDSL</div>
+                    </div>
+                    <div class="option-card" data-value="industrial">
+                        <i class="fas fa-microchip"></i>
+                        <div class="opt-title">برد صنعتی</div>
+                        <div class="opt-desc">CNC، اینورتر</div>
+                    </div>
+                    <div class="option-card" data-value="medical">
+                        <i class="fas fa-heartbeat"></i>
+                        <div class="opt-title">برد پزشکی</div>
+                        <div class="opt-desc">تجهیزات پزشکی</div>
+                    </div>
+                    <div class="option-card" data-value="network">
+                        <i class="fas fa-network-wired"></i>
+                        <div class="opt-title">تجهیزات شبکه</div>
+                        <div class="opt-desc">سوئیچ، روتر</div>
+                    </div>
+                </div>
+
+                <div class="nav-buttons">
+                    <button class="nav-btn next" id="next1" disabled>
+                        مرحله بعد <i class="fas fa-arrow-left"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- مرحله ۲: برند -->
+            <div class="calc-step" id="step2">
+                <h3><i class="fas fa-tag"></i> برند دستگاه چیست؟</h3>
+                <p class="step-help">برند دستگاه خود را انتخاب کنید (اختیاری)</p>
+
+                <div class="options-grid" data-group="brand">
+                    <div class="option-card" data-value="asus">
+                        <i class="fas fa-laptop"></i>
+                        <div class="opt-title">ایسوس</div>
+                        <div class="opt-desc">ASUS</div>
+                    </div>
+                    <div class="option-card" data-value="lenovo">
+                        <i class="fas fa-laptop"></i>
+                        <div class="opt-title">لنوو</div>
+                        <div class="opt-desc">Lenovo</div>
+                    </div>
+                    <div class="option-card" data-value="hp">
+                        <i class="fas fa-laptop"></i>
+                        <div class="opt-title">اچ‌پی</div>
+                        <div class="opt-desc">HP</div>
+                    </div>
+                    <div class="option-card" data-value="dell">
+                        <i class="fas fa-laptop"></i>
+                        <div class="opt-title">دل</div>
+                        <div class="opt-desc">Dell</div>
+                    </div>
+                    <div class="option-card" data-value="acer">
+                        <i class="fas fa-laptop"></i>
+                        <div class="opt-title">ایسر</div>
+                        <div class="opt-desc">Acer</div>
+                    </div>
+                    <div class="option-card" data-value="apple">
+                        <i class="fas fa-laptop"></i>
+                        <div class="opt-title">اپل</div>
+                        <div class="opt-desc">MacBook</div>
+                    </div>
+                    <div class="option-card" data-value="msi">
+                        <i class="fas fa-laptop"></i>
+                        <div class="opt-title">ام‌اس‌آی</div>
+                        <div class="opt-desc">MSI</div>
+                    </div>
+                    <div class="option-card" data-value="other">
+                        <i class="fas fa-question"></i>
+                        <div class="opt-title">سایر / نامشخص</div>
+                        <div class="opt-desc">برندهای دیگر</div>
+                    </div>
+                </div>
+
+                <div class="nav-buttons">
+                    <button class="nav-btn back" id="back2"><i class="fas fa-arrow-right"></i> مرحله قبل</button>
+                    <button class="nav-btn next" id="next2">مرحله بعد <i class="fas fa-arrow-left"></i></button>
+                </div>
+            </div>
+
+            <!-- مرحله ۳: مشکل -->
+            <div class="calc-step" id="step3">
+                <h3><i class="fas fa-tools"></i> مشکل دستگاه چیست؟</h3>
+                <p class="step-help">مشکل اصلی دستگاه خود را انتخاب کنید</p>
+
+                <div class="options-grid" data-group="issue">
+                    <div class="option-card" data-value="software">
+                        <i class="fas fa-windows"></i>
+                        <div class="opt-title">مشکل نرم‌افزاری</div>
+                        <div class="opt-desc">ویندوز، ویروس</div>
+                    </div>
+                    <div class="option-card" data-value="power">
+                        <i class="fas fa-power-off"></i>
+                        <div class="opt-title">روشن نمی‌شود</div>
+                        <div class="opt-desc">بدون واکنش</div>
+                    </div>
+                    <div class="option-card" data-value="charger">
+                        <i class="fas fa-plug"></i>
+                        <div class="opt-title">سوکت شارژر</div>
+                        <div class="opt-desc">شارژ نمی‌کند</div>
+                    </div>
+                    <div class="option-card" data-value="overheat">
+                        <i class="fas fa-thermometer-half"></i>
+                        <div class="opt-title">داغی و خاموشی</div>
+                        <div class="opt-desc">سرویس فن</div>
+                    </div>
+                    <div class="option-card" data-value="display">
+                        <i class="fas fa-tv"></i>
+                        <div class="opt-title">تصویر ندارد</div>
+                        <div class="opt-desc">صفحه سیاه</div>
+                    </div>
+                    <div class="option-card" data-value="keyboard">
+                        <i class="fas fa-keyboard"></i>
+                        <div class="opt-title">کیبورد / ماوس</div>
+                        <div class="opt-desc">تعویض قطعه</div>
+                    </div>
+                    <div class="option-card" data-value="motherboard">
+                        <i class="fas fa-microchip"></i>
+                        <div class="opt-title">مادربرد</div>
+                        <div class="opt-desc">تعمیر تخصصی</div>
+                    </div>
+                    <div class="option-card" data-value="bga">
+                        <i class="fas fa-fire"></i>
+                        <div class="opt-title">ریبال چیپ</div>
+                        <div class="opt-desc">BGA</div>
+                    </div>
+                    <div class="option-card" data-value="bios">
+                        <i class="fas fa-file-code"></i>
+                        <div class="opt-title">ریکاوری بایوس</div>
+                        <div class="opt-desc">BIOS</div>
+                    </div>
+                    <div class="option-card" data-value="data">
+                        <i class="fas fa-hdd"></i>
+                        <div class="opt-title">ریکاوری اطلاعات</div>
+                        <div class="opt-desc">بازیابی داده</div>
+                    </div>
+                </div>
+
+                <div class="nav-buttons">
+                    <button class="nav-btn back" id="back3"><i class="fas fa-arrow-right"></i> مرحله قبل</button>
+                    <button class="nav-btn next" id="next3" disabled>مشاهده تخمین قیمت <i class="fas fa-calculator"></i></button>
+                </div>
+            </div>
+
+            <!-- مرحله ۴: نتیجه -->
+            <div class="calc-step" id="step4">
+                <div class="result-box">
+                    <i class="fas fa-calculator result-icon"></i>
+                    <h3>تخمین هزینه تعمیر</h3>
+                    <p class="result-sub">بر اساس اطلاعاتی که وارد کردید</p>
+
+                    <div class="price-range">
+                        <div class="range-label"><i class="fas fa-coins"></i> بازه قیمت تقریبی</div>
+                        <div class="range-value" id="priceValue">—</div>
+                        <div class="range-note">قیمت نهایی پس از عیب‌یابی دقیق دستگاه اعلام می‌شود</div>
+                    </div>
+
+                    <div class="result-details">
+                        <h4><i class="fas fa-list"></i> خلاصه انتخاب‌های شما</h4>
+                        <ul>
+                            <li><span>نوع دستگاه:</span> <strong id="sumDevice">—</strong></li>
+                            <li><span>برند:</span> <strong id="sumBrand">—</strong></li>
+                            <li><span>مشکل:</span> <strong id="sumIssue">—</strong></li>
+                        </ul>
+                    </div>
+
+                    <div class="result-cta">
+                        <a href="#" class="wa" id="waSendBtn" target="_blank" rel="noopener">
+                            <i class="fab fa-whatsapp"></i> ارسال به واتساپ برای استعلام دقیق
+                        </a>
+                        <a href="tel:09174429089" class="call">
+                            <i class="fas fa-phone-alt"></i> تماس فوری
+                        </a>
+                        <a href="#" class="restart" id="restartBtn">
+                            <i class="fas fa-redo"></i> شروع مجدد
+                        </a>
+                    </div>
+
+                    <div class="result-disclaimer">
+                        <strong><i class="fas fa-info-circle"></i> توجه:</strong> این بازه قیمت بر اساس تجربه ۲۰ ساله خدمات آلفا در تعمیرات تخمین زده شده است. قیمت نهایی وابسته به نوع دقیق خرابی، قطعات موردنیاز و مدل دستگاه است. <strong>عیب‌یابی در خدمات آلفا رایگان است</strong> و پس از تشخیص، قیمت دقیق اعلام می‌شود.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- راهنما -->
+    <section class="section">
+        <h2 class="section-title"><i class="fas fa-info-circle"></i> نکات مهم درباره تخمین هزینه</h2>
+        <div class="description">
+            <p>🔹 <strong>عیب‌یابی اولیه رایگان است.</strong> شما می‌توانید دستگاه را برای عیب‌یابی رایگان بیاورید و بعد از اطلاع از قیمت دقیق، تصمیم به تعمیر بگیرید.</p>
+            <p>🔹 <strong>قیمت‌ها وابسته به مدل دستگاه است.</strong> تعمیر یک لپ تاپ گیمینگ با تعمیر یک لپ تاپ اداری، هزینه متفاوتی دارد.</p>
+            <p>🔹 <strong>استفاده از قطعات اصل.</strong> ما در خدمات آلفا فقط از قطعات اصل و باکیفیت استفاده می‌کنیم که همین باعث افزایش عمر دستگاه شما می‌شود.</p>
+            <p>🔹 <strong>گارانتی ۳ ماهه.</strong> تمام تعمیرات ما ۳ ماه گارانتی دارند. اگر مشکل در همان بخش دوباره پیش بیاید، رایگان رفع می‌شود.</p>
+        </div>
+    </section>
+
+    <!-- سوالات متداول -->
+    <section class="section">
+        <h2 class="section-title"><i class="fas fa-question-circle"></i> سوالات متداول درباره هزینه تعمیر</h2>
+
+        <details class="faq-item" open>
+            <summary>هزینه تعمیر لپ تاپ چقدر است؟</summary>
+            <div class="faq-answer">هزینه تعمیر لپ تاپ به نوع خرابی بستگی دارد. مشکلات نرم‌افزاری از حدود ۳۰۰ هزار تومان شروع می‌شود و تعمیر مادربرد و ریبال چیپ می‌تواند چند میلیون تومان باشد. برای قیمت دقیق، <strong>عیب‌یابی رایگان</strong> در خدمات آلفا انجام می‌شود.</div>
+        </details>
+
+        <details class="faq-item">
+            <summary>آیا تخمین این محاسبه‌گر دقیق است؟</summary>
+            <div class="faq-answer">این محاسبه‌گر فقط <strong>بازه تقریبی</strong> بر اساس تجربه ۲۰ ساله ما ارائه می‌دهد. قیمت نهایی پس از عیب‌یابی دقیق دستگاه و مشخص شدن قطعات موردنیاز، اعلام می‌شود.</div>
+        </details>
+
+        <details class="faq-item">
+            <summary>عیب‌یابی هزینه دارد؟</summary>
+            <div class="faq-answer">عیب‌یابی اولیه در خدمات آلفا <strong>کاملاً رایگان</strong> است. فقط در صورت تایید تعمیر از شما هزینه دریافت می‌شود.</div>
+        </details>
+
+        <details class="faq-item">
+            <summary>آیا هزینه قطعات در تخمین لحاظ شده است؟</summary>
+            <div class="faq-answer">بله، بازه قیمتی شامل هزینه قطعه و اجرت تعمیر است. اما اگر قطعه‌ای خاص و کمیاب نیاز باشد، هزینه نهایی ممکن است بیشتر شود که قبل از تعمیر به شما اطلاع داده می‌شود.</div>
+        </details>
+    </section>
+
+    <!-- لینک‌های مرتبط -->
+    <section class="section">
+        <h2 class="section-title"><i class="fas fa-link"></i> صفحات مرتبط</h2>
+        <div class="related-links">
+            <a href="laptop-repair-shiraz.html" class="related-card">
+                <h4><i class="fas fa-laptop"></i> تعمیر لپ تاپ در شیراز</h4>
+                <p>خدمات تخصصی تعمیر انواع لپ تاپ</p>
+            </a>
+            <a href="computer-repair-shiraz.html" class="related-card">
+                <h4><i class="fas fa-desktop"></i> تعمیر کامپیوتر در شیراز</h4>
+                <p>تعمیر کیس، پاور و مادربرد</p>
+            </a>
+            <a href="corporate.html" class="related-card">
+                <h4><i class="fas fa-building"></i> خدمات سازمانی</h4>
+                <p>پشتیبانی IT برای شرکت‌ها</p>
+            </a>
+            <a href="blog.html" class="related-card">
+                <h4><i class="fas fa-book-open"></i> وبلاگ و مقالات</h4>
+                <p>راهنماها و نکات تخصصی</p>
+            </a>
+        </div>
+    </section>
+
+    <div class="footer-card">
+        <i class="fas fa-store"></i> <strong>آدرس کارگاه:</strong> شیراز، معالی آباد، خیابان پزشکان، کوچه 4/1، ساختمان سپیده 2، طبقه 6، واحد 24<br>
+        <i class="fas fa-phone-alt"></i> <strong>تماس و استعلام:</strong> <a href="tel:09174429089" dir="ltr">0917-4429089</a><br>
+        <i class="fas fa-clock"></i> <strong>ساعات پاسخگویی:</strong> ۹ صبح تا ۸ شب (به جز جمعه‌ها)<br>
+        <i class="fas fa-user-tie"></i> <strong>مدیریت:</strong> مهندس مازیار جاویدی پارسی جانی
+    </div>
+
+    <div class="footer-links"><a href="/">خانه</a><a href="about.html">درباره ما</a><a href="laptop-repair-shiraz.html">تعمیر لپ تاپ</a><a href="computer-repair-shiraz.html">تعمیر کامپیوتر</a><a href="modem-repair-shiraz.html">تعمیر مودم</a><a href="industrial-board-repair-shiraz.html">برد صنعتی</a><a href="medical-board-repair-shiraz.html">برد پزشکی</a><a href="data-recovery-shiraz.html">ریکاوری اطلاعات</a><a href="corporate.html">خدمات سازمانی</a><a href="blog.html">وبلاگ</a><a href="estimate.html">تخمین هزینه</a></div>
+    <div class="footer">
+        © ۱۴۰۴ - تمامی حقوق محفوظ است. <strong>محاسبه‌گر تخمین هزینه خدمات آلفا شیراز</strong> | shirazpcrepair.ir
+    </div>
+</div>
+
+<script>
+/* ============================================
+   محاسبه‌گر تخمین هزینه تعمیر
+   ============================================ */
+
+// جدول تخمین قیمت‌ها (به تومان)
+// ساختار: [حداقل, حداکثر]
+var priceTable = {
+
+    laptop: {
+        software:    [400000, 900000],
+        power:       [1200000, 4500000],
+        charger:     [600000, 1500000],
+        overheat:    [500000, 1000000],
+        display:     [800000, 2500000],
+        keyboard:    [700000, 1800000],
+        motherboard: [1800000, 5500000],
+        bga:         [3000000, 8500000],
+        bios:        [700000, 1500000],
+        data:        [1000000, 5000000]
+    },
+
+    desktop: {
+        software:    [300000, 800000],
+        power:       [400000, 1200000],
+        charger:     [300000, 700000],
+        overheat:    [400000, 900000],
+        display:     [800000, 2500000],
+        keyboard:    [400000, 1200000],
+        motherboard: [900000, 3000000],
+        bga:         [1500000, 4500000],
+        bios:        [500000, 1200000],
+        data:        [800000, 4500000]
+    },
+
+    modem: {
+        software:    [300000, 700000],
+        power:       [400000, 900000],
+        charger:     [250000, 600000],
+        overheat:    [300000, 700000],
+        display:     [300000, 700000],
+        keyboard:    [300000, 700000],
+        motherboard: [500000, 1300000],
+        bga:         [800000, 1800000],
+        bios:        [400000, 900000],
+        data:        [300000, 800000]
+    },
+
+    industrial: {
+        software:    [800000, 2000000],
+        power:       [1500000, 5000000],
+        charger:     [800000, 1800000],
+        overheat:    [1000000, 2500000],
+        display:     [1000000, 3000000],
+        keyboard:    [700000, 1800000],
+        motherboard: [2500000, 8000000],
+        bga:         [4000000, 12000000],
+        bios:        [800000, 2000000],
+        data:        [1000000, 3500000]
+    },
+
+    medical: {
+        software:    [1000000, 2500000],
+        power:       [2000000, 6000000],
+        charger:     [1000000, 2500000],
+        overheat:    [1200000, 3000000],
+        display:     [1500000, 4000000],
+        keyboard:    [800000, 2000000],
+        motherboard: [3000000, 9000000],
+        bga:         [5000000, 15000000],
+        bios:        [1000000, 2500000],
+        data:        [1500000, 5000000]
+    },
+
+    network: {
+        software:    [400000, 1000000],
+        power:       [500000, 1500000],
+        charger:     [400000, 900000],
+        overheat:    [500000, 1200000],
+        display:     [400000, 1000000],
+        keyboard:    [400000, 900000],
+        motherboard: [800000, 2500000],
+        bga:         [1200000, 3500000],
+        bios:        [500000, 1300000],
+        data:        [500000, 1500000]
+    }
+};
+
+// ضرایب برند
+var brandMultiplier = {
+    asus: 1.0,
+    lenovo: 1.0,
+    hp: 1.05,
+    dell: 1.0,
+    acer: 0.95,
+    apple: 1.8,
+    msi: 1.15,
+    other: 1.0
+};
+
+// نام‌های فارسی
+var deviceNames = {
+    laptop: "لپ تاپ",
+    desktop: "کامپیوتر",
+    modem: "مودم",
+    industrial: "برد صنعتی",
+    medical: "برد پزشکی",
+    network: "تجهیزات شبکه"
+};
+
+var brandNames = {
+    asus: "ایسوس",
+    lenovo: "لنوو",
+    hp: "اچ‌پی",
+    dell: "دل",
+    acer: "ایسر",
+    apple: "اپل مک‌بوک",
+    msi: "ام‌اس‌آی",
+    other: "سایر"
+};
+
+var issueNames = {
+    software: "مشکل نرم‌افزاری",
+    power: "روشن نمی‌شود",
+    charger: "سوکت شارژر",
+    overheat: "داغی و خاموشی",
+    display: "تصویر ندارد",
+    keyboard: "کیبورد / ماوس",
+    motherboard: "تعمیر مادربرد",
+    bga: "ریبال چیپ (BGA)",
+    bios: "ریکاوری بایوس",
+    data: "ریکاوری اطلاعات"
+};
+
+// وضعیت
+var selections = {
+    device: null,
+    brand: null,
+    issue: null
+};
+
+var currentStep = 1;
+
+// ============ مدیریت انتخاب گزینه‌ها ============
+
+function setupOptionCards() {
+    document.querySelectorAll('.options-grid').forEach(function(grid) {
+        var groupName = grid.getAttribute('data-group');
+        grid.querySelectorAll('.option-card').forEach(function(card) {
+            card.addEventListener('click', function() {
+                // حذف انتخاب قبلی
+                grid.querySelectorAll('.option-card').forEach(function(c) {
+                    c.classList.remove('selected');
+                });
+                // انتخاب جدید
+                card.classList.add('selected');
+                selections[groupName] = card.getAttribute('data-value');
+                updateNextButtons();
+            });
+        });
+    });
+}
+
+// ============ فعال/غیرفعال کردن دکمه‌های "مرحله بعد" ============
+
+function updateNextButtons() {
+    var next1 = document.getElementById('next1');
+    var next3 = document.getElementById('next3');
+
+    if (next1) next1.disabled = !selections.device;
+    if (next3) next3.disabled = !selections.issue;
+}
+
+// ============ ناوبری مراحل ============
+
+function goToStep(step) {
+    currentStep = step;
+
+    // مخفی کردن همه مراحل
+    document.querySelectorAll('.calc-step').forEach(function(s) {
+        s.classList.remove('active');
+    });
+    // نمایش مرحله جاری
+    var stepEl = document.getElementById('step' + step);
+    if (stepEl) stepEl.classList.add('active');
+
+    // نوار پیشرفت
+    document.getElementById('progressBar').setAttribute('data-step', step);
+
+    // بروزرسانی نشانگرها
+    document.querySelectorAll('.step-indicator').forEach(function(ind) {
+        var s = parseInt(ind.getAttribute('data-step'));
+        ind.classList.remove('active', 'done');
+        if (s < step) ind.classList.add('done');
+        if (s === step) ind.classList.add('active');
+    });
+
+    // اسکرول به بالای محاسبه‌گر
+    document.querySelector('.calc-wrapper').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ============ محاسبه قیمت ============
+
+function formatPrice(n) {
+    // تبدیل عدد به میلیون تومان
+    if (n >= 1000000) {
+        var m = n / 1000000;
+        return (m % 1 === 0 ? m : m.toFixed(1)) + ' میلیون';
+    }
+    return (n / 1000).toFixed(0) + ' هزار';
+}
+
+function calculatePrice() {
+    var device = selections.device;
+    var brand = selections.brand || 'other';
+    var issue = selections.issue;
+
+    if (!device || !issue) return;
+
+    var range = priceTable[device][issue];
+    if (!range) return;
+
+    var mult = brandMultiplier[brand] || 1.0;
+    var min = Math.round(range[0] * mult);
+    var max = Math.round(range[1] * mult);
+
+    // نمایش
+    document.getElementById('priceValue').textContent =
+        'از ' + formatPrice(min) + ' تا ' + formatPrice(max) + ' تومان';
+
+    document.getElementById('sumDevice').textContent = deviceNames[device];
+    document.getElementById('sumBrand').textContent = brandNames[brand] || brandNames['other'];
+    document.getElementById('sumIssue').textContent = issueNames[issue];
+
+    // لینک واتساپ با پیام خودکار
+    var text = '🧮 *درخواست استعلام دقیق تعمیر*\n';
+    text += '━━━━━━━━━━━━━━━\n';
+    text += '📱 *دستگاه:* ' + deviceNames[device] + '\n';
+    text += '🏷 *برند:* ' + (brandNames[brand] || brandNames['other']) + '\n';
+    text += '🔧 *مشکل:* ' + issueNames[issue] + '\n';
+    text += '💰 *تخمین سایت:* ' + formatPrice(min) + ' تا ' + formatPrice(max) + ' تومان\n';
+    text += '━━━━━━━━━━━━━━━\n';
+    text += 'لطفاً قیمت دقیق و زمان تعمیر را اعلام کنید.';
+
+    document.getElementById('waSendBtn').href = 'https://wa.me/989174429089?text=' + encodeURIComponent(text);
+}
+
+// ============ ریست ============
+
+function restart() {
+    selections = { device: null, brand: null, issue: null };
+    document.querySelectorAll('.option-card').forEach(function(c) {
+        c.classList.remove('selected');
+    });
+    updateNextButtons();
+    goToStep(1);
+}
+
+// ============ راه‌اندازی ============
+
+document.addEventListener('DOMContentLoaded', function() {
+    setupOptionCards();
+
+    document.getElementById('next1').addEventListener('click', function() {
+        goToStep(2);
+    });
+
+    document.getElementById('back2').addEventListener('click', function() {
+        goToStep(1);
+    });
+
+    document.getElementById('next2').addEventListener('click', function() {
+        goToStep(3);
+    });
+
+    document.getElementById('back3').addEventListener('click', function() {
+        goToStep(2);
+    });
+
+    document.getElementById('next3').addEventListener('click', function() {
+        calculatePrice();
+        goToStep(4);
+    });
+
+    document.getElementById('restartBtn').addEventListener('click', function(e) {
+        e.preventDefault();
+        restart();
+    });
+});
+</script>
+<div class="sticky-cta"><a href="tel:09174429089" class="sc-call"><i class="fas fa-phone-alt"></i> تماس</a><a href="https://wa.me/989174429089" class="sc-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> واتساپ</a></div>
+</body>
+</html>
