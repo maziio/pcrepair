@@ -10,7 +10,9 @@ https://shirazpcrepair.ir/clinic-management-software.html
 - dashboard.png       تصویر اصلی / نمای کلی برنامه
 - patients.png        فهرست یا پرونده بیماران
 - visits.png          نوبت‌ها و وضعیت ویزیت
-- doctor-finance.png  تب پزشک، عمل و هزینه‌ها
+- doctor-finance.png    تب پزشک، بخش اول
+- doctor-finance-2.png  تب پزشک، بخش دوم
+- doctor-finance-3.png  تب پزشک، بخش سوم (اختیاری)
 - reports.png         گزارش‌ها و امور مالی
 - patient-photos.png  گالری تصاویر پرونده
 
