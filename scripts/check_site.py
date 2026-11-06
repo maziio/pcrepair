@@ -12,6 +12,7 @@ from xml.etree import ElementTree
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE_HOSTS = {"shirazpcrepair.ir", "www.shirazpcrepair.ir"}
+REPAIR_REQUEST_URL = "https://shop.shirazpcrepair.ir/repair/"
 RESOURCE_ATTRIBUTES = {"href", "src", "action", "poster"}
 
 
@@ -98,6 +99,12 @@ def main() -> int:
             errors.append(f"{rel}: cannot read HTML ({exc})")
             continue
         parsers[rel] = parser
+
+        if rel != "google310d647dba2af007.html" and not any(
+            url.rstrip("/") == REPAIR_REQUEST_URL.rstrip("/")
+            for url, _ in parser.references
+        ):
+            errors.append(f"{rel}: missing prominent repair request link to {REPAIR_REQUEST_URL}")
 
         for url, context in parser.references:
             target = resolve_local_path(url, rel)
