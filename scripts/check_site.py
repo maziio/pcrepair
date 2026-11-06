@@ -132,10 +132,10 @@ def main() -> int:
     if software.is_file():
         software_parser = parsers.get("software.html")
         robots = ",".join(software_parser.robots_values) if software_parser else ""
-        if "noindex" not in robots:
-            errors.append("software.html: placeholder should remain noindex until product details are ready")
-        if any(urlsplit(url).path.rstrip("/").endswith("/software.html") for url in locations):
-            errors.append("sitemap.xml: software.html is noindex but appears in sitemap")
+        if "noindex" in robots:
+            errors.append("software.html: page is expected to be indexable but has a noindex directive")
+        if not any(urlsplit(url).path.rstrip("/").endswith("/software.html") for url in locations):
+            errors.append("sitemap.xml: indexable software.html is missing from sitemap")
 
     home = parsers.get("index.html")
     if home and not any(urlsplit(url).path.rstrip("/").endswith("/software.html") or url == "software.html"
@@ -149,7 +149,7 @@ def main() -> int:
         return 1
 
     print(f"Site validation passed: checked {len(parsers)} HTML pages and {len(locations)} sitemap URLs.")
-    print("Local links/assets resolve; sitemap XML is valid; software placeholder remains noindex.")
+    print("Local links/assets resolve; sitemap XML is valid; software.html indexability matches sitemap.")
     return 0
 
 
