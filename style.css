@@ -38,8 +38,19 @@ body {
     font-size: 0.9rem;
     margin-bottom: 16px;
 }
-.top-bar .brand { font-weight: 800; font-size: 1.05rem; display: flex; align-items: center; gap: 8px; }
-.top-bar .brand i { color: #f4a261; }
+.top-bar .brand { font-weight: 800; font-size: 1.05rem; display: flex; align-items: center; gap: 10px; }
+.top-bar .brand i { display: none; }
+.top-bar .brand::before {
+    content: "";
+    display: inline-block;
+    flex: 0 0 46px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #fff url("/images/logo.png") center / contain no-repeat;
+    border: 2px solid rgba(255,255,255,.82);
+    box-shadow: 0 2px 8px rgba(0,0,0,.18);
+}
 .top-bar .info { display: flex; gap: 16px; flex-wrap: wrap; font-size: 0.85rem; }
 .top-bar .info span { display: inline-flex; align-items: center; gap: 5px; }
 
